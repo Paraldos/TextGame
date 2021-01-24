@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 *,
 *::before,
 *::after {
@@ -12,6 +14,7 @@
 }
 
 body {
+  font-family: "Roboto", sans-serif;
   background-color: var(--cBackground);
   color: var(--cMain);
   width: 100%;
@@ -22,8 +25,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0px;
-  border-bottom: 4px dashed var(--cMain);
+  border-bottom: 6px dashed var(--cMain);
+  padding-bottom: 3px;
 }
 
 .gameBox {
@@ -31,4 +34,15 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1rem 0px;
+}
+
+.button {
+  font-size: 2em;
+  padding: 1rem 2rem;
+}
+
+.button:hover {
+  background-color: var(--cMain);
+  color: var(--cBackground);
+  cursor: crosshair;
 }
