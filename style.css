@@ -45,11 +45,11 @@ gameBox
 }
 
 .txt {
-  padding: 1rem 0px;
+  padding: 1rem;
 }
 
 .btn {
-  padding: 1rem 2rem;
+  padding: 1rem;
 }
 
 .btn:hover {
