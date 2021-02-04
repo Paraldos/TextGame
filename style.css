@@ -82,7 +82,9 @@ gameBox
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: 0.7rem;
 }
 .img img {
-  max-width: 80%;
+  max-width: 95%;
+  max-height: 500px;
 }
