@@ -28,11 +28,11 @@ let scenes = {
 
     {
       txt: "This text shows when 'test_key_01' is TRUE",
-      showIfKeyIsTrue: "test_key_01",
+      key_hideIfFalse: "test_key_01",
     },
     {
       txt: "This text shows when 'test_key_01' is FALSE",
-      showIfKeyIsFalse: "test_key_01",
+      key_hideIfTrue: "test_key_01",
     },
     { btn: "Set 'test_key_01' to true", changeScene: "test_03a" },
     { btn: 'Set "test_key_01" to false', changeScene: "test_03b" },
@@ -47,14 +47,14 @@ let scenes = {
   test_03a: [
     {
       txt: '"test_key_01" is now TRUE',
-      setKeyToTrue: "test_key_01",
+      key_setToTrue: "test_key_01",
     },
     { btn: "Go to TEST PAGE", changeScene: "test_01" },
   ],
   test_03b: [
     {
       txt: '"test_key_01" is now FALSE',
-      setKeyToFalse: "test_key_01",
+      key_setToFalse: "test_key_01",
     },
     { btn: "Go to TEST PAGE", changeScene: "test_01" },
   ],
@@ -95,7 +95,7 @@ let scenes = {
     {
       txt:
         "You take a deep breath, calm down and take a moment to examine yourself.",
-      setKeyToTrue: "egg_02a",
+      key_setToTrue: "egg_02a",
     },
     {
       txt:
@@ -108,8 +108,8 @@ let scenes = {
     { btn: "Examine your surroundings.", changeScene: "egg_02b" },
     {
       btn: "Struggle to get free.",
-      showIfKeyIsTrue: "egg_02a",
-      showIfKeyIsTrue: "egg_02b",
+      key_hideIfFalse: "egg_02a",
+      key_hideIfFalse: "egg_02b",
       changeScene: "egg_03",
     },
   ],
@@ -117,7 +117,7 @@ let scenes = {
     {
       txt:
         "You are in the cargo bay of some sort of old transport shuttle. The room is only a couple of meters wide and long, and mostly empty. The metal floor looks old and dirty and the walls are covered with scratches and rings to mount cargo. A big crane is mounted to the ceiling and waiting to lift stuff in an out through a big loading gate to your left side. The only other exit is a much small metal door and probably leads to the cockpit.",
-      setKeyToTrue: "egg_02b",
+      key_setToTrue: "egg_02b",
     },
     {
       txt:
@@ -125,20 +125,20 @@ let scenes = {
     },
     { txt: "“…found a nest…”" },
     { txt: "“…good bait…”" },
-    { txt: "“…Yea! A real fucktoy…”" },
+    { txt: "“…Yea! 1A fucktoy…”" },
     { txt: "“…might take a few days…”" },
     { btn: "Examine yourself.", changeScene: "egg_02a" },
     {
       btn: "Struggle to get free.",
-      showIfKeyIsTrue: "egg_02a",
-      showIfKeyIsTrue: "egg_02b",
+      key_hideIfFalse: "egg_02a",
+      key_hideIfFalse: "egg_02b",
       changeScene: "egg_03",
     },
   ],
   egg_03: [
     {
       txt:
-        "You moan and grunt, while you try to get free, but your bondage hold’s tight. After a few minutes you are totally exhausted and sweaty, but still bound and helpless.",
+        "You moan and grunt, while you try to get free, but your bondage hold’s tight. After only a few minutes you are totally exhausted and sweaty, but still bound and helpless.",
     },
     {
       txt:
@@ -146,8 +146,21 @@ let scenes = {
     },
     {
       txt:
-        "“You are awake. Good.” He slowly walks to you and starts to fit you into a tight harness of leather straps. You try to fight it, but bound and helpless as you are, you are not match for the man. After he is done, he connects your harness to the cargo crane and pushes a button, to lift you from the floor.  ",
+        "He stops for a moment and grumbles, “you are awake? Good.” Then he slowly walks towards you, takes what looks like a harness mad of leather belts and kneels to strap you into it.",
     },
+    {
+      btn: "More Bondage?! NO! Try to fight him!",
+      changeScene: "egg_04a",
+    },
+    {
+      btn: "Hold still. You don't wan't him to get angry.",
+      changeScene: "egg_04b",
+    },
+  ],
+  egg_04a: [{ txt: "Angry reaction" }, { btn: "next", changeScene: "egg_05" }],
+  egg_04b: [
+    { txt: "pleased reaction" },
+    { btn: "next", changeScene: "egg_05" },
   ],
 };
 
@@ -168,11 +181,12 @@ function fillGameBox(scene) {
 
 function createHTMLElements(sceneElement) {
   let newDiv = document.createElement("div");
-  if (keys[sceneElement.showIfKeyIsTrue] == false) return;
-  if (keys[sceneElement.showIfKeyIsFalse] == true) return;
+  if (keys[sceneElement.key_hideIfFalse] == false) return;
+  if (keys[sceneElement.key_hideIfTrue] == true) return;
 
-  if (sceneElement.setKeyToTrue) keys[sceneElement.setKeyToTrue] = true;
-  if (sceneElement.setKeyToFalse) keys[sceneElement.setKeyToFalse] = false;
+  if (sceneElement.key_setToTrue) keys[sceneElement.key_setToTrue] = true;
+  if (sceneElement.key_setToFalse) keys[sceneElement.key_setToFalse] = false;
+
   if (sceneElement.h1) {
     newDiv.classList.add("h1");
     newDiv.innerHTML = sceneElement.h1;
