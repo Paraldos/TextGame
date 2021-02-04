@@ -105,10 +105,13 @@ let scenes = {
       txt:
         "As you try to sit up, you notice your arms are cuffed behind your back and your legs are chained together. A big, red ballgag forces your mouth painfully wide and makes intelligible speak impossible.",
     },
-    { btn: "Examine your surroundings.", changeScene: "egg_02b" },
+    {
+      btn: "Examine your surroundings.",
+      key_hideIfTrue: "egg_02b",
+      changeScene: "egg_02b",
+    },
     {
       btn: "Struggle to get free.",
-      key_hideIfFalse: "egg_02a",
       key_hideIfFalse: "egg_02b",
       changeScene: "egg_03",
     },
@@ -127,11 +130,14 @@ let scenes = {
     { txt: "“…good bait…”" },
     { txt: "“…Yea! 1A fucktoy…”" },
     { txt: "“…might take a few days…”" },
-    { btn: "Examine yourself.", changeScene: "egg_02a" },
+    {
+      btn: "Examine yourself.",
+      changeScene: "egg_02a",
+      key_hideIfTrue: "egg_02a",
+    },
     {
       btn: "Struggle to get free.",
       key_hideIfFalse: "egg_02a",
-      key_hideIfFalse: "egg_02b",
       changeScene: "egg_03",
     },
   ],
@@ -157,10 +163,101 @@ let scenes = {
       changeScene: "egg_04b",
     },
   ],
-  egg_04a: [{ txt: "Angry reaction" }, { btn: "next", changeScene: "egg_05" }],
+  egg_04a: [
+    {
+      txt:
+        "You struggle and squirm as best as you can, but even without the bondage, you would be no match for the big, strong man. After only a few moments he has enough from your antics. He turns you on your belly and pins you down with one knee on your back.",
+    },
+    {
+      txt:
+        "You still try to wiggle free as you suddenly feel a hard slap on the ass. Then another, and another, and another. He spanks you hard and without mercy until you are reduced to a sobbing mess. Your ass is pulsing from pain and burning like fire.",
+    },
+    {
+      txt:
+        "After he is done he gives you a second to breave, before he growls: “Now Missy. Wanna more or can I now finish my work?”",
+    },
+    { btn: "Struggle", changeScene: "egg_04aa" },
+    {
+      btn: "Hold still and let hem wrapp you into the harness.",
+      changeScene: "egg_05",
+    },
+  ],
+  egg_04aa: [
+    {
+      txt_random: [
+        "You will not let him win! You fight your tears back, tack a few breaths, shift your weight, and try to roll on your back and away from this monster.",
+        "Not just yet! Just as you feel he gives you a bit slack you start to squirm like crazy. There is no way you will just give in to this!",
+        "Your poor ass feel terrible, but you refuse to give up. With all what is left inside of you, you buckle up and try to make him fall off you.",
+      ],
+    },
+    {
+      txt_random: [
+        "But the man just pins you down again. Then he gives you another brutal spanking. You cannot fight it. After only few seconds you are sobbing and crying again, as with ever slap another flash of pain jolt through your body.",
+        "The man loses his balance only for a short second, grunts angry and rewards your resistance with another barrage of painful slap to your ass. After only seconds you can no longer fight but have to plea unintelligible through your gag for mercy.",
+        "The man just snorts amused and gives you a couple of extra hard slaps on the ass. You can only scream in pain, no longer able to resist.",
+      ],
+    },
+    {
+      txt:
+        "After he is done he gives you a second to breave, before he growls: “Now Missy. Wanna more or can I now finish my work?”",
+    },
+    { btn: "Struggle", changeScene: "egg_04aa" },
+    {
+      btn: "Hold still and let hem wrapp you into the harness.",
+      changeScene: "egg_05",
+    },
+  ],
   egg_04b: [
-    { txt: "pleased reaction" },
-    { btn: "next", changeScene: "egg_05" },
+    {
+      txt:
+        "You hold still as the intimidating man is wrapping you into a tight leather harness. He does not react to much and works fast. Only after he is done he uses the moment to knead your tits with a regretful expression on his face.",
+    },
+    {
+      txt:
+        "“Good girl.” His voice sounds rough and hard. “You are obedient. I like that. What a waist to use you as bait.”",
+    },
+    {
+      btn: "Lean into his hands and moan",
+      changeScene: "egg_04ba",
+    },
+    { btn: "Hold still", changeScene: "egg_05" },
+  ],
+  egg_04ba: [
+    {
+      txt:
+        "The man grins and massages your tits for a little while longer. His rough hands squeez your soft flesh and you feel your nipples get erect. A soft moan escapes your gagged mouth as you enjoy the moment.",
+    },
+    {
+      txt:
+        "But after a few seconds he just stops and shakes his head with a grin. “Nice try, slut. But you are not the first whore who tried to fuck it’s way out of this.”",
+    },
+    {
+      btn: "Moan seductive",
+      changeScene: "egg_05",
+    },
+    {
+      btn: "Groan anoyed.",
+      changeScene: "egg_05",
+    },
+  ],
+  egg_05: [
+    {
+      txt:
+        "After the man is done your bondage is absolute. You are like a mummy, woven into a cocoon of leather straps. Your legs pinned together and your arms to your body. There is no chance you would ever be able to free yourself.",
+    },
+    {
+      txt:
+        "“Okay Missy. I found a cave that looks inhabited.” While he speaks, he takes an aerosol can and starts to spray you from top to bottom. “The pheromones will attract the Dianoga. Just move a little around, it will find you eventually.”",
+    },
+    {
+      txt:
+        "He gets back up, fastens your harness to the crane and lifts you up, until you dangle slightly above the ground. With an evil grin he pinches your nipple. “I will come back in a few days. So, you will have some quality time with your new lover. Have fun.”",
+    },
+    {
+      txt:
+        "Then he pushes a button on a wall terminal and the loading gate, on the side of the shuttle, slides open. Wind forces grey dust into the small vehicle and you can see that you are hovering 20 to 30 meters above a wasteland of grey and black rock.",
+    },
+    { btn: "Next", changeScene: "egg_06" },
   ],
 };
 
@@ -194,6 +291,13 @@ function createHTMLElements(sceneElement) {
   if (sceneElement.txt) {
     newDiv.classList.add("txt");
     newDiv.innerHTML = sceneElement.txt;
+  }
+  if (sceneElement.txt_random) {
+    newDiv.classList.add("txt");
+    newDiv.innerHTML =
+      sceneElement.txt_random[
+        Math.floor(Math.random() * sceneElement.txt_random.length)
+      ];
   }
   if (sceneElement.btn) {
     newDiv.classList.add("btn");
