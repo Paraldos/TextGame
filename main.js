@@ -8,13 +8,13 @@ let player = {};
 let scenes = {
   start: [
     { h1: "Start Page" },
-    { btn: "Gehe zur Scene: Test_01", changeScene: "Test_01" },
-    { btn: "Beedroom", changeScene: "Bedroom" },
+    { btn: "Go to TEST PAGE", changeScene: "Test_01" },
+    { btn: "The World", changeScene: "theWorld" },
   ],
   /////////////
   Test_01: [
     { h1: "Test Page" },
-    { btn: "Gehe zur START PAGE", changeScene: "start" },
+    { btn: "Go to START PAGE", changeScene: "start" },
     { txt: "Ein Textfeld! Ist das nicht aufregend?" },
     { txt: "<b>bold</b>, <i>italic</i>, <u>underline</u>" },
     { btn: "Gehe zur Scene: Test_02", changeScene: "Test_02" },
@@ -25,10 +25,18 @@ let scenes = {
     { txt: "Scene: Test_02" },
     { btn: "Gehe zurück zu Test_01", changeScene: "Test_01" },
   ],
-  /* ==================================== */
-  Bedroom: [
-    { txt: "You are in your bedroom." },
-    { btn: "Strip and get in bed", changeScene: "Bed" },
+  /* intro ==================================== */
+  theWorld: [
+    { h1: "The World" },
+    {
+      txt:
+        "This story is set in a post scarcity sci-fi universe. Humanity has spread to dozens of new planets and answered all the big questions.",
+    },
+    {
+      txt:
+        "People stay young forever, AI and robots have replaced human labor, money has been abolished and war has been eradicated. Every person can live in luxurious decadence and do whatever they like, without any responsibilities.",
+    },
+    { btn: "Go to START PAGE", changeScene: "start" },
   ],
 };
 
