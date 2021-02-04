@@ -2,6 +2,7 @@
 let navBox = document.getElementsByClassName("navBox");
 let gameBox = document.querySelector(".gameBox");
 let btn = [];
+let currentScene = "";
 let keys = {
   test_key_01: false,
   egg_02a: false,
@@ -99,7 +100,7 @@ let scenes = {
     },
     {
       txt:
-        "Nearly all your body is covered in grey latex. Only your face, breasts and crotch are exempt. Your legs are fitted into black, knee-high balletboots and your arms into shoulder length, black, latex gloves. A tight, black underbust corset and a tight posture collar sits snug around your throat.",
+        "Nearly all your body is covered in grey latex. The only exceptions are your face, breasts, and crotch. Your legs are fitted into black, knee-high balletboots and your arms into shoulder length, black, latex gloves. A tight, black underbust corset and a tight posture collar sits snug around your throat.",
     },
     {
       txt:
@@ -128,7 +129,7 @@ let scenes = {
     },
     { txt: "“…found a nest…”" },
     { txt: "“…good bait…”" },
-    { txt: "“…Yea! 1A fucktoy…”" },
+    { txt: "“…Yea! A real prime fucktoy…”" },
     { txt: "“…might take a few days…”" },
     {
       btn: "Examine yourself.",
@@ -269,6 +270,7 @@ let scenes = {
 }
 
 function fillGameBox(scene) {
+  console.log(currentScene);
   if (!scene) return;
   btn = [[]];
   while (gameBox.children.length > 0) gameBox.lastChild.remove();
@@ -315,7 +317,10 @@ function createHTMLElements(sceneElement) {
 }
 
 function clickBtn(sceneElement) {
-  if (sceneElement.changeScene) fillGameBox(scenes[sceneElement.changeScene]);
+  if (sceneElement.changeScene) {
+    currentScene = sceneElement.changeScene;
+    fillGameBox(scenes[sceneElement.changeScene]);
+  }
 }
 
 fillGameBox(scenes.start);
