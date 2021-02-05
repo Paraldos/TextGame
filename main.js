@@ -563,4 +563,4 @@ function clickBtn(sElement) {
   }
 }
 
-fillGameBox(scenes.egg_09aac);
+fillGameBox(scenes.start);
