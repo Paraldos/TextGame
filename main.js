@@ -25,19 +25,21 @@ let scenes = {
     { h1: "Start Page" },
     { btn: "Go to TEST PAGE", changeScene: "test_01" },
     // { btn: "Go to WIKI", changeScene: "wiki" },
-    { btn: "Story: Eggs", changeScene: "egg_01" },
+    { btn: "Story: The Selzabeast", changeScene: "selzabeastStart" },
   ],
+  // test pages
   test_01: [
     { h1: "Test Page" },
     { txt: "Ein Textfeld! Ist das nicht aufregend?" },
     { txt: "<b>bold</b>, <i>italic</i>, <u>underline</u>" },
     { btn: "test button: change scene", changeScene: "test_02" },
+    { txt: `"test_key_01" is...` },
     {
-      txt: `show example / "test_key_01" = ${keys.test_key_01}`,
+      txt: "True",
       key_show: "test_key_01",
     },
     {
-      txt: `hide example / "test_key_01" = ${keys.test_key_01}`,
+      txt: "False",
       key_hide: "test_key_01",
     },
     { btn: "Set 'test_key_01' to true", changeScene: "test_03a" },
@@ -90,16 +92,16 @@ let scenes = {
     { btn: "Back to STARTPAGE", changeScene: "start" },
   ],
   // story: eggs
-  egg_01: [
+  selzabeastStart: [
     { h1: "Kapitel 1: Rude Awakening" },
     {
       txt:
         "You slowly come to your senses and immediately know something is wrong. You are bound and gagged, lying on the cold floor of a transport shuttle, and you feel hazy and tired. Have you been druged? What had happend? You can't remember!",
     },
-    { btn: "Examine yourself.", changeScene: "egg_02a" },
-    { btn: "Examine your surroundings.", changeScene: "egg_02b" },
+    { btn: "Examine yourself.", changeScene: "examinYourself" },
+    { btn: "Examine your surroundings.", changeScene: "examineSurrondings" },
   ],
-  egg_02a: [
+  examinYourself: [
     { key_setToTrue: "examinYourself" },
     {
       txt:
@@ -116,7 +118,7 @@ let scenes = {
     {
       key_hide: "examineSurrondings",
       btn: "Examine your surroundings.",
-      changeScene: "egg_02b",
+      changeScene: "examineSurrondings",
     },
     {
       key_show: "examineSurrondings",
@@ -124,7 +126,7 @@ let scenes = {
       changeScene: "egg_03",
     },
   ],
-  egg_02b: [
+  examineSurrondings: [
     { key_setToTrue: "examineSurrondings" },
     {
       txt:
@@ -141,7 +143,7 @@ let scenes = {
     {
       key_hide: "examinYourself",
       btn: "Examine yourself.",
-      changeScene: "egg_02a",
+      changeScene: "examinYourself",
     },
     {
       key_show: "examinYourself",
@@ -266,7 +268,7 @@ let scenes = {
     },
     {
       txt:
-        "“Okay, missy. I found a cave that looks inhabited.” While he speaks, he takes an aerosol can and starts to spray you from top to bottom. “The pheromones will attract the Dianoga. Just move around a little, it will find you eventually.”",
+        "“Okay, missy. I found a cave that looks inhabited.” While he speaks, he takes an aerosol can and starts to spray you from top to bottom. “The pheromones will attract the Selzabeast. Just move around a little, it will find you eventually.”",
     },
     {
       txt:
@@ -293,11 +295,11 @@ let scenes = {
     },
     {
       btn: "Try to get up.",
-      changeScene: "egg_07",
+      changeScene: "theCave",
     },
   ],
   // inside the cave
-  egg_07: [
+  theCave: [
     {
       h1: "Chapter 2: The Cave",
     },
@@ -319,10 +321,13 @@ let scenes = {
       txt:
         "You move your hands to your breasts and cover them, a bit ashamed. It’s like you still can feel a echo of the man’s hand on them. Was it okay to let him overpower you so easy? Better not think too much about it.",
     },
-    { btn: "Explore your Surrondings.", changeScene: "egg_08a" },
-    { btn: "Get rid of this degrading outfit.", changeScene: "egg_08b" },
+    { btn: "Explore your Surrondings.", changeScene: "exploreCave" },
+    {
+      btn: "Get rid of this degrading outfit.",
+      changeScene: "failedToUndress01",
+    },
   ],
-  egg_08a: [
+  exploreCave: [
     {
       txt:
         "You are in a big cave. The air is warm, moist and smells weird – It kind makes you dizzy if you concentrate too much on it. Dim light is entering through the big opening on the ceiling. The walls are steep and covered in wet, blue moss – there is no way you could climb them.",
@@ -337,7 +342,7 @@ let scenes = {
     },
     {
       btn: "Get rid of this degrading outfit.",
-      changeScene: "egg_08b",
+      changeScene: "failedToUndress01",
       key_hide: "failedToUndress",
     },
     {
@@ -347,14 +352,14 @@ let scenes = {
     },
     {
       btn: "Examine the small holes in the wall.",
-      changeScene: "egg_09b",
+      changeScene: "smallHoles",
     },
     {
       btn: "Examine the tunnel.",
       changeScene: "egg_09c",
     },
   ],
-  egg_08b: [
+  failedToUndress01: [
     { key_setToTrue: "failedToUndress" },
     {
       txt:
@@ -370,10 +375,10 @@ let scenes = {
     },
     {
       btn: "Next",
-      changeScene: "egg_08ba",
+      changeScene: "failedToUndress02",
     },
   ],
-  egg_08ba: [
+  failedToUndress02: [
     {
       txt:
         "Even the latex suit is impossible to remove. It seems somehow melted to your skin and there is not a single gap or fold you could use to peal it off. It would be impressive and even sexy if the circumstances where different.",
@@ -386,7 +391,7 @@ let scenes = {
       txt:
         "You realize how you got distracted and snap out of your daydream. What is wrong with you? How can you think about such nonsense right now?! ",
     },
-    { btn: "Explore your Surrondings.", changeScene: "egg_08a" },
+    { btn: "Explore your Surrondings.", changeScene: "exploreCave" },
   ],
   slimePool: [
     {
@@ -399,7 +404,7 @@ let scenes = {
     },
     {
       btn: "Gross! Step away and explore the rest of the cave.",
-      changeScene: "egg_08a",
+      changeScene: "exploreCave",
     },
     {
       btn: "Dip a finger into it to and examine it closer.",
@@ -439,8 +444,8 @@ let scenes = {
         "Sudenly you realize there is still some goo on your fingers. You look around where you could get rid of it and eventually just use some moos to wipe your hand clean. “Okay...” you say to yourself, “stay away from the green goo. Got it.”",
     },
     {
-      btn: "concentrate on the rest of the cave.",
-      changeScene: "egg_08a",
+      btn: "Back to explore the cave.",
+      changeScene: "exploreCave",
     },
   ],
   slimePool_giveIn: [
@@ -488,25 +493,72 @@ let scenes = {
     },
     {
       btn: "Keep going!",
-      changeScene: "slimePoolCounter",
+      changeScene: "slimePool_giveIn02",
     },
     {
       btn: "Cum!",
-      counter_hideBelow6: "egg_09aad",
+      changeScene: "slimePool_orgasm",
+      counter_hideBelow6: "slimePoolCounter",
     },
   ],
-  egg_09aad: [
+  slimePool_orgasm: [
     {
       txt:
         "The tension inside of you rises to the breaking point, letting you dance on the very edge of climax for several long moments. ",
     },
     {
       txt:
-        "Then, suddenly, the bubble pops. You scream in primal lust, as waves of orgasmic bliss start to rock through your body. Warm love pulses through your body and you keep on rubbing your clit, to make it last just for a little bit longer.",
+        "Then, suddenly, the bubble pops. You scream in primal lust, as waves of orgasmic bliss start to rock through your body. Warm love pulses through your body and you keep on rubbing your clit to make the orgasm last longer.",
     },
     {
       txt:
         "You collapse to the floor and rest. Just breathing and enjoying the afterglow. Feeling the  pleasant warmth radiate from your crotch into the rest of your body. ",
+    },
+    {
+      btn: "Just a little rest.",
+      changeScene: "slimePool_aftermath",
+    },
+  ],
+  slimePool_aftermath: [
+    {
+      txt:
+        "You cannot say how long you have rested, until you suddenly realize what just happened. This had to be some sort of crazy aphrodisiac.",
+    },
+    {
+      txt:
+        "With a mix of shame and longing you get up and look towards the pool of slime. Better don’t get to close. You might not be able to fight your urges, when you get to close again…",
+    },
+    {
+      btn: "Get back to examine your surroundings.",
+      changeScene: "exploreCave",
+    },
+    {
+      btn: "Must… get… more… goo…",
+      changeScene: "slimePool_badEnd",
+    },
+  ],
+  slimePool_badEnd: [
+    {
+      h1: "Pool of Slime – Bad End",
+    },
+    {
+      txt: "Under Construction",
+    },
+    {
+      txt: "You get in the pool and meet the creature producing the slim.",
+    },
+    {
+      btn: "Get back to examine your surroundings.",
+      changeScene: "exploreCave",
+    },
+  ],
+  smallHoles: [
+    { h1: "Small holes" },
+    { txt: "Under construction" },
+    { txt: "Plan: Facehugger type creature attacks player" },
+    {
+      btn: "Get back to examine your surroundings.",
+      changeScene: "exploreCave",
     },
   ],
 };
@@ -584,4 +636,4 @@ function clickBtn(sElement) {
   }
 }
 
-fillGameBox(scenes.start);
+fillGameBox(scenes.theCave);
