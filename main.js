@@ -356,7 +356,7 @@ let scenes = {
     },
     {
       btn: "Examine the tunnel.",
-      changeScene: "egg_09c",
+      changeScene: "theTunnel",
     },
   ],
   failedToUndress01: [
@@ -371,7 +371,7 @@ let scenes = {
     },
     {
       txt:
-        "Annoyed you concentrate on the corset and find it as impossible to remove as the boots. It is tightly fit to your torso and sealed with padlocks. No way to get out of it without tools or the key.",
+        "Your frustration grows. You shift your attention towards the corset and it also is stuck to your body. It fits tightly and is sealed with padlocks. You have no way to get out of it.",
     },
     {
       btn: "Next",
@@ -469,7 +469,7 @@ let scenes = {
         "You push slow and deliberately with your finger into your snatch, while you push your hips forward to feel them deep inside of you.",
         "You rub your clit with fast, desperate need. Your entire body tense and feels like it's on fire.",
         "You cannot be deliberate anymore. You finger yourself hard and fast, feeding into the glowing need pulsing in your pussy. It just feels sooooooo good.",
-        "You force yourself to slow down a bit, rock your hips gently back and forth and fondle your clit softly. It feeeeels so good but you need more.",
+        "You force yourself to slow down a bit, rock your hips gently back and forth and fondle your clit softly. It feels really good, but you need more. This is just to tame.",
         "You gently rub between your pussylips, before slowly, deliberatly and with force sliping three of your fingers into your lovetunnel.",
       ],
     },
@@ -485,8 +485,8 @@ let scenes = {
     },
     {
       txt_random: [
-        "You are getting closer. You can feel the tension slowly build inside you.",
-        "Your entire body is trembling. You are close to climax.",
+        "You are so close. You can feel the tension right benath your skin, ready to burst into orgasm.",
+        "Your entire body is trembling. You feel the climax allready - you just need a little more to get over the edge.",
         "You can feel it, you are right on the edge, only a little more!",
       ],
       counter_hideBelow4: "slimePoolCounter",
@@ -539,13 +539,11 @@ let scenes = {
   ],
   slimePool_badEnd: [
     {
-      h1: "Pool of Slime – Bad End",
+      h1: "Bad End: Pool of Slime / under construction",
     },
     {
-      txt: "Under Construction",
-    },
-    {
-      txt: "You get in the pool and meet the creature producing the slim.",
+      txt:
+        "Plan: The player gets into the pool, where a tentacle creature waits for her.",
     },
     {
       btn: "Get back to examine your surroundings.",
@@ -553,9 +551,17 @@ let scenes = {
     },
   ],
   smallHoles: [
-    { h1: "Small holes" },
-    { txt: "Under construction" },
+    { h1: "Small holes / under construction" },
     { txt: "Plan: Facehugger type creature attacks player" },
+    {
+      btn: "Get back to examine your surroundings.",
+      changeScene: "exploreCave",
+    },
+  ],
+  theTunnel: [
+    {
+      h1: "Path to next chapter / under construction",
+    },
     {
       btn: "Get back to examine your surroundings.",
       changeScene: "exploreCave",
