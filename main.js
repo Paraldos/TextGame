@@ -13,7 +13,7 @@ let keys = {
   scaredByPool: false,
 };
 let counters = {
-  egg_09aac: 0,
+  slimePoolCounter: 0,
 };
 let player = {};
 
@@ -24,7 +24,7 @@ let scenes = {
   start: [
     { h1: "Start Page" },
     { btn: "Go to TEST PAGE", changeScene: "test_01" },
-    { btn: "Go to WIKI", changeScene: "wiki" },
+    // { btn: "Go to WIKI", changeScene: "wiki" },
     { btn: "Story: Eggs", changeScene: "egg_01" },
   ],
   test_01: [
@@ -342,7 +342,7 @@ let scenes = {
     },
     {
       btn: "Examine the slime pool.",
-      changeScene: "egg_09a",
+      changeScene: "slimePool",
       key_hide: "scaredByPool",
     },
     {
@@ -388,7 +388,7 @@ let scenes = {
     },
     { btn: "Explore your Surrondings.", changeScene: "egg_08a" },
   ],
-  egg_09a: [
+  slimePool: [
     {
       txt:
         "You get closer to the pool of slime. It radiates warmth and humidity and a strange smelling musk, that reminds you somehow of sex. Just standing this close makes you feel dizzy and… horny? What the hell is this stuff?",
@@ -403,10 +403,10 @@ let scenes = {
     },
     {
       btn: "Dip a finger into it to and examine it closer.",
-      changeScene: "egg_09aa",
+      changeScene: "slimePool_examine",
     },
   ],
-  egg_09aa: [
+  slimePool_examine: [
     { key_setToTrue: "scaredByPool" },
     {
       txt:
@@ -422,14 +422,14 @@ let scenes = {
     },
     {
       btn: "Step away! Fast!",
-      changeScene: "egg_09aaa",
+      changeScene: "slimePool_run",
     },
     {
       btn: "Give in to it! Suck the goo from your finger!",
-      changeScene: "egg_09aab",
+      changeScene: "slimePool_giveIn",
     },
   ],
-  egg_09aaa: [
+  slimePool_run: [
     {
       txt:
         '“Nope, nope, nope!” You force yourself back into reality and stumble away from the pool as fast as you can. You flee to the wall, which is the farthest away from it, before you can catch a break. "What the hell just happened?!"" Your entire body is still trembling in a mix of panic and lust.',
@@ -443,7 +443,7 @@ let scenes = {
       changeScene: "egg_08a",
     },
   ],
-  egg_09aab: [
+  slimePool_giveIn: [
     {
       txt:
         "A small part of your mind tells you to fight your urges and step away, but you ignore it. You sink down to your knees, close your eyes, spread your legs, and start to finger yourself with the left hand, while you suck on the goo covered finger of your right hand.",
@@ -454,11 +454,11 @@ let scenes = {
     },
     {
       btn: "More!",
-      changeScene: "egg_09aac",
+      changeScene: "slimePool_giveIn02",
     },
   ],
-  egg_09aac: [
-    { counter_addOne: "egg_09aac" },
+  slimePool_giveIn02: [
+    { counter_addOne: "slimePoolCounter" },
     {
       txt_random: [
         "You push slow and deliberately with your finger into your snatch, while you push your hips forward to feel them deep inside of you.",
@@ -484,15 +484,29 @@ let scenes = {
         "Your entire body is trembling. You are close to climax.",
         "You can feel it, you are right on the edge, only a little more!",
       ],
-      counter_hideBelow4: "egg_09aac",
+      counter_hideBelow4: "slimePoolCounter",
     },
     {
       btn: "Keep going!",
-      changeScene: "egg_09aac",
+      changeScene: "slimePoolCounter",
     },
     {
       btn: "Cum!",
-      counter_hideBelow6: "egg_09aac",
+      counter_hideBelow6: "egg_09aad",
+    },
+  ],
+  egg_09aad: [
+    {
+      txt:
+        "The tension inside of you rises to the breaking point, letting you dance on the very edge of climax for several long moments. ",
+    },
+    {
+      txt:
+        "Then, suddenly, the bubble pops. You scream in primal lust, as waves of orgasmic bliss start to rock through your body. Warm love pulses through your body and you keep on rubbing your clit, to make it last just for a little bit longer.",
+    },
+    {
+      txt:
+        "You collapse to the floor and rest. Just breathing and enjoying the afterglow. Feeling the  pleasant warmth radiate from your crotch into the rest of your body. ",
     },
   ],
 };
