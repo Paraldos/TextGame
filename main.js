@@ -91,7 +91,7 @@ let scenes = {
     { btn: "Back to WIKI", changeScene: "wiki" },
     { btn: "Back to STARTPAGE", changeScene: "start" },
   ],
-  // story: eggs
+  // story: selzabeast
   selzabeastStart: [
     { h1: "Kapitel 1: Rude Awakening" },
     {
@@ -123,7 +123,7 @@ let scenes = {
     {
       key_show: "examineSurrondings",
       btn: "Struggle to get free.",
-      changeScene: "egg_03",
+      changeScene: "meetOrlop",
     },
   ],
   examineSurrondings: [
@@ -148,10 +148,10 @@ let scenes = {
     {
       key_show: "examinYourself",
       btn: "Struggle to get free.",
-      changeScene: "egg_03",
+      changeScene: "meetOrlop",
     },
   ],
-  egg_03: [
+  meetOrlop: [
     {
       txt:
         "You moan and grunt, while you try to get free, but your bondage hold’s tight. After only a few minutes you are totally exhausted and sweaty, but still bound and helpless.",
@@ -166,14 +166,14 @@ let scenes = {
     },
     {
       btn: "No way! Try to fight him!",
-      changeScene: "egg_04a",
+      changeScene: "Spanking_01",
     },
     {
       btn: "Give in. Better not make him angry.",
-      changeScene: "egg_04b",
+      changeScene: "Groping_01",
     },
   ],
-  egg_04a: [
+  Spanking_01: [
     {
       key_setToTrue: "gotSpanked",
     },
@@ -189,13 +189,13 @@ let scenes = {
       txt:
         "He gives you a second to catch your breave, before he growls: “Now Missy. Wanna more or can we finally move on?”",
     },
-    { btn: "Struggle", changeScene: "egg_04aa" },
+    { btn: "Struggle", changeScene: "Spanking_02" },
     {
       btn: "Hold still and let him wrapp you into the harness.",
-      changeScene: "egg_05",
+      changeScene: "getHarnessed",
     },
   ],
-  egg_04aa: [
+  Spanking_02: [
     {
       txt_random: [
         "You will not let him win! You fight your tears back, tack a few breaths, shift your weight, and try to roll on your back and away from this monster.",
@@ -219,13 +219,13 @@ let scenes = {
         "“Just give up already. This temper tantrum will not change anything – except for you having a sore ass.”",
       ],
     },
-    { btn: "Struggle", changeScene: "egg_04aa" },
+    { btn: "Struggle", changeScene: "Spanking_02" },
     {
       btn: "Hold still and let him wrapp you into the harness.",
-      changeScene: "egg_05",
+      changeScene: "getHarnessed",
     },
   ],
-  egg_04b: [
+  Groping_01: [
     {
       key_setToTrue: "gotGroped",
     },
@@ -239,11 +239,11 @@ let scenes = {
     },
     {
       btn: "Lean into his hands and moan",
-      changeScene: "egg_04ba",
+      changeScene: "Groping_02",
     },
-    { btn: "Hold still", changeScene: "egg_05" },
+    { btn: "Hold still", changeScene: "getHarnessed" },
   ],
-  egg_04ba: [
+  Groping_02: [
     {
       txt:
         "The man grins and massages your tits for a little while longer. His rough hands squeez your soft flesh and you feel your nipples get erect. A soft moan escapes your gagged mouth as you enjoy the moment.",
@@ -254,14 +254,14 @@ let scenes = {
     },
     {
       btn: "Lean into his hands and moan.",
-      changeScene: "egg_04ba",
+      changeScene: "Groping_02",
     },
     {
       btn: "Turn away from him.",
-      changeScene: "egg_05",
+      changeScene: "getHarnessed",
     },
   ],
-  egg_05: [
+  getHarnessed: [
     {
       txt:
         "After the man is done, your bondage is absolute. You are like a mummy, your legs pinned together and your arms to your body. There is no chance you would ever be able to free yourself from this tight cocoon of leather straps.",
@@ -278,9 +278,9 @@ let scenes = {
       txt:
         "Without another word, he steps towards a terminal on the wall and pushes a button. With an angry hiss, the big loading gate of the shuttle slides open and wind blows into the vehicle.",
     },
-    { btn: "Next", changeScene: "egg_06" },
+    { btn: "Next", changeScene: "getLoweredDown" },
   ],
-  egg_06: [
+  getLoweredDown: [
     {
       txt:
         "The man pushes a lever, and you stop swinging around, somehow stabilized by the machine. You slowly get hoisted out of the shuttle and then lowered down. Wind blows hard against your defenseless body and you can see a grey and black wasteland about 20 to 30 meters below you.",
