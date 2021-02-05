@@ -636,4 +636,4 @@ function clickBtn(sElement) {
   }
 }
 
-fillGameBox(scenes.theCave);
+fillGameBox(scenes.start);
