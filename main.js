@@ -40,7 +40,6 @@ let scenes = {
       txt: `hide example / "test_key_01" = ${keys.test_key_01}`,
       key_hide: "test_key_01",
     },
-
     { btn: "Set 'test_key_01' to true", changeScene: "test_03a" },
     { btn: 'Set "test_key_01" to false', changeScene: "test_03b" },
 
@@ -164,11 +163,11 @@ let scenes = {
         "He stops for a moment and grumbles, “you are awake? Good.” Then he slowly walks towards you, takes what looks like a harness mad of leather belts and kneels to strap you into it.",
     },
     {
-      btn: "More Bondage?! NO! Try to fight him!",
+      btn: "No way! Try to fight him!",
       changeScene: "egg_04a",
     },
     {
-      btn: "Hold still. You don't wan't him to get angry.",
+      btn: "Give in. Better not make him angry.",
       changeScene: "egg_04b",
     },
   ],
@@ -313,12 +312,12 @@ let scenes = {
     {
       txt:
         "Your ass still feels sore from the spanking. You gently rub your poor backside, and even that hurts a bit. The pain makes you growl in anger. You promise yourself to make the bastard pay!",
-      key_hide: "egg_04b",
+      key_show: "egg_04a",
     },
     {
       txt:
         "You move your hands to your breasts and cover them a bit ashamed. It’s like you still can feel a echo of the man’s hand on them. Was it okay to let him overpower you so easy? Better not think too much about it.",
-      key_hide: "egg_04a",
+      key_show: "egg_04b",
     },
     { btn: "Explore your Surrondings.", changeScene: "egg_08a" },
     { btn: "Get rid of this degrading outfit.", changeScene: "egg_08b" },
@@ -369,6 +368,12 @@ let scenes = {
       txt:
         "Annoyed you concentrate on the corset and find it as impossible to remove as the boots. It is tightly fit to your torso and sealed with padlocks. No way to get out of it without tools or the key.",
     },
+    {
+      btn: "Next",
+      changeScene: "egg_08ba",
+    },
+  ],
+  egg_08ba: [
     {
       txt:
         "Even the latex suit is impossible to remove. It seems somehow melted to your skin and there is not a single gap or fold you could use to peal it off. It would be impressive and even sexy if the circumstances where different.",
@@ -453,7 +458,7 @@ let scenes = {
     },
   ],
   egg_09aac: [
-    { counter_add: ["egg_09aac", 1] },
+    { counter_addOne: "egg_09aac" },
     {
       txt_random: [
         "You push slow and deliberately with your finger into your snatch, while you push your hips forward to feel them deep inside of you.",
@@ -474,12 +479,20 @@ let scenes = {
       ],
     },
     {
-      txt: "hi",
-      hide: counters.egg_09aac >= 0,
+      txt_random: [
+        "You are getting closer. You can feel the tension slowly build inside you.",
+        "Your entire body is trembling. You are close to climax.",
+        "You can feel it, you are right on the edge, only a little more!",
+      ],
+      counter_hideBelow4: "egg_09aac",
     },
     {
-      btn: "More! You need more!",
+      btn: "Keep going!",
       changeScene: "egg_09aac",
+    },
+    {
+      btn: "Cum!",
+      counter_hideBelow6: "egg_09aac",
     },
   ],
 };
@@ -505,9 +518,13 @@ function createHTMLElements(sElement) {
 
   if (keys[sElement.key_hide]) return;
   if (keys[sElement.key_show] == false) return;
-
   if (sElement.key_setToTrue) keys[sElement.key_setToTrue] = true;
   if (sElement.key_setToFalse) keys[sElement.key_setToFalse] = false;
+
+  if (counters[sElement.counter_hideBelow4] < 4) return;
+  if (counters[sElement.counter_hideBelow6] < 6) return;
+
+  if (sElement.counter_addOne) counters[sElement.counter_addOne]++;
 
   if (sElement.h1) {
     newDiv.classList.add("h1");
@@ -546,4 +563,4 @@ function clickBtn(sElement) {
   }
 }
 
-fillGameBox(scenes.start);
+fillGameBox(scenes.egg_09aac);
