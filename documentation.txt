@@ -1,0 +1,4 @@
+egg_00 – write intro
+//egg_04aa – make the last sentence random
+egg_04ba – make it random
+egg_09aac - add optional bad end for slime pool
