@@ -5,12 +5,12 @@ let btn = [];
 let currentScene = "";
 let keys = {
   test_key_01: false,
-  egg_02a: false,
-  egg_02b: false,
-  egg_04a: false,
-  egg_04b: false,
-  egg_08b: false,
-  egg_09aa: false,
+  examinYourself: false,
+  examineSurrondings: false,
+  gotSpanked: false,
+  gotGroped: false,
+  failedToUndress: false,
+  scaredByPool: false,
 };
 let counters = {
   egg_09aac: 0,
@@ -100,7 +100,7 @@ let scenes = {
     { btn: "Examine your surroundings.", changeScene: "egg_02b" },
   ],
   egg_02a: [
-    { key_setToTrue: "egg_02a" },
+    { key_setToTrue: "examinYourself" },
     {
       txt:
         "You take a deep breath, calm down and take a moment to examine yourself.",
@@ -114,18 +114,18 @@ let scenes = {
         "As you try to sit up, you notice your arms are cuffed behind your back and your legs are chained together. A big, red ballgag forces your mouth painfully wide and makes intelligible speak impossible.",
     },
     {
-      key_hide: "egg_02b",
+      key_hide: "examineSurrondings",
       btn: "Examine your surroundings.",
       changeScene: "egg_02b",
     },
     {
-      key_show: "egg_02b",
+      key_show: "examineSurrondings",
       btn: "Struggle to get free.",
       changeScene: "egg_03",
     },
   ],
   egg_02b: [
-    { key_setToTrue: "egg_02b" },
+    { key_setToTrue: "examineSurrondings" },
     {
       txt:
         "You are in the cargo bay of some sort of old transport shuttle. The room is only a couple of meters wide and long, and mostly empty. The metal floor looks old and dirty and the walls are covered with scratches and rings to mount cargo. A big crane is mounted to the ceiling and waiting to lift stuff in an out through a big loading gate to your left side. The only other exit is a much small metal door and probably leads to the cockpit.",
@@ -139,12 +139,12 @@ let scenes = {
     { txt: "“…Yea! A real prime fucktoy…”" },
     { txt: "“…might take a few days…”" },
     {
-      key_hide: "egg_02a",
+      key_hide: "examinYourself",
       btn: "Examine yourself.",
       changeScene: "egg_02a",
     },
     {
-      key_show: "egg_02a",
+      key_show: "examinYourself",
       btn: "Struggle to get free.",
       changeScene: "egg_03",
     },
@@ -173,7 +173,7 @@ let scenes = {
   ],
   egg_04a: [
     {
-      key_setToTrue: "egg_04a",
+      key_setToTrue: "gotSpanked",
     },
     {
       txt:
@@ -225,7 +225,7 @@ let scenes = {
   ],
   egg_04b: [
     {
-      key_setToTrue: "egg_04b",
+      key_setToTrue: "gotGroped",
     },
     {
       txt:
@@ -262,19 +262,19 @@ let scenes = {
   egg_05: [
     {
       txt:
-        "After the man is done your bondage is absolute. You are like a mummy, woven into a cocoon of leather straps. Your legs pinned together and your arms to your body. There is no chance you would ever be able to free yourself.",
+        "After the man is done, your bondage is absolute. You are like a mummy, your legs pinned together and your arms to your body. There is no chance you would ever be able to free yourself from this tight cocoon of leather straps.",
     },
     {
       txt:
-        "“Okay Missy. I found a cave that looks inhabited.” While he speaks, he takes an aerosol can and starts to spray you from top to bottom. “The pheromones will attract the Dianoga. Just move a little around, it will find you eventually.”",
+        "“Okay, missy. I found a cave that looks inhabited.” While he speaks, he takes an aerosol can and starts to spray you from top to bottom. “The pheromones will attract the Dianoga. Just move around a little, it will find you eventually.”",
     },
     {
       txt:
-        "He gets back up, fastens your harness to the crane and lifts you up, until you dangle slightly above the ground. “I will come back in a few days. So, you will have some quality time with your new lover. Have fun, i guess.”",
+        "He gets back up, fastens your harness to the crane, and lifts you up until you dangle slightly above the ground. “I will come back in a few days. So, you will have some quality time with your new lover. Have fun, I guess.”",
     },
     {
       txt:
-        "Without another word he steps towards a terminal on the wall and pushes a button. With an angry hiss the big loading gate of the shuttle slides open and wind blows into the vehicle.",
+        "Without another word, he steps towards a terminal on the wall and pushes a button. With an angry hiss, the big loading gate of the shuttle slides open and wind blows into the vehicle.",
     },
     { btn: "Next", changeScene: "egg_06" },
   ],
@@ -285,11 +285,11 @@ let scenes = {
     },
     {
       txt:
-        "Thanks to your collar you are not able to look down. So, are surprised as you pass ground level and decent even more, into a big gaping cave opening. Big, intimidating walls of rock devour you until you are at least 20 meters below ground. Even without your bondage you would never be able to climb these walls.",
+        "Thanks to your collar, you are not able to look down. You are surprised as you pass ground level and descend even more, into a gaping cave opening. Big, intimidating walls of rock devour you until you are at least 20 meters below ground. Even without your bondage, you would never be able to climb these walls.",
     },
     {
       txt:
-        "Finally your feet touch the ground, but you get lowered even further until you lay on your stomach. You can only moan as your exposed breasts get squished against cold, wet rock. CLICK! CLICK! CLICK! CLICK! CLICK! Suddenly dozens of tiny locks open up and you feel the pressure of your bondage lessens dramatically.",
+        "Finally your feet touch the ground, but you get lowered even further until you lay on your stomach. You can only moan as your exposed breasts get squished against cold, wet rock. CLICK! CLICK! CLICK! CLICK! CLICK! Suddenly, dozens of tiny locks open up and you feel the pressure of your bondage lessen dramatically.",
     },
     {
       btn: "Try to get up.",
@@ -303,21 +303,21 @@ let scenes = {
     },
     {
       txt:
-        "You struggle a bit to get out of the leather harness, but soon you are free again. Even the cuffs on your arms and legs have open. You immidietly get the ballgag out of your mouth and start to stretch your sore muscles.",
+        "You struggle a bit to get out of the leather harness, but soon you are free again. Even the cuffs on your arms and legs have opened. You immediately get the ballgag out of your mouth and start to stretch your sore muscles.",
     },
     {
       txt:
-        "You feel like your entire body is aching from the stress of the bondage. After a while you slowly get to your feet. The balletboots restrict your movement noticeable, but if you are carfull you are able to walk reasonably well. Have you experience in wearing this kind of boots? It kinda feels familiar...",
+        "You feel like your entire body is aching from the stress of the bondage. After a while, you slowly get to your feet. The ballet boots restrict your movement noticeably, but if you are careful, you are able to walk reasonably well. Do you have experience in wearing this kind of boots? It feels familiar somehow...",
     },
     {
+      key_show: "gotSpanked",
       txt:
         "Your ass still feels sore from the spanking. You gently rub your poor backside, and even that hurts a bit. The pain makes you growl in anger. You promise yourself to make the bastard pay!",
-      key_show: "egg_04a",
     },
     {
+      key_show: "gotGroped",
       txt:
-        "You move your hands to your breasts and cover them a bit ashamed. It’s like you still can feel a echo of the man’s hand on them. Was it okay to let him overpower you so easy? Better not think too much about it.",
-      key_show: "egg_04b",
+        "You move your hands to your breasts and cover them, a bit ashamed. It’s like you still can feel a echo of the man’s hand on them. Was it okay to let him overpower you so easy? Better not think too much about it.",
     },
     { btn: "Explore your Surrondings.", changeScene: "egg_08a" },
     { btn: "Get rid of this degrading outfit.", changeScene: "egg_08b" },
@@ -338,12 +338,12 @@ let scenes = {
     {
       btn: "Get rid of this degrading outfit.",
       changeScene: "egg_08b",
-      key_hide: "egg_08b",
+      key_hide: "failedToUndress",
     },
     {
       btn: "Examine the slime pool.",
       changeScene: "egg_09a",
-      key_hide: "egg_09aa",
+      key_hide: "scaredByPool",
     },
     {
       btn: "Examine the small holes in the wall.",
@@ -355,7 +355,7 @@ let scenes = {
     },
   ],
   egg_08b: [
-    { key_setToTrue: "egg_08b" },
+    { key_setToTrue: "failedToUndress" },
     {
       txt:
         "You try to get rid of the annoying posture collar first, but you cannot find a seal. It nearly seems like the thick, black leather has no opening at all.",
@@ -407,7 +407,7 @@ let scenes = {
     },
   ],
   egg_09aa: [
-    { key_setToTrue: "egg_09aa" },
+    { key_setToTrue: "scaredByPool" },
     {
       txt:
         "What exactly is this stuff? You dip a single finger into the goo. It is hot, but bearable. Still, you would rather avoid falling into it.",
@@ -505,10 +505,17 @@ let scenes = {
 }
 
 function fillGameBox(scene) {
-  console.log(currentScene);
   if (!scene) return;
   btn = [[]];
   while (gameBox.children.length > 0) gameBox.lastChild.remove();
+
+  /* post page name / only for development*/ {
+    let newDiv = document.createElement("div");
+    newDiv.classList.add("dev_pageName");
+    newDiv.innerHTML = "Current Page: " + currentScene;
+    gameBox.appendChild(newDiv);
+  }
+
   scene.forEach((sElement) => createHTMLElements(sElement));
   window.scrollTo(0, 0);
 }

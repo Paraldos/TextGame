@@ -54,6 +54,12 @@ gameBox
   background: var(--c1);
 }
 
+.dev_pageName {
+  text-align: right;
+  color: green;
+  font-size: 1rem;
+}
+
 .txt {
   padding: 0.5rem;
 }
