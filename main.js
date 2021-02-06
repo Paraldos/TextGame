@@ -13,6 +13,7 @@ let keys = {
   scaredByPool: false,
 };
 let counters = {
+  gropingCounter: 0,
   slimePoolCounter: 0,
 };
 let player = {};
@@ -136,8 +137,8 @@ let scenes = {
       txt:
         "You can feel a soft humming from the engines, so you guess you are probably moving, but there are no windows, so you cannot be sure. But you can hear a muffled, male voice through the door.",
     },
-    { txt: "“…found a nest…”" },
-    { txt: "“…good bait…”" },
+    { txt: "“…almost at the nest…”" },
+    { txt: "“…good breeder…”" },
     { txt: "“…Yea! A real prime fucktoy…”" },
     { txt: "“…might take a few days…”" },
     {
@@ -158,14 +159,18 @@ let scenes = {
     },
     {
       txt:
-        " You give yourself a moment to breath, but before you can try again, the cockpit door slides open. A big, scarry looking man steps towards you. He looks like he is in his 40s and his face is covered with a wild looking, brown beard. He wears an old looking environment suit and has tools and survival equipment hanging from his belt.",
+        "You give yourself a moment to breath, but before you can try again, the cockpit door slides open. A big, scarry looking man steps towards you.",
+    },
+    {
+      txt:
+        "He looks like he is in his 40s and his face is covered with a wild looking, brown beard. He wears an old looking environment suit and has tools and survival equipment hanging from his belt. Something in the back of your head recognizes him. You think his name is Orlop.",
     },
     {
       txt:
         "He stops for a moment and grumbles, “you are awake? Good.” Then he slowly walks towards you, takes what looks like a harness mad of leather belts and kneels to strap you into it.",
     },
     {
-      btn: "No way! Try to fight him!",
+      btn: "Try to fight him!",
       changeScene: "Spanking_01",
     },
     {
@@ -179,7 +184,7 @@ let scenes = {
     },
     {
       txt:
-        "You struggle and squirm as best as you can, but even without the bondage, you would be no match for the big, strong man. After only a few moments he has enough from your antics. He turns you on your belly and pins you down with his knee on your back.",
+        "You struggle and squirm as best as you can, but even without the bondage, you would be no match for this big, strong man. After only a few moments he has enough from your antics. He turns you on your belly and pins you down with his knee on your back.",
     },
     {
       txt:
@@ -191,37 +196,37 @@ let scenes = {
     },
     { btn: "Struggle", changeScene: "Spanking_02" },
     {
-      btn: "Hold still and let him wrapp you into the harness.",
+      btn: "Give up.",
       changeScene: "getHarnessed",
     },
   ],
   Spanking_02: [
     {
       txt_random: [
-        "You will not let him win! You fight your tears back, tack a few breaths, shift your weight, and try to roll on your back and away from this monster.",
-        "Not just yet! Just as you feel he gives you a bit slack you start to squirm like crazy again. There is no way you will just give in to this!",
-        "Your poor ass feels terrible, but you refuse to give up. With all what is left inside of you, you buckle up and try to make him fall off you.",
+        "You will not let him win! You fight your tears back, take a few breaths, shift your weight, and try to roll onto your back and away from this monster.",
+        "Not just yet! The moment you feel him give you a bit of slack, you start to squirm like crazy again. There is no way you will just give in to this!",
+        "Your poor ass feels terrible, but you refuse to give up. With all that is left inside of you, you buckle up and try to make him fall off you.",
       ],
     },
     {
       txt_random: [
-        "But the man just pins you down again. Then he gives you another brutal spanking. You cannot fight it. After only few seconds you are a sobbing mess again, as with ever slap another flash of pain jolt through your body.",
-        "The man loses his balance only for a short second, grunts angry and rewards your resistance with another barrage of painful slaps to your ass. After only seconds you can no longer fight but have to plea unintelligible through your gag for mercy.",
-        "The man just snorts amused and gives you a couple of extra hard slaps on the ass. You can only scream in pain, no longer able to resist.",
+        "Orlop just pins you down again, then gives you another brutal spanking. You cannot fight it. After only few seconds you are a sobbing mess again, as with every slap, another flash of pain jolts through your body.",
+        "Orlop loses his balance only for a short second, grunts angrily, and rewards your resistance with another barrage of painful slaps to your ass. After only seconds, you can no longer fight but have to plea unintelligibly through your gag for mercy.",
+        "Orlop just snorts, amused, and gives you a couple of extra-hard slaps on the ass. You can only scream in pain, no longer able to resist.",
       ],
     },
     {
       txt_random: [
-        "After he is done the man growls annoyed. „Have you enough? Or do you like some more?”",
-        "He stops, and you think its over, but then he gives you another, hard slap to throw you off balance. “Are you done now?”",
-        "“Can we now move on? Or do you like some more?” The man sound annoyed and leans with more weight onto your back, to drive his words home.",
-        "He just shakes his head. “I have work to do. Stop wasting my time!”",
+        'After he is done, the annoyed man growls, "Had enough? Or would you like some more?"',
+        "He stops, and you think it's over, but then he gives you another hard slap to throw you off balance. “Are you done now?”",
+        "“Can we move on, or do you want some more?” Orlop sounds annoyed, and leans with more weight onto your back to drive his words home.",
+        "He just shakes his head. “I have work to do. Stop wasting my time!",
         "“Just give up already. This temper tantrum will not change anything – except for you having a sore ass.”",
       ],
     },
     { btn: "Struggle", changeScene: "Spanking_02" },
     {
-      btn: "Hold still and let him wrapp you into the harness.",
+      btn: "Give up.",
       changeScene: "getHarnessed",
     },
   ],
@@ -231,40 +236,66 @@ let scenes = {
     },
     {
       txt:
-        "You hold still as the intimidating man is wrapping you into a tight leather harness. He does not react to much and works fast. Only after he is done he uses the moment to knead your tits with a regretful expression on his face.",
+        "Instead of doing his work, Orlops rests the harness next to him and instead gropes your exposed tits. He smiles predatory, while he massages your soft flesh with his rough hands.",
     },
     {
       txt:
-        "“Good girl.” His voice sounds rough and hard. “You are obedient. I like that. What a waist to use you as bait.”",
+        "“What a waist.” He mumbles to himself, while he catches your nipples and gently pinches them.",
     },
     {
-      btn: "Lean into his hands and moan",
+      btn: "Lean into his hands.",
       changeScene: "Groping_02",
     },
-    { btn: "Hold still", changeScene: "getHarnessed" },
+    { btn: "Turn away.", changeScene: "getHarnessed" },
   ],
   Groping_02: [
     {
-      txt:
-        "The man grins and massages your tits for a little while longer. His rough hands squeez your soft flesh and you feel your nipples get erect. A soft moan escapes your gagged mouth as you enjoy the moment.",
+      counter_addOne: "gropingCounter",
     },
     {
-      txt:
-        "“Nice try, slut. But you are not the first whore trying to fuck her way out of this.”",
+      txt_random: [
+        "You moan softly, and even lean into Orlops hands. This feels way better as it should.",
+        "You get red from shame but let Orlop fondle you without resistance. You really should not do this. Right?",
+        "You feel the heat inside of you. How can you get aroused by this? Instead of thinking to much about it, you shiver and enjoy the moment.",
+        "You lean into his big, strong hands. Maybe you can get him so horny that he unbinds you?",
+        "You moan with lust and stretch your willing body towards Orlops hands. Maybe you can seduce him into letting you go?",
+      ],
     },
     {
-      btn: "Lean into his hands and moan.",
+      txt_random: [
+        "Orlop grins and massages your tits for a little longer. “Good girl.”",
+        "“You are real slut, aren’t you? I like that.”",
+        "“What a waist to use you as a breeder.”",
+        "Orlops rough hands squeeze your soft breasts hard and you can see the lust in his eyes.",
+        "Suddenly you feel a jolt of pain. Orlop pinches both of your nipples hard and pulls them up.",
+        `“Nice try, slut. But you are not the first whore who's tried to fuck her way out of this.”`,
+      ],
+    },
+    {
+      btn: "Fuck him",
+      changeScene: "sexWithOrlop",
+      counter_hideBelow6: "gropingCounter",
+    },
+    {
+      btn: "Lean into his hands.",
       changeScene: "Groping_02",
     },
     {
-      btn: "Turn away from him.",
+      btn: "Turn away.",
+      changeScene: "getHarnessed",
+    },
+  ],
+  sexWithOrlop: [
+    { h1: "Sex with Orlop / Under Construction" },
+    {
+      btn: "Get Harnessed",
       changeScene: "getHarnessed",
     },
   ],
   getHarnessed: [
     {
       txt:
-        "After the man is done, your bondage is absolute. You are like a mummy, your legs pinned together and your arms to your body. There is no chance you would ever be able to free yourself from this tight cocoon of leather straps.",
+        "Finally, Orlop fits you into the tight leather harness. Dozens of small locks click shut. After he is done, your bondage is absolute. You are like a mummy, your legs pinned together and your arms to your body. There is no chance you would ever be able to free yourself from this tight cocoon of leather straps.",
     },
     {
       txt:
@@ -333,8 +364,14 @@ let scenes = {
         "You are in a big cave. The air is warm, moist and smells weird – It kind makes you dizzy if you concentrate too much on it. Dim light is entering through the big opening on the ceiling. The walls are steep and covered in wet, blue moss – there is no way you could climb them.",
     },
     {
+      key_hide: "scaredByPool",
       txt:
         "In the center of the cave is a small pool of greenish, bubbling, slim. It looks hot and gives you an uneasy feeling. It is probably the source of the warmth and moisture in the air.",
+    },
+    {
+      key_show: "scaredByPool",
+      txt:
+        "In the middle of the cave is the pool of aphrodisiac slime. It still gives you an uneasy feeling. But something inside of you also wants to get closer again. Better to stay away from it.",
     },
     {
       txt:
@@ -349,6 +386,11 @@ let scenes = {
       btn: "Examine the slime pool.",
       changeScene: "slimePool",
       key_hide: "scaredByPool",
+    },
+    {
+      key_show: "scaredByPool",
+      btn: "You cannot control it! Go back to the pool.",
+      changeScene: "slimePool",
     },
     {
       btn: "Examine the small holes in the wall.",
@@ -415,7 +457,7 @@ let scenes = {
     { key_setToTrue: "scaredByPool" },
     {
       txt:
-        "What exactly is this stuff? You dip a single finger into the goo. It is hot, but bearable. Still, you would rather avoid falling into it.",
+        "You dip a single finger into the goo. It is hot, but bearable. Still, you would rather avoid falling into it.",
     },
     {
       txt:
@@ -426,12 +468,12 @@ let scenes = {
         "Suddenly you feel the urge to like it, no, to suck it from your finger. You feel… hot… horny… your mouth is hanging half open, your pussy is wet and you have startet subconsciously to knead your tits with your left hand.",
     },
     {
-      btn: "Step away! Fast!",
-      changeScene: "slimePool_run",
-    },
-    {
       btn: "Give in to it! Suck the goo from your finger!",
       changeScene: "slimePool_giveIn",
+    },
+    {
+      btn: "Step away! Fast!",
+      changeScene: "slimePool_run",
     },
   ],
   slimePool_run: [
@@ -560,13 +602,98 @@ let scenes = {
   ],
   theTunnel: [
     {
-      h1: "Path to next chapter / under construction",
+      txt:
+        "You inspect the entrance to the tunnel. It leads down, deeper into the earth and a faint, blue light glows in the distance. The air is filled with a sweet, musky smell – like the odor the pool of slime was radiating. It makes you feel dizzy and… horny. Despite all efforts to suppress the feeling.",
     },
     {
-      btn: "Get back to examine your surroundings.",
+      txt:
+        "Suddenly a noise is pulling you out of your daydreams. A faint gurgling and bubbling from inside the tunnel. But you also notice a soft gust of air. If the air is moving, there must be another exit somewhere in those tunnels, right?",
+    },
+    {
+      btn: "There got to be a way out of this. Try to follow the gust of wind.",
+      changeScene: "exploreTunnel_01",
+    },
+    {
+      btn: "Not worth it. Go back to the cave.",
       changeScene: "exploreCave",
     },
   ],
+  // the tunnel
+  exploreTunnel_01: [
+    { h1: "Chapter 3: The tunnels" },
+    {
+      txt:
+        "It does not take long before you realize that you are in a big labyrinth of tunnels and caves. Therefore, you only enter slowly, and make sure to remember the way back. But after a while it is getting hard to concentrate. Something in the air is clouding your mind and… you can no longer remember the way back.",
+    },
+    {
+      btn: "Examine your surrondings.",
+      changeScene: "exploreTunnel_02",
+    },
+  ],
+  exploreTunnel_02: [
+    {
+      txt:
+        "You are surrounded by long uneven tunnels, junctions, and caverns. Some parts of this underworld are filled with fluorescent moos or puddles of slime. Gurgling, slithering sounds seem to come from all around and drugs in the air make it hard to stay focused. You basically lost all feeling for time and direction.",
+    },
+    {
+      txt:
+        "Like in the cave you came from, the walls are dotted with small holes, roughly the size of your fist. And at some places you find cocoons. They are made of a purple, flesh like substance and are grown onto the wall. If you look closely, you can see them twitch from time to time.",
+    },
+    {
+      txt:
+        "But you still can feel the soft gush of wind, promising a way out of this crazy place.",
+    },
+    {
+      btn: "Follow the breath of air.",
+    },
+    {
+      btn: "Examine the cocoon.",
+      changeScene: "cocoon_01",
+    },
+    {
+      btn: "Try to get back where you came from.",
+      changeScene: "goBack",
+    },
+    {
+      btn: "There is no way to get out of this. Just sit down and wait.",
+    },
+  ],
+  goBack: [
+    {
+      txt_random: [
+        "You slowly wander through the dark. You must be careful and deliberate as your boots make it difficult to walk on this uneven ground. Better to support yourself at the wall. Wait? Where did you go again? Oh yea! Back to the cave you came from!",
+        "You must squint your eyes to see in this dark. The faint glow of the plant’s around you is just enough to see outlines. Wait! There is someone! You move as fast as you can towards the silhouette in the dark, only to find a stalagmite which vaguely resembles a human form. Damnit!",
+        "You wander the tunnels until you find a passage you think you know. You follow the path you remember, turn a corner, and suddenly stand in front of a wall. Fuck! You had been absolutely sure this was the way back!",
+        "You follow a long tunnel that looks familiar. But slowly get’s narrower and narrower until you can no longer fit through. Darn it! Another dead end!",
+        "After a while wandering the tunnel you feel tired and your poor little snatch is itching for attention. You stop, to catch a break… and to rub exposed sex for a little. Cannot hurt, right? Suddenly you realize what you are doing and snap out of it. This place is making you mad! Better go on.",
+      ],
+    },
+    {
+      btn: "Go on.",
+      changeScene: "goBack",
+    },
+    {
+      btn: "Give up and check your surroundings.",
+      changeScene: "exploreTunnel_02",
+    },
+  ],
+  cocoon_01: [
+    {
+      txt:
+        "Disgusted but also fascinated you get closer to one of the cocoons and inspect it from nearby.",
+    },
+    {
+      txt:
+        "The main body seems segmented and sprawled out from the small holes in the wall. Like roots or tentacles haven grown out of those openings and formed the cocoon. The surrounding fleshy substance seems to grow out of the main body, sealing it tight and anker it to the walls.",
+    },
+    {
+      txt:
+        "Suddenly the fleshy sack moves. Strong muscles beneath start to contract and you can hear a faint, moan from the inside. It sounded almost… human.",
+    },
+    { btn: "Step away.", changeScene: "exploreTunnel_02" },
+    { btn: "Try to break the cocoon open!", changeScene: "cocoon_02" },
+  ],
+  cocoon_02: [],
 };
 
 /* event listener: keydown*/ {
