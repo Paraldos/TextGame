@@ -254,9 +254,9 @@ let scenes = {
     },
     {
       txt_random: [
-        "You moan softly, and even lean into Orlops hands. This feels way better as it should.",
+        "You moan softly, and even lean into Orlop's hands. This feels way better than it should.",
         "You get red from shame but let Orlop fondle you without resistance. You really should not do this. Right?",
-        "You feel the heat inside of you. How can you get aroused by this? Instead of thinking to much about it, you shiver and enjoy the moment.",
+        "You feel the heat inside of you. How can you get aroused by this? Instead of thinking too much about it, you shiver and enjoy the moment.",
         "You lean into his big, strong hands. Maybe you can get him so horny that he unbinds you?",
         "You moan with lust and stretch your willing body towards Orlops hands. Maybe you can seduce him into letting you go?",
       ],
@@ -265,9 +265,9 @@ let scenes = {
       txt_random: [
         "Orlop grins and massages your tits for a little longer. “Good girl.”",
         "“You are real slut, aren’t you? I like that.”",
-        "“What a waist to use you as a breeder.”",
+        "“What a waste to use you as a breeder.”",
         "Orlops rough hands squeeze your soft breasts hard and you can see the lust in his eyes.",
-        "Suddenly you feel a jolt of pain. Orlop pinches both of your nipples hard and pulls them up.",
+        "Suddenly you feel a jolt of pain. Orlop pinches both of your nipples hard and pulls them upwards.",
         `“Nice try, slut. But you are not the first whore who's tried to fuck her way out of this.”`,
       ],
     },
