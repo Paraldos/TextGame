@@ -508,11 +508,11 @@ let scenes = {
     { counter_addOne: "slimePoolCounter" },
     {
       txt_random: [
-        "You push slow and deliberately with your finger into your snatch, while you push your hips forward to feel them deep inside of you.",
+        "You push slow and deliberately into your snatch, while you push your hips forward to feel them deep inside of you.",
         "You rub your clit with fast, desperate need. Your entire body tense and feels like it's on fire.",
         "You cannot be deliberate anymore. You finger yourself hard and fast, feeding into the glowing need pulsing in your pussy. It just feels sooooooo good.",
         "You force yourself to slow down a bit, rock your hips gently back and forth and fondle your clit softly. It feels really good, but you need more. This is just to tame.",
-        "You gently rub between your pussylips, before slowly, deliberatly and with force sliping three of your fingers into your lovetunnel.",
+        "You rub your clit and pussylips, before slowly and deliperatly push trhee fingers into your lovetunnel. You can not hold it back and moan with deep pasion.",
       ],
     },
     {
