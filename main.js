@@ -301,6 +301,9 @@ let scenes = {
       txt:
         "“Okay, missy. I found a cave that looks inhabited.” While he speaks, he takes an aerosol can and starts to spray you from top to bottom. “The pheromones will attract the Selzabeast. Just move around a little, it will find you eventually.”",
     },
+    { btn: "Next", changeScene: "getHarnessed02" },
+  ],
+  getHarnessed02: [
     {
       txt:
         "He gets back up, fastens your harness to the crane, and lifts you up until you dangle slightly above the ground. “I will come back in a few days. So, you will have some quality time with your new lover. Have fun, I guess.”",
@@ -413,7 +416,7 @@ let scenes = {
     },
     {
       txt:
-        "Your frustration grows. You shift your attention towards the corset and it also is stuck to your body. It fits tightly and is sealed with padlocks. You have no way to get out of it.",
+        "As your frustration grows you shift your attention towards the corset and it also is stuck to your body. It fits tightly and is sealed with padlocks. You have no way to get out of it.",
     },
     {
       btn: "Next",
