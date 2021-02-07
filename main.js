@@ -550,11 +550,11 @@ let scenes = {
     },
     {
       txt:
-        "Then, suddenly, the bubble pops. You scream in primal lust, as waves of orgasmic bliss start to rock through your body. Warm love pulses through your body and you keep on rubbing your clit to make the orgasm last longer.",
+        "Then, suddenly, the bubble pops. You scream in primal lust, as waves of orgasmic bliss start to rock through your body. Warm love pulses through your body and you keep on rubbing your clit to make it last longer.",
     },
     {
       txt:
-        "You collapse to the floor and rest. Just breathing and enjoying the afterglow. Feeling the  pleasant warmth radiate from your crotch into the rest of your body. ",
+        "Finally you collapse to the floor and rest. Just breathing and enjoying the afterglow. Feeling the  pleasant warmth radiate from your crotch into the rest of your body. This was fantastic.",
     },
     {
       btn: "Just a little rest.",
