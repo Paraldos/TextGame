@@ -2,7 +2,7 @@
 let navBox = document.getElementsByClassName("navBox");
 let gameBox = document.querySelector(".gameBox");
 let btn = [];
-let currentScene = "";
+let newScene = "";
 let keys = {
   test_key_01: false,
   examinYourself: false,
@@ -15,6 +15,7 @@ let keys = {
 let counters = {
   gropingCounter: 0,
   slimePoolCounter: 0,
+  goBack: 0,
 };
 let player = {};
 
@@ -26,7 +27,11 @@ let scenes = {
     { h1: "Start Page" },
     { btn: "Go to TEST PAGE", changeScene: "test_01" },
     // { btn: "Go to WIKI", changeScene: "wiki" },
-    { btn: "Story: The Selzabeast", changeScene: "selzabeastStart" },
+    { h1: "Story: The Xil" },
+    { btn: "Rude Awakening", changeScene: "xilStart" },
+    { btn: "The Cave", changeScene: "theCave" },
+    { btn: "Lost in the tunnels", changeScene: "exploreTunnel_01" },
+    { btn: "The Xil", changeScene: "XilAttack" },
   ],
   // test pages
   test_01: [
@@ -43,8 +48,16 @@ let scenes = {
       txt: "False",
       key_hide: "test_key_01",
     },
-    { btn: "Set 'test_key_01' to true", changeScene: "test_03a" },
-    { btn: 'Set "test_key_01" to false', changeScene: "test_03b" },
+    {
+      btn: "Set 'test_key_01' to true",
+      key_hide: "test_key_01",
+      changeScene: "test_03a",
+    },
+    {
+      btn: 'Set "test_key_01" to false',
+      key_show: "test_key_01",
+      changeScene: "test_03b",
+    },
 
     { img: "test_01.jpg" },
     { img: "test_02.jpg" },
@@ -92,8 +105,8 @@ let scenes = {
     { btn: "Back to WIKI", changeScene: "wiki" },
     { btn: "Back to STARTPAGE", changeScene: "start" },
   ],
-  // story: selzabeast
-  selzabeastStart: [
+  // chapter 1
+  xilStart: [
     { h1: "Kapitel 1: Rude Awakening" },
     {
       txt:
@@ -299,7 +312,7 @@ let scenes = {
     },
     {
       txt:
-        "“Okay, missy. I found a cave that looks inhabited.” While he speaks, he takes an aerosol can and starts to spray you from top to bottom. “The pheromones will attract the Selzabeast. Just move around a little, it will find you eventually.”",
+        "“Okay, missy. I found a cave that looks inhabited.” While he speaks, he takes an aerosol can and starts to spray you from top to bottom. “The pheromones will attract the Xil. Just move around a little, it will find you eventually.”",
     },
     { btn: "Next", changeScene: "getHarnessed02" },
   ],
@@ -332,7 +345,7 @@ let scenes = {
       changeScene: "theCave",
     },
   ],
-  // inside the cave
+  // chapter 2
   theCave: [
     {
       h1: "Chapter 2: The Cave",
@@ -448,7 +461,7 @@ let scenes = {
         "You carefully move a little closer and kneel next to the pool to stretch your right hand towards it. It clearly is warm, but you think it is not too hot to touch.",
     },
     {
-      btn: "Gross! Step away and explore the rest of the cave.",
+      btn: "Gross! Step away.",
       changeScene: "exploreCave",
     },
     {
@@ -471,12 +484,12 @@ let scenes = {
         "Suddenly you feel the urge to like it, no, to suck it from your finger. You feel… hot… horny… your mouth is hanging half open, your pussy is wet and you have startet subconsciously to knead your tits with your left hand.",
     },
     {
-      btn: "Give in to it! Suck the goo from your finger!",
-      changeScene: "slimePool_giveIn",
+      btn: "Step away!",
+      changeScene: "slimePool_run",
     },
     {
-      btn: "Step away! Fast!",
-      changeScene: "slimePool_run",
+      btn: "Give in to it! Suck the goo from your finger!",
+      changeScene: "slimePool_giveIn",
     },
   ],
   slimePool_run: [
@@ -486,7 +499,7 @@ let scenes = {
     },
     {
       txt:
-        "Sudenly you realize there is still some goo on your fingers. You look around where you could get rid of it and eventually just use some moos to wipe your hand clean. “Okay...” you say to yourself, “stay away from the green goo. Got it.”",
+        "Sudenly you realize there is still some goo on your fingers. You look around where you could get rid of it and eventually just use some moss to wipe your hand clean. “Okay...” you say to yourself, “stay away from the green goo. Got it.”",
     },
     {
       btn: "Back to explore the cave.",
@@ -494,6 +507,9 @@ let scenes = {
     },
   ],
   slimePool_giveIn: [
+    {
+      counter_reset: "slimePoolCounter",
+    },
     {
       txt:
         "A small part of your mind tells you to fight your urges and step away, but you ignore it. You sink down to your knees, close your eyes, spread your legs, and start to finger yourself with the left hand, while you suck on the goo covered finger of your right hand.",
@@ -529,16 +545,17 @@ let scenes = {
       ],
     },
     {
+      counter_hideBelow4: "slimePoolCounter",
       txt_random: [
         "You are so close. You can feel the tension right benath your skin, ready to burst into orgasm.",
         "Your entire body is trembling. You feel the climax allready - you just need a little more to get over the edge.",
         "You can feel it, you are right on the edge, only a little more!",
       ],
-      counter_hideBelow4: "slimePoolCounter",
     },
     {
-      btn: "Keep going!",
+      btn: "More!",
       changeScene: "slimePool_giveIn02",
+      counter_hideAt6: "slimePoolCounter",
     },
     {
       btn: "Cum!",
@@ -557,7 +574,7 @@ let scenes = {
     },
     {
       txt:
-        "Finally you collapse to the floor and rest. Just breathing and enjoying the afterglow. Feeling the  pleasant warmth radiate from your crotch into the rest of your body. This was fantastic.",
+        "Finally you collapse to the floor and rest. Just breathing and enjoying the afterglow. Feeling the  pleasant warmth radiate from your crotch into the rest of your body.",
     },
     {
       btn: "Just a little rest.",
@@ -613,20 +630,24 @@ let scenes = {
         "Suddenly a noise is pulling you out of your daydreams. A faint gurgling and bubbling from inside the tunnel. But you also notice a soft gust of air. If the air is moving, there must be another exit somewhere in those tunnels, right?",
     },
     {
-      btn: "There got to be a way out of this. Try to follow the gust of wind.",
+      btn: "Enter the tunnel.",
       changeScene: "exploreTunnel_01",
     },
     {
-      btn: "Not worth it. Go back to the cave.",
+      btn: "Go back to the cave.",
       changeScene: "exploreCave",
     },
   ],
-  // the tunnel
+  // chapter 3
   exploreTunnel_01: [
-    { h1: "Chapter 3: The tunnels" },
+    { h1: "Chapter 3: Lost in the tunnels" },
     {
       txt:
-        "It does not take long before you realize that you are in a big labyrinth of tunnels and caves. Therefore, you only enter slowly, and make sure to remember the way back. But after a while it is getting hard to concentrate. Something in the air is clouding your mind and… you can no longer remember the way back.",
+        "It does not take long before you realize that you are in a big labyrinth of tunnels and caves. Ofcourse you only enter slowly, and make sure to remember the way back. But after a while you notice that it is getting hard to concentrate. Something in the air is clouding your mind.",
+    },
+    {
+      txt:
+        "Fear is slowly settling in and so you turn around to leave this place. You walk for a bit, but swiftly realize you can no longer remember where exactly you came from. Was it left or right on this crossing? You can't tell anymore.",
     },
     {
       btn: "Examine your surrondings.",
@@ -635,8 +656,11 @@ let scenes = {
   ],
   exploreTunnel_02: [
     {
+      counter_reset: "goBack",
+    },
+    {
       txt:
-        "You are surrounded by long uneven tunnels, junctions, and caverns. Some parts of this underworld are filled with fluorescent moos or puddles of slime. Gurgling, slithering sounds seem to come from all around and drugs in the air make it hard to stay focused. You basically lost all feeling for time and direction.",
+        "You are surrounded by long uneven tunnels, junctions, and caverns. Some parts of this underworld are filled with fluorescent moss or puddles of slime. Gurgling, slithering sounds seem to come from all around and drugs in the air make it hard to stay focused.",
     },
     {
       txt:
@@ -644,10 +668,11 @@ let scenes = {
     },
     {
       txt:
-        "But you still can feel the soft gush of wind, promising a way out of this crazy place.",
+        "But you still can feel the soft gush of wind, that lured you into this place. It still could lead towards a way out...",
     },
     {
       btn: "Follow the breath of air.",
+      changeScene: "breathOfAir",
     },
     {
       btn: "Examine the cocoon.",
@@ -659,27 +684,18 @@ let scenes = {
     },
     {
       btn: "There is no way to get out of this. Just sit down and wait.",
+      changeScene: "fallAsleep",
     },
   ],
-  goBack: [
+
+  breathOfAir: [
+    { h1: "Under Construction - Find the Layer of the Xil" },
     {
-      txt_random: [
-        "You slowly wander through the dark. You must be careful and deliberate as your boots make it difficult to walk on this uneven ground. Better to support yourself at the wall. Wait? Where did you go again? Oh yea! Back to the cave you came from!",
-        "You must squint your eyes to see in this dark. The faint glow of the plant’s around you is just enough to see outlines. Wait! There is someone! You move as fast as you can towards the silhouette in the dark, only to find a stalagmite which vaguely resembles a human form. Damnit!",
-        "You wander the tunnels until you find a passage you think you know. You follow the path you remember, turn a corner, and suddenly stand in front of a wall. Fuck! You had been absolutely sure this was the way back!",
-        "You follow a long tunnel that looks familiar. But slowly get’s narrower and narrower until you can no longer fit through. Darn it! Another dead end!",
-        "After a while wandering the tunnel you feel tired and your poor little snatch is itching for attention. You stop, to catch a break… and to rub exposed sex for a little. Cannot hurt, right? Suddenly you realize what you are doing and snap out of it. This place is making you mad! Better go on.",
-      ],
-    },
-    {
-      btn: "Go on.",
-      changeScene: "goBack",
-    },
-    {
-      btn: "Give up and check your surroundings.",
+      btn: "Back to tunnels",
       changeScene: "exploreTunnel_02",
     },
   ],
+
   cocoon_01: [
     {
       txt:
@@ -693,10 +709,168 @@ let scenes = {
       txt:
         "Suddenly the fleshy sack moves. Strong muscles beneath start to contract and you can hear a faint, moan from the inside. It sounded almost… human.",
     },
+    {
+      btn: "What was that sound? Try to break open and see inside the cocoon.",
+      changeScene: "cocoon_02",
+    },
     { btn: "Step away.", changeScene: "exploreTunnel_02" },
-    { btn: "Try to break the cocoon open!", changeScene: "cocoon_02" },
+    // { btn: "Try to break the cocoon open!", changeScene: "cocoon_02" },
   ],
-  cocoon_02: [],
+  cocoon_02: [
+    {
+      h1: "Under Construction – Find another victim / Get ambushed by the Xil",
+    },
+    {
+      btn: "Back to tunnels",
+      changeScene: "exploreTunnel_02",
+    },
+  ],
+
+  goBack: [
+    {
+      counter_addOne: "goBack",
+    },
+    {
+      txt_random: [
+        "You slowly wander through the dark. You must be careful and deliberate as your boots make it difficult to walk on this uneven ground. Better to support yourself at the wall. Wait? Where did you go again? It is so hard to think.",
+        "You must squint your eyes to see in this dark. The faint glow of the plant’s around you is just enough to see outlines. Wait! There is someone! You move as fast as you can towards the silhouette, only to find a stalagmite which vaguely resembles a human. Damnit!",
+        "You wander the tunnels until you find a passage you think you know. You follow the path you remember, turn a corner, and suddenly stand in front of a wall. Fuck! You had been absolutely sure this was the way back!",
+        "You follow a long tunnel that looks familiar. But slowly get’s narrower and narrower until you can no longer fit through. Darn it! Another dead end!",
+        "After a while wandering the tunnel you feel tired and your poor little snatch is itching for attention. You stop, to catch a break… and to rub exposed sex for a little. Cannot hurt, right? Suddenly you realize what you are doing and snap out of it. This place is making you mad! Better go on.",
+      ],
+    },
+    {
+      counter_hideBelow3: "goBack",
+      txt_random: [
+        "Is this really where you came from? All of this looks so… alien.",
+        "It is so hard to stay focused. Everything inside of your mind is begging to stop, rest, and just give up.",
+        "Doubts start to gnaw on your resolve. Will you ever leave this place? Is there any hope of seeing sunlight ever again?",
+        "With every second it gets a little harder to think straight. Maybe you should just give up.",
+        "Doubts settle in. Are you really walking back towards where you came from?",
+        "Is this really the right way? What if you cannot find a way out of this maze?",
+      ],
+    },
+    {
+      counter_hideBelow5: "goBack",
+      txt_random: [
+        "Fears starts to creep into your mind. Something dangerous nearby.",
+        "Something is off. You feel it. There is something hunting you.",
+        "You can feel it. Something is hunting you.",
+        "Something has changed. You are sure there is something hunting you.",
+      ],
+    },
+    {
+      counter_hideAt7: "goBack",
+      btn: "Go on.",
+      changeScene: "goBack",
+    },
+    {
+      counter_hideBelow7: "goBack",
+      btn: "Go on.",
+      changeScene: "tunnelAmbush",
+    },
+    {
+      btn: "Give up.",
+      changeScene: "exploreTunnel_02",
+    },
+  ],
+
+  fallAsleep: [
+    { h1: "Under Construction – Fall asleep and get surprised by the Xil" },
+    {
+      btn: "Back to tunnels",
+      changeScene: "exploreTunnel_02",
+    },
+  ],
+
+  tunnelAmbush: [
+    {
+      txt:
+        "You feel like you have stumbled through the dark for ages. Your feet hurt and you are just sooo horny. Maybe you should just rest for a moment. Just a little pause.",
+    },
+    {
+      txt:
+        "You lean against a moss-covered wall, close your eyes, and start to rub and touch yourself. “Wait… What am I doing?” You mumble but cannot stop it.",
+    },
+    {
+      btn: "I NEED this!",
+      changeScene: "XilAttack",
+    },
+  ],
+
+  // chapter 4
+  XilAttack: [
+    { h1: "Chapter 4: The Xil" },
+    {
+      txt:
+        "While you were busy with yourself, you did not notice the tentacles, slowly emerging from the small holes in the wall around and above you. Dozens of slimy, purple flesh things, slowly and silently moving towards you.",
+    },
+    {
+      txt:
+        "A couple of the things have eyes on the tip, and stare at you with inhuman gazes, some have something like a blossom bud at the end, and stay carefully away, but the most are just nasty, slimy, naked worms, slowly getting ready to grab and overwhelm you.",
+    },
+    {
+      btn: "Next",
+      changeScene: "XilAttack02",
+    },
+  ],
+  XilAttack02: [
+    {
+      txt:
+        "Suddenly the creature lunges at you. Dozens of tentacles grab you around the arms, legs, belly and throat. Incidentally all the places you have extra protections from your gloves, boots, corset and collar.",
+    },
+    {
+      txt:
+        "You can only scream in panic, as the inhumanly strong thing tightens its grip. You get lifted in the air and forced into a spread-eagle position, while more and more tentacles wrap around your body.",
+    },
+    {
+      btn: "Scream!",
+      changeScene: "XilAttack03",
+    },
+  ],
+  XilAttack03: [
+    {
+      txt:
+        "You fight as hard as you can, pulling and struggling against the creature, but its tentacles are way too powerful. Inhumanly strong muscles pull your limbs out to either side, leaving you stretched and spread across the cavern.",
+    },
+    {
+      txt:
+        "Suddenly different looking tentacle moves towards you. It is reminding you of a slime covered blossom bud. For a while it hovers in front of your face, like a snake, ready to strike. Suddenly the blossom opens, and a puff of spores hits you.",
+    },
+    {
+      btn: "Next",
+      changeScene: "XilAttack04",
+    },
+  ],
+  XilAttack04: [
+    {
+      txt:
+        "Your vision get’s blurred and your mind starts to drift away, as you are forced into sexual overdrive. Your pussy, ass, tits and even mouth are tingling and pulsing with need. All fears and thoughts get washed away by pure, primal lust.",
+    },
+    {
+      txt:
+        "The creature waits untile the spores have overtaken you completely and make you moan with need. It shoots forward and forces a tube into your throat. Foul tasting slim fills your mouth and numbs your gag reflex, while it pushes deeper and deeper. Meanwhile the fleshy leaves of the tentacle wrap around your head, anchoring it to your face.",
+    },
+    {
+      txt:
+        "It is dark and hot and for a few long moments you cannot breathe. Even with the drugs in your body, panic starts to rise, until your lungs are suddenly warm, drugged air is pumped into your lungs.",
+    },
+    { btn: "Next", changeScene: "XilAttack05" },
+  ],
+  XilAttack05: [
+    {
+      txt:
+        "As the drugs fill your lungs, you subconsciously start to suckle and swallow the tentacle in your mouth. More spore-filled gas filles your lungs, just giving you enough exygen to stay conscious. But you have only seconds to rest.",
+    },
+    {
+      txt:
+        "The tube in your mouth begins to pulse and contract. Something big moves inside of it, forcing itself down the fleshy tunnel and forcing your mouth open. You can feel your throat bulge and your air gets blocked again. Then it has passed and is pushed into your stomach.",
+    },
+    {
+      txt:
+        "You take a few deep breaths, but that is all you got, then it starts gain.",
+    },
+  ],
 };
 
 /* event listener: keydown*/ {
@@ -714,7 +888,7 @@ function fillGameBox(scene) {
   /* post page name / only for development*/ {
     let newDiv = document.createElement("div");
     newDiv.classList.add("dev_pageName");
-    newDiv.innerHTML = "Current Page: " + currentScene;
+    newDiv.innerHTML = "Current Page: " + newScene;
     gameBox.appendChild(newDiv);
   }
 
@@ -725,13 +899,27 @@ function fillGameBox(scene) {
 function createHTMLElements(sElement) {
   let newDiv = document.createElement("div");
 
+  if (sElement.forwardToNextScene) {
+    newScene = sElement.forwardToNextScene;
+    fillGameBox(scenes[newScene]);
+  }
+
   if (keys[sElement.key_hide]) return;
   if (keys[sElement.key_show] == false) return;
   if (sElement.key_setToTrue) keys[sElement.key_setToTrue] = true;
   if (sElement.key_setToFalse) keys[sElement.key_setToFalse] = false;
 
+  if (counters[sElement.counter_hideBelow3] < 3) return;
   if (counters[sElement.counter_hideBelow4] < 4) return;
+  if (counters[sElement.counter_hideBelow5] < 5) return;
   if (counters[sElement.counter_hideBelow6] < 6) return;
+  if (counters[sElement.counter_hideBelow7] < 7) return;
+  if (counters[sElement.counter_hideAt4] >= 3) return;
+  if (counters[sElement.counter_hideAt4] >= 4) return;
+  if (counters[sElement.counter_hideAt5] >= 5) return;
+  if (counters[sElement.counter_hideAt6] >= 6) return;
+  if (counters[sElement.counter_hideAt7] >= 7) return;
+  if (sElement.counter_reset) counters[sElement.counter_reset] = 0;
 
   if (sElement.counter_addOne) counters[sElement.counter_addOne]++;
 
@@ -746,9 +934,7 @@ function createHTMLElements(sElement) {
   if (sElement.txt_random) {
     newDiv.classList.add("txt");
     newDiv.innerHTML =
-      sElement.txt_random[
-        Math.floor(Math.random() * sElement.txt_random.length)
-      ];
+      sElement.txt_random[randomInteger(sElement.txt_random.length)];
   }
   if (sElement.btn) {
     newDiv.classList.add("btn");
@@ -766,10 +952,12 @@ function createHTMLElements(sElement) {
 }
 
 function clickBtn(sElement) {
-  if (sElement.changeScene) {
-    currentScene = sElement.changeScene;
-    fillGameBox(scenes[sElement.changeScene]);
-  }
+  if (sElement.changeScene) newScene = sElement.changeScene;
+  fillGameBox(scenes[newScene]);
+}
+
+function randomInteger(x) {
+  return Math.floor(Math.random() * x);
 }
 
 fillGameBox(scenes.start);
