@@ -16,6 +16,7 @@ let counters = {
   gropingCounter: 0,
   slimePoolCounter: 0,
   goBack: 0,
+  breathOfAir: 0,
 };
 let player = {};
 
@@ -32,6 +33,7 @@ let scenes = {
     { btn: "The Cave", changeScene: "theCave" },
     { btn: "Lost in the tunnels", changeScene: "exploreTunnel_01" },
     { btn: "The Xil", changeScene: "XilAttack" },
+    { btn: "The Rescue", changeScene: "OrlopToTheRescue" },
   ],
   // test pages
   test_01: [
@@ -655,9 +657,8 @@ let scenes = {
     },
   ],
   exploreTunnel_02: [
-    {
-      counter_reset: "goBack",
-    },
+    { counter_reset: "goBack" },
+    { counter_reset: "breathOfAir" },
     {
       txt:
         "You are surrounded by long uneven tunnels, junctions, and caverns. Some parts of this underworld are filled with fluorescent moss or puddles of slime. Gurgling, slithering sounds seem to come from all around and drugs in the air make it hard to stay focused.",
@@ -689,9 +690,49 @@ let scenes = {
   ],
 
   breathOfAir: [
-    { h1: "Under Construction - Find the Layer of the Xil" },
     {
-      btn: "Back to tunnels",
+      counter_addOne: "breathOfAir",
+    },
+    {
+      txt_random: [
+        "You wander through the dark and follow the illusive gust of fresh air you feel every now and then. Is it now more from the left or the right?",
+        "After a while you reach a point that looks awfully familiar. Have you just wandered in a circle?",
+        "You struggle to move in your boots. The uneven floor and the lack of light make it hard to not fall over. What a nightmare.",
+        "You find a rather easy to follow tunnel, only to find a dead end. But you where certain you felt the breez of air from right here!",
+        "You struggle walking around this dark, uneven tunnel with your boots. Sometimes you just have to concentrate more on not falling than getting anywhere.",
+        "You stumble through the dark, stopping every now and then to sense the little hint of fresh air. Are you still on the right path?",
+      ],
+    },
+    {
+      counter_hideBelow3: "breathOfAir",
+      txt_random: [
+        "Did you really feel the wind come from here? You cannot feel it now anymore!",
+        "You slowly but surely get the impression the wind is changing direction every now and then. Is this even actual lead?",
+        "You lost the lead and must go back from where you came. It is so hard to concentrate with all this drugs in the air!",
+        "What where you doing again? Oh yea… following the fresh air.",
+      ],
+    },
+    {
+      counter_hideBelow5: "breathOfAir",
+      txt_random: [
+        "Fear is creeping into your mind. You feel like there is something stalking you.",
+        "You are getting worry. Is there something out to hunt you?",
+        "You get more and more uneasy. You can feel it. Something is lurking in the shadows nearby.",
+      ],
+    },
+
+    {
+      counter_hideAt7: "breathOfAir",
+      btn: "Go on.",
+      changeScene: "breathOfAir",
+    },
+    {
+      counter_hideBelow7: "breathOfAir",
+      btn: "Go on.",
+      changeScene: "tunnelAmbush",
+    },
+    {
+      btn: "Give up.",
       changeScene: "exploreTunnel_02",
     },
   ],
@@ -906,6 +947,125 @@ let scenes = {
       txt:
         "Then another egg is forced into your mouth, then another into your butt, and then another into your pussy. The creature starts to slowly fill you with egg, after egg, after egg, alternating between the tree tubes, never giving you a second to rest. ",
     },
+    {
+      btn: "Next",
+      changeScene: "XilAttack08",
+    },
+  ],
+  XilAttack08: [
+    {
+      txt:
+        "The creature only stops to pump eggs into you, after your body is filled to the brim. You can only groan weakly, as your body is moved and pinned to the wall. Tentacles wrap around you and slowly but surely form a solid, pulsing cocoon around you – just like all the others you have seen in this tunnel.",
+    },
+    {
+      txt:
+        "You do not know how many time passes, as the orgasm bliss wears off. You feel full to the brim, but it strangely does not hurt, and occasionally the tubes in your mouth, puss and ass pulls a little, but that is all. Everything else is dark. You cannot move. You cannot hear. You can not even scream.",
+    },
+    {
+      btn: "Next",
+      changeScene: "XilAttack09",
+    },
+  ],
+  XilAttack09: [
+    {
+      txt:
+        "After what feels like an eternity, you can sense something moving inside of you. At first it is faint, but then it grows stronger. At the same time the drugs in your lungs increase, and you getting horny again.",
+    },
+    {
+      txt:
+        "The hours go by, your mind slowly melts away. You feel aroused beyond believe. Your entire body is craving sex, and there is nothing you can do. Only listen to the things inside of you, as the get more and more active. They press try to get out, squirm around, like fish in an overstuffed tank.",
+    },
+    {
+      btn: "Next",
+      changeScene: "XilAttack10",
+    },
+  ],
+  XilAttack10: [
+    {
+      txt:
+        "After what feels like an eternity, the tubes in you start to move again. They start to contract, move, and slowly but surely pump out was lingering in your body. But the things are even bigger than the eggs. Your throat bulges out, and your pussy and ass get stretched to enormous proportions. Every single birth gives you an orgasm, shattering whatever was left of your sanity.",
+    },
+    {
+      txt:
+        "After you are empty, some form of liquid is pumped into your stomach, making you feel satiated. You get to rest for a couple of hours, then the cycle starts again. Eggs get pumped into you, you wait till the hatch, the creatures get pumped out of you, you get feed, and have a couple of hours to rest. Rinse and repeat.",
+    },
+    {
+      txt:
+        "Every now and then your body is shiftet a little, to avoid muscles atrophy, but there is never enough room to get free. All is black, silent, numb. You are nothing but a incubator for the creature.",
+    },
+    { btn: "Change.", changeScene: "OrlopToTheRescue" },
+  ],
+  // rescue
+  OrlopToTheRescue: [
+    { h1: "Chapter 5: The Rescue" },
+    {
+      txt:
+        "You don’t know how much time has passed as you suddenly feel something change. The tentacles around you start to jerk and twitch. Almost like the creature around you is fighting someone.",
+    },
+    {
+      txt:
+        "Orlop has finally found you. It took him much longer than he had anticipated, and he had nearly given up, but now he stands in front of your cocoon. His face is hidden behind a thick gasmask and he is covered in predator pheromones, which make the Xils tentacle shy away.",
+    },
+    {
+      btn: "Next",
+      changeScene: "OrlopToTheRescue02",
+    },
+  ],
+  OrlopToTheRescue02: [
+    {
+      txt:
+        "With more pheromones and a knife, he slowly cuts and scares away more and more of the tentacles, untile he can reach you. He puts a canister beneath you, cuts away some more tentacles and pulls out the tentacles from your pussy and ass.",
+    },
+    {
+      txt:
+        "Eggs spill out of you and into the canister. “Darn… that is a big load.” The experienced Wastelander uses a long, latex covered shaft to poke into your poor little holes, provoking another wave of eggs spilling fourth. He repeats the process a few times, until you are mostly empty.",
+    },
+    { btn: "Next", changeScene: "OrlopToTheRescue03" },
+  ],
+  OrlopToTheRescue03: [
+    {
+      txt:
+        "At last, Orlop cuts away the tentacles around your head, until you collapse into his arms. He holds you over the canisters, cuts away the leaves engulfing your head and pulls the tube out of your mouth. You immediately start to vomit dozens of eggs, nearly suffocating in the process.",
+    },
+    {
+      txt:
+        "After a while Orlop rests you on the floor. There are certainly still eggs inside of you, but for the moment he seems satisfied. He examines the harvest with interest. It is much more then usual and of really good quality. Big eggs and no discoloration in the insemination goo. He looks back at you and starts to mumble. “I could just say I did not find you and come back again in a week or two.”",
+    },
+    {
+      btn: "More! You need moor!",
+      changeScene: "livestock",
+    },
+    {
+      btn: "No! Please! Get me out of here!",
+      changeScene: "rescued",
+    },
+  ],
+
+  livestock: [
+    { h1: "End: Livestock" },
+    {
+      txt:
+        "You weekly look up to him, chough some goo, and beg him to stay. “Leve me here. In the cave… I need it!”",
+    },
+    {
+      txt:
+        "The man looks at you for a long moment, but nods after a while. He stands up and puts the canister with eggs on his hover cart. He looks down at you, thinking about the business possibilities. He never thought about farming Xil eggs this way. After a while he addresses you one last time. “I will be back in about a week… and I will make sure I will not cut away too much. Will make it easier for it to regrow around you…”",
+    },
+    { btn: "Back to STARTPAGE", changeScene: "start" },
+  ],
+
+  rescued: [
+    { h1: "End: Rescued" },
+    { txt: "A few days later..." },
+    {
+      txt:
+        "Your have forgotten most of your adventure. Your memories have been clouded beforehand and ereased after to to minimize mental damage. Advanced medicine has restored your body and erased most of the memory. You have gotten a big paycheck for a job well done and walked way.",
+    },
+    {
+      txt:
+        "But sometimes there are dreams. Dreams about being trapped in the dark, engulfed by something unbelievable powerful, that is using your body, filling it up. You feel pleasure, lust… and a strange urge to go back. Back to the tunnels. Back to the creature.",
+    },
+    { btn: "Back to STARTPAGE", changeScene: "start" },
   ],
 };
 
