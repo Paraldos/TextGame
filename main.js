@@ -849,7 +849,7 @@ let scenes = {
     },
     {
       txt:
-        "The creature waits untile the spores have overtaken you completely and make you moan with need. It shoots forward and forces a tube into your throat. Foul tasting slim fills your mouth and numbs your gag reflex, while it pushes deeper and deeper. Meanwhile the fleshy leaves of the tentacle wrap around your head, anchoring it to your face.",
+        "The creature waits untile the spores have overtaken you completely and make you moan with need. It shoots forward and forces a tube into your throat. Foul tasting slim fills your mouth and numbs you. But moments later you fill it tingle, getting warm and finally you feeling even more sensetive then before. Meanwhile the thing pushes deeper and deeper, while fleshy leaves of the tentacle wrap around your head, anchoring it to your face.",
     },
     {
       txt:
@@ -860,7 +860,7 @@ let scenes = {
   XilAttack05: [
     {
       txt:
-        "As the drugs fill your lungs, you subconsciously start to suckle and swallow the tentacle in your mouth. More spore-filled gas filles your lungs, just giving you enough exygen to stay conscious. But you have only seconds to rest.",
+        "As the drugs fill your lungs, you subconsciously start to suckle and swallow the tentacle in your mouth. More spore-filled gas filles your lungs, just giving you enough oxygen to stay conscious. But you have only seconds to rest.",
     },
     {
       txt:
@@ -868,7 +868,43 @@ let scenes = {
     },
     {
       txt:
-        "You take a few deep breaths, but that is all you got, then it starts gain.",
+        "You take a few deep breaths, but that is all you got, then it starts again.",
+    },
+    {
+      btn: "Next",
+      changeScene: "XilAtack06",
+    },
+  ],
+  XilAtack06: [
+    {
+      txt:
+        "While the beast is pumping eggs through your mouth, two more blossom tentacles move into position. One of them is wrapping around your left leg, the other around your waist. The rub themselves against your privates, spreading slime all over.",
+    },
+    {
+      txt:
+        "Like with the mouth, the fluids make you feel numb at first, but then your skin start to tingle, getting warm and finally feeling overly sensitive. Both tentacles open their blossoms, spitting even more slime at your body, before they push their tubes deep into your ass and pussy.",
+    },
+    {
+      txt:
+        "Like on the face, the leaves of the tentacle close, sucking onto your latex skin and anchoring themselves to your body.",
+    },
+    {
+      btn: "Next",
+      changeScene: "XilAttack07",
+    },
+  ],
+  XilAttack07: [
+    {
+      txt:
+        "After the initial attack it takes only a moment before you can feel something pressing against your sphincter. It is way to big to fit easy, even if you would cooperate. But the monster does not stop. It pushes and presses, until your unwilling body gives way, and the egg plops into your body. A wave of intense pleasure gets released, mixing with the pain of the anal invasion.",
+    },
+    {
+      txt:
+        "Moments later another egg presses against your pussy. Your love channel gives way much easier, and you can feel the round thing being pushed into you. Deep inside you can feel some resistance, but the monster overpowers it, pushes the egg into your womb and a flash of orgasmic bliss shakes your body.",
+    },
+    {
+      txt:
+        "Then another egg is forced into your mouth, then another into your butt, and then another into your pussy. The creature starts to slowly fill you with egg, after egg, after egg, alternating between the tree tubes, never giving you a second to rest. ",
     },
   ],
 };
