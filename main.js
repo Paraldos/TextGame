@@ -104,12 +104,6 @@ let content = {
         "Nearly all your body is covered in grey latex. The only exceptions are your face, breasts, and crotch. Your legs are fitted into black, knee-high balletboots and your arms into shoulder length, black, latex gloves. A tight, black underbust corset and a tight posture collar sits snug around your throat.",
     },
     {
-      btn: "Next",
-      changeScene: "examineYourself02",
-    },
-  ],
-  examineYourself02: [
-    {
       txt:
         "As you try to sit up, you notice your arms are cuffed behind your back and your legs are chained together. A big, red ballgag forces your mouth painfully wide and makes intelligible speak impossible.",
     },
@@ -129,14 +123,12 @@ let content = {
     { setToTrue: "examineSurrondings" },
     {
       txt:
-        "You are in the cargo bay of some sort of old transport shuttle. The room is only a couple of meters wide and long, and mostly empty. The metal floor looks old and dirty and the walls are covered with scratches and rings to mount cargo. A big crane is mounted to the ceiling and waiting to lift stuff in an out through a big loading gate to your left side. The only other exit is a much small metal door and probably leads to the cockpit.",
+        "You are in the cargo bay of some sort of old transport shuttle. The room is only a couple of meters wide and long, and mostly empty. The metal floor looks old and dirty and the walls are covered with scratches and rings to mount cargo.",
     },
     {
-      btn: "Next",
-      changeScene: "examineSurrondings02",
+      txt:
+        "A big crane is mounted to the ceiling and waiting to lift stuff in an out through a big loading gate to your left side. The only other exit is a much small metal door and probably leads to the cockpit.",
     },
-  ],
-  examineSurrondings02: [
     {
       txt:
         "You can feel a soft humming from the engines, so you guess you are probably moving, but there are no windows, so you cannot be sure. But you can hear a muffled, male voice through the door.",
@@ -166,12 +158,6 @@ let content = {
       txt:
         "You give yourself a moment to breath, but before you can try again, the cockpit door slides open. A big, scarry looking man steps towards you.",
     },
-    {
-      btn: "Next",
-      changeScene: "meetOrlop02",
-    },
-  ],
-  meetOrlop02: [
     {
       txt:
         "He looks like he is in his 40s and his face is covered with a wild looking, brown beard. He wears an old looking environment suit and has tools and survival equipment hanging from his belt. Something in the back of your head recognizes him. You think his name is Orlop.",
@@ -203,22 +189,16 @@ let content = {
         "You still try to wiggle free as you suddenly feel a hard slap on the ass. Then another, and another, and another. He spanks you hard and without mercy until you are reduced to a sobbing mess. Your ass is pulsing from pain and burning like fire.",
     },
     {
-      btn: "Next",
-      changeScene: "spanking02",
-    },
-  ],
-  spanking02: [
-    {
       txt:
         "He gives you a second to catch your breave, before he growls: “Now Missy. Wanna more or can we finally move on?”",
     },
-    { btn: "Struggle", changeScene: "spanking03" },
+    { btn: "Struggle", changeScene: "spanking02" },
     {
       btn: "Give up.",
       changeScene: "getHarnessed",
     },
   ],
-  spanking03: [
+  spanking02: [
     {
       txt_random: [
         "You will not let him win! You fight your tears back, take a few breaths, shift your weight, and try to roll onto your back and away from this monster.",
@@ -242,7 +222,7 @@ let content = {
         "“Just give up already. This temper tantrum will not change anything – except for you having a sore ass.”",
       ],
     },
-    { btn: "Struggle", changeScene: "spanking03" },
+    { btn: "Struggle", changeScene: "spanking02" },
     {
       btn: "Give up.",
       changeScene: "getHarnessed",
@@ -312,6 +292,7 @@ let content = {
       changeScene: "getHarnessed",
     },
   ],
+
   getHarnessed: [
     {
       txt:
@@ -321,9 +302,6 @@ let content = {
       txt:
         "“Okay, missy. I found a cave that looks inhabited.” While he speaks, he takes an aerosol can and starts to spray you from top to bottom. “The pheromones will attract the Xil. Just move around a little, it will find you eventually.”",
     },
-    { btn: "Next", changeScene: "getHarnessed02" },
-  ],
-  getHarnessed02: [
     {
       txt:
         "He gets back up, fastens your harness to the crane, and lifts you up until you dangle slightly above the ground. “I will come back in a few days. So, you will have some quality time with your new lover. Have fun, I guess.”",
