@@ -37,7 +37,7 @@ let content = {
     { btn: "Go to TEST PAGE", changeScene: "test" },
     // { btn: "Go to WIKI", changeScene: "wiki" },
     { h1: "Story: The Xil" },
-    // { btn: "Dedication", changeScene: "dedication" },
+    { btn: "Dedication", changeScene: "dedication" },
     { btn: "Rude Awakening", changeScene: "xilStart" },
     { btn: "The Cave", changeScene: "theCave" },
     { btn: "Lost in the tunnels", changeScene: "exploreTunnel_01" },
@@ -88,7 +88,7 @@ let content = {
     { h1: "Dedication" },
     {
       txt:
-        "This game was inspired by a phenomenal RP I did with Harley / Daena. So it is dedicated to her – the best RP partner I ever had the pleasure to play with.",
+        "This game was inspired by a phenomenal RP I did with Harley / Daena. Sam and Skybound helped me a lot with correcting spelling and grammar errors. So, this project is dedicated to them – the phenomenal friends I have made online.",
     },
     {
       btn: "Back to STARTPAGE",
