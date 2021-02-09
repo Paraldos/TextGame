@@ -30,10 +30,11 @@ let keysHistory = [];
 /* ==============================
 scenen
 ============================== */
-let scenes = {
+let content = {
+  // ==============================
   start: [
     { h1: "Start Page" },
-    { btn: "Go to TEST PAGE", changeScene: "test_01" },
+    { btn: "Go to TEST PAGE", changeScene: "test" },
     // { btn: "Go to WIKI", changeScene: "wiki" },
     { h1: "Story: The Xil" },
     { btn: "Rude Awakening", changeScene: "xilStart" },
@@ -43,19 +44,19 @@ let scenes = {
     { btn: "The Rescue", changeScene: "OrlopToTheRescue" },
   ],
 
-  // test pages
-  test_01: [
+  // ==============================
+  test: [
     { h1: "Test Page" },
     {
       hideAbove: ["test01", 3],
       txt: "test",
     },
 
-    // ------------
+    /////////////////////////
     { btn: "Go to START PAGE", changeScene: "start" },
   ],
 
-  // wiki
+  // ==============================
   wiki: [
     { h1: "Wiki" },
     { btn: "The World", changeScene: "theWorld" },
@@ -79,7 +80,7 @@ let scenes = {
     { btn: "Back to STARTPAGE", changeScene: "start" },
   ],
 
-  // chapter 1
+  // ==============================
   xilStart: [
     { h1: "Kapitel 1: Rude Awakening" },
     {
@@ -320,7 +321,8 @@ let scenes = {
       changeScene: "theCave",
     },
   ],
-  // chapter 2
+
+  // ==============================
   theCave: [
     {
       h1: "Chapter 2: The Cave",
@@ -613,7 +615,8 @@ let scenes = {
       changeScene: "exploreCave",
     },
   ],
-  // chapter 3
+
+  // ==============================
   exploreTunnel_01: [
     { h1: "Chapter 3: Lost in the tunnels" },
     {
@@ -812,7 +815,7 @@ let scenes = {
     },
   ],
 
-  // chapter 4
+  // ==============================
   XilAttack: [
     { h1: "Chapter 4: The Xil" },
     {
@@ -969,7 +972,7 @@ let scenes = {
     { btn: "Change.", changeScene: "OrlopToTheRescue" },
   ],
 
-  // chapter 5
+  // ==============================
   OrlopToTheRescue: [
     { h1: "Chapter 5: The Rescue" },
     {
@@ -1112,7 +1115,7 @@ function fillGameBox() {
   devAssist_addSceneName();
 
   let scene = keys.scene;
-  scenes[scene].forEach((sElement) => createHTMLElements(sElement));
+  content[scene].forEach((sElement) => createHTMLElements(sElement));
   window.scrollTo(0, 0);
 }
 
