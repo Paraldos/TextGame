@@ -1059,19 +1059,6 @@ let scenes = {
   ],
 };
 
-const TEST = {
-  test_01: [
-    { h1: "Test Page" },
-    {
-      hideAbove: ["test01", 3],
-      txt: "test",
-    },
-
-    // ------------
-    { btn: "Go to START PAGE", changeScene: "start" },
-  ],
-};
-
 /* =================================
 logic
 ================================= */
@@ -1087,6 +1074,14 @@ logic
     if (keysHistory.length == 0) return;
     let x = keysHistory.pop();
     keys = Object.assign({}, x);
+    fillGameBox();
+  });
+}
+
+/* event listener: home btn */ {
+  homeBtn.addEventListener("click", () => {
+    createHistoryOfScenes();
+    keys.scene = "start";
     fillGameBox();
   });
 }
