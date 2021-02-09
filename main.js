@@ -543,7 +543,7 @@ let scenes = {
     {
       btn: "More!",
       changeScene: "slimePool_giveIn02",
-      counter_hideAt6: "slimePoolCounter",
+      hideAbove: ["slimePoolCounter", 5],
     },
     {
       btn: "Cum!",
@@ -708,7 +708,7 @@ let scenes = {
     },
 
     {
-      counter_hideAt7: "breathOfAir",
+      hideAbove: ["breathOfAir", 6],
       btn: "Go on.",
       changeScene: "breathOfAir",
     },
@@ -787,7 +787,7 @@ let scenes = {
       ],
     },
     {
-      counter_hideAt7: "goBack",
+      hideAbove: ["goBack", 6],
       btn: "Go on.",
       changeScene: "goBack",
     },
@@ -1115,16 +1115,7 @@ function createHTMLElements(sElement) {
     let x = sElement.hideAbove[0];
     let y = sElement.hideAbove[1];
     if (keys[x] > y) return;
-    console.log(keys.x > y);
   }
-
-  if (counters[sElement.counter_hideAt4] >= 3) return;
-  if (counters[sElement.counter_hideAt4] >= 4) return;
-  if (counters[sElement.counter_hideAt5] >= 5) return;
-  if (counters[sElement.counter_hideAt6] >= 6) return;
-  if (counters[sElement.counter_hideAt7] >= 7) return;
-
-  if (sElement.addOne) counters[sElement.addOne]++;
 
   if (sElement.h1) {
     newDiv.classList.add("h1");
