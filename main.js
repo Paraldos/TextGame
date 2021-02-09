@@ -8,7 +8,8 @@ variables
 ============================== */
 let keys = {
   // ==============================
-  scene: "start",
+  chapter: "TEST",
+  scene: "test_01",
   btnCounter: [],
   // ==============================
   test01: 1,
@@ -54,24 +55,6 @@ let scenes = {
     { btn: "Go to START PAGE", changeScene: "start" },
   ],
 
-  test_02: [
-    { txt: "Test: change scene" },
-    { btn: "Go to TEST PAGE", changeScene: "test_01" },
-  ],
-  test_03a: [
-    {
-      txt: '"test_key_01" is now TRUE',
-      setToTrue: "test_key_01",
-    },
-    { btn: "Go to TEST PAGE", changeScene: "test_01" },
-  ],
-  test_03b: [
-    {
-      txt: '"test_key_01" is now FALSE',
-      setToFalse: "test_key_01",
-    },
-    { btn: "Go to TEST PAGE", changeScene: "test_01" },
-  ],
   // wiki
   wiki: [
     { h1: "Wiki" },
@@ -95,6 +78,7 @@ let scenes = {
     { btn: "Back to WIKI", changeScene: "wiki" },
     { btn: "Back to STARTPAGE", changeScene: "start" },
   ],
+
   // chapter 1
   xilStart: [
     { h1: "Kapitel 1: Rude Awakening" },
@@ -1076,6 +1060,19 @@ let scenes = {
   ],
 };
 
+const TEST = {
+  test_01: [
+    { h1: "Test Page" },
+    {
+      hideAbove: ["test01", 3],
+      txt: "test",
+    },
+
+    // ------------
+    { btn: "Go to START PAGE", changeScene: "start" },
+  ],
+};
+
 /* =================================
 logic
 ================================= */
@@ -1114,13 +1111,15 @@ function resetBtnCounter() {
   keys.btnCounter = [[]];
 }
 
+// =================================
 function fillGameBox() {
   resetBtnCounter();
   removeOldElementsFromGameBox();
   devAssist_addSceneName();
 
-  let x = keys.scene;
-  scenes[x].forEach((y) => createHTMLElements(y));
+  let scene = keys.scene;
+  let chapter = keys.chapter;
+  scenes[scene].forEach((sElement) => createHTMLElements(sElement));
   window.scrollTo(0, 0);
 }
 
