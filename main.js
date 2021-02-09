@@ -2,6 +2,7 @@
 let navBox = document.getElementsByClassName("navBox");
 let gameBox = document.querySelector(".gameBox");
 let returnBtn = document.querySelector(".return");
+let homeBtn = document.querySelector(".home");
 
 /* ==============================
 variables
