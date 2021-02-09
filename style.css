@@ -40,14 +40,16 @@ navBox
   text-align: center;
   border-bottom: 3px solid var(--c2);
   background: var(--c1);
+  display: flex;
 }
 
-.return {
+.navObject {
   padding: 1.4rem;
   font-size: 1.8rem;
+  width: 100%;
   text-transform: uppercase;
 }
-.return:hover {
+.navObject:hover {
   background-color: var(--c2);
   color: var(--c1);
   cursor: pointer;
