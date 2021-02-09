@@ -4,13 +4,17 @@ let gameBox = document.querySelector(".gameBox");
 let btn = [];
 let newScene = "";
 let keys = {
-  test_key_01: false,
+  test01: 1,
   examinYourself: false,
   examineSurrondings: false,
   gotSpanked: false,
   gotGroped: false,
+  gropingCounter: 0,
   failedToUndress: false,
   scaredByPool: false,
+  slimePoolCounter: 0,
+  goBack: 0,
+  breathOfAir: 0,
 };
 let counters = {
   gropingCounter: 0,
@@ -21,7 +25,7 @@ let counters = {
 let player = {};
 
 /* ===============
-scenen 
+scenen
 =============== */
 let scenes = {
   start: [
@@ -35,37 +39,19 @@ let scenes = {
     { btn: "The Xil", changeScene: "XilAttack" },
     { btn: "The Rescue", changeScene: "OrlopToTheRescue" },
   ],
+
   // test pages
   test_01: [
     { h1: "Test Page" },
-    { txt: "Ein Textfeld! Ist das nicht aufregend?" },
-    { txt: "<b>bold</b>, <i>italic</i>, <u>underline</u>" },
-    { btn: "test button: change scene", changeScene: "test_02" },
-    { txt: `"test_key_01" is...` },
     {
-      txt: "True",
-      key_show: "test_key_01",
-    },
-    {
-      txt: "False",
-      key_hide: "test_key_01",
-    },
-    {
-      btn: "Set 'test_key_01' to true",
-      key_hide: "test_key_01",
-      changeScene: "test_03a",
-    },
-    {
-      btn: 'Set "test_key_01" to false',
-      key_show: "test_key_01",
-      changeScene: "test_03b",
+      hideAbove: ["test01", 3],
+      txt: "test",
     },
 
-    { img: "test_01.jpg" },
-    { img: "test_02.jpg" },
     // ------------
     { btn: "Go to START PAGE", changeScene: "start" },
   ],
+
   test_02: [
     { txt: "Test: change scene" },
     { btn: "Go to TEST PAGE", changeScene: "test_01" },
@@ -73,14 +59,14 @@ let scenes = {
   test_03a: [
     {
       txt: '"test_key_01" is now TRUE',
-      key_setToTrue: "test_key_01",
+      setToTrue: "test_key_01",
     },
     { btn: "Go to TEST PAGE", changeScene: "test_01" },
   ],
   test_03b: [
     {
       txt: '"test_key_01" is now FALSE',
-      key_setToFalse: "test_key_01",
+      setToFalse: "test_key_01",
     },
     { btn: "Go to TEST PAGE", changeScene: "test_01" },
   ],
@@ -118,7 +104,7 @@ let scenes = {
     { btn: "Examine your surroundings.", changeScene: "examineSurrondings" },
   ],
   examinYourself: [
-    { key_setToTrue: "examinYourself" },
+    { setToTrue: "examinYourself" },
     {
       txt:
         "You take a deep breath, calm down and take a moment to examine yourself.",
@@ -132,18 +118,18 @@ let scenes = {
         "As you try to sit up, you notice your arms are cuffed behind your back and your legs are chained together. A big, red ballgag forces your mouth painfully wide and makes intelligible speak impossible.",
     },
     {
-      key_hide: "examineSurrondings",
+      hide: "examineSurrondings",
       btn: "Examine your surroundings.",
       changeScene: "examineSurrondings",
     },
     {
-      key_show: "examineSurrondings",
+      show: "examineSurrondings",
       btn: "Struggle to get free.",
       changeScene: "meetOrlop",
     },
   ],
   examineSurrondings: [
-    { key_setToTrue: "examineSurrondings" },
+    { setToTrue: "examineSurrondings" },
     {
       txt:
         "You are in the cargo bay of some sort of old transport shuttle. The room is only a couple of meters wide and long, and mostly empty. The metal floor looks old and dirty and the walls are covered with scratches and rings to mount cargo. A big crane is mounted to the ceiling and waiting to lift stuff in an out through a big loading gate to your left side. The only other exit is a much small metal door and probably leads to the cockpit.",
@@ -157,12 +143,12 @@ let scenes = {
     { txt: "“…Yea! A real prime fucktoy…”" },
     { txt: "“…might take a few days…”" },
     {
-      key_hide: "examinYourself",
+      hide: "examinYourself",
       btn: "Examine yourself.",
       changeScene: "examinYourself",
     },
     {
-      key_show: "examinYourself",
+      show: "examinYourself",
       btn: "Struggle to get free.",
       changeScene: "meetOrlop",
     },
@@ -195,7 +181,7 @@ let scenes = {
   ],
   Spanking_01: [
     {
-      key_setToTrue: "gotSpanked",
+      setToTrue: "gotSpanked",
     },
     {
       txt:
@@ -247,7 +233,7 @@ let scenes = {
   ],
   Groping_01: [
     {
-      key_setToTrue: "gotGroped",
+      setToTrue: "gotGroped",
     },
     {
       txt:
@@ -265,7 +251,7 @@ let scenes = {
   ],
   Groping_02: [
     {
-      counter_addOne: "gropingCounter",
+      addOne: "gropingCounter",
     },
     {
       txt_random: [
@@ -289,7 +275,7 @@ let scenes = {
     {
       btn: "Fuck him",
       changeScene: "sexWithOrlop",
-      counter_hideBelow6: "gropingCounter",
+      hideIfBelow: ["gropingCounter", 6],
     },
     {
       btn: "Lean into his hands.",
@@ -361,12 +347,12 @@ let scenes = {
         "You feel like your entire body is aching from the stress of the bondage. After a while, you slowly get to your feet. The ballet boots restrict your movement noticeably, but if you are careful, you are able to walk reasonably well. Do you have experience in wearing this kind of boots? It feels familiar somehow...",
     },
     {
-      key_show: "gotSpanked",
+      show: "gotSpanked",
       txt:
         "Your ass still feels sore from the spanking. You gently rub your poor backside, and even that hurts a bit. The pain makes you growl in anger. You promise yourself to make the bastard pay!",
     },
     {
-      key_show: "gotGroped",
+      show: "gotGroped",
       txt:
         "You move your hands to your breasts and cover them, a bit ashamed. It’s like you still can feel a echo of the man’s hand on them. Was it okay to let him overpower you so easy? Better not think too much about it.",
     },
@@ -382,12 +368,12 @@ let scenes = {
         "You are in a big cave. The air is warm, moist and smells weird – It kind makes you dizzy if you concentrate too much on it. Dim light is entering through the big opening on the ceiling. The walls are steep and covered in wet, blue moss – there is no way you could climb them.",
     },
     {
-      key_hide: "scaredByPool",
+      hide: "scaredByPool",
       txt:
         "In the center of the cave is a small pool of greenish, bubbling, slim. It looks hot and gives you an uneasy feeling. It is probably the source of the warmth and moisture in the air.",
     },
     {
-      key_show: "scaredByPool",
+      show: "scaredByPool",
       txt:
         "In the middle of the cave is the pool of aphrodisiac slime. It still gives you an uneasy feeling. But something inside of you also wants to get closer again. Better to stay away from it.",
     },
@@ -398,15 +384,15 @@ let scenes = {
     {
       btn: "Get rid of this degrading outfit.",
       changeScene: "failedToUndress01",
-      key_hide: "failedToUndress",
+      hide: "failedToUndress",
     },
     {
       btn: "Examine the slime pool.",
       changeScene: "slimePool",
-      key_hide: "scaredByPool",
+      hide: "scaredByPool",
     },
     {
-      key_show: "scaredByPool",
+      show: "scaredByPool",
       btn: "You cannot control it! Go back to the pool.",
       changeScene: "slimePool",
     },
@@ -420,7 +406,7 @@ let scenes = {
     },
   ],
   failedToUndress01: [
-    { key_setToTrue: "failedToUndress" },
+    { setToTrue: "failedToUndress" },
     {
       txt:
         "You try to get rid of the annoying posture collar first, but you cannot find a seal. It nearly seems like the thick, black leather has no opening at all.",
@@ -472,7 +458,7 @@ let scenes = {
     },
   ],
   slimePool_examine: [
-    { key_setToTrue: "scaredByPool" },
+    { setToTrue: "scaredByPool" },
     {
       txt:
         "You dip a single finger into the goo. It is hot, but bearable. Still, you would rather avoid falling into it.",
@@ -526,7 +512,7 @@ let scenes = {
     },
   ],
   slimePool_giveIn02: [
-    { counter_addOne: "slimePoolCounter" },
+    { addOne: "slimePoolCounter" },
     {
       txt_random: [
         "You push slow and deliberately into your snatch, while you push your hips forward to feel them deep inside of you.",
@@ -547,7 +533,7 @@ let scenes = {
       ],
     },
     {
-      counter_hideBelow4: "slimePoolCounter",
+      hideIfBelow: ["slimePoolCounter", 4],
       txt_random: [
         "You are so close. You can feel the tension right benath your skin, ready to burst into orgasm.",
         "Your entire body is trembling. You feel the climax allready - you just need a little more to get over the edge.",
@@ -562,7 +548,7 @@ let scenes = {
     {
       btn: "Cum!",
       changeScene: "slimePool_orgasm",
-      counter_hideBelow6: "slimePoolCounter",
+      hideIfBelow: ["slimePoolCounter", 6],
     },
   ],
   slimePool_orgasm: [
@@ -691,7 +677,7 @@ let scenes = {
 
   breathOfAir: [
     {
-      counter_addOne: "breathOfAir",
+      addOne: "breathOfAir",
     },
     {
       txt_random: [
@@ -704,7 +690,7 @@ let scenes = {
       ],
     },
     {
-      counter_hideBelow3: "breathOfAir",
+      hideIfBelow: ["breathOfAir", 3],
       txt_random: [
         "Did you really feel the wind come from here? You cannot feel it now anymore!",
         "You slowly but surely get the impression the wind is changing direction every now and then. Is this even working?",
@@ -713,7 +699,7 @@ let scenes = {
       ],
     },
     {
-      counter_hideBelow5: "breathOfAir",
+      hideIfBelow: ["breathOfAir", 5],
       txt_random: [
         "Fear is creeping into your mind. You feel like there is something stalking you.",
         "You are getting worried. Is there something out to hunt you?",
@@ -727,7 +713,7 @@ let scenes = {
       changeScene: "breathOfAir",
     },
     {
-      counter_hideBelow7: "breathOfAir",
+      hideIfBelow: ["breathOfAir", 7],
       btn: "Go on.",
       changeScene: "tunnelAmbush",
     },
@@ -769,7 +755,7 @@ let scenes = {
 
   goBack: [
     {
-      counter_addOne: "goBack",
+      addOne: "goBack",
     },
     {
       txt_random: [
@@ -781,7 +767,7 @@ let scenes = {
       ],
     },
     {
-      counter_hideBelow3: "goBack",
+      hideIfBelow: ["goBack", 3],
       txt_random: [
         "Is this really where you came from? All of this looks so… alien.",
         "It is so hard to stay focused. Everything inside of your mind is begging to stop, rest, and just give up.",
@@ -792,7 +778,7 @@ let scenes = {
       ],
     },
     {
-      counter_hideBelow5: "goBack",
+      hideIfBelow: ["goBack", 5],
       txt_random: [
         "Fears starts to creep into your mind. Something dangerous is nearby.",
         "Something is off. You feel it. There is something hunting you.",
@@ -806,7 +792,7 @@ let scenes = {
       changeScene: "goBack",
     },
     {
-      counter_hideBelow7: "goBack",
+      hideIfBelow: ["goBack", 7],
       btn: "Go on.",
       changeScene: "tunnelAmbush",
     },
@@ -1063,7 +1049,7 @@ let scenes = {
     },
     {
       txt:
-        "Orlop looks at you with a mix of disbelief and delight. “Well, an easy decision then.” He puts the canister with the harvest on his hover cart and starts to walk away from you. Before he turns a corner, he looks back at you one last time. Tentacle are allready moving towards you.",
+        "Orlop looks at you with a mix of disbelief and delight. “Well, an easy decision then.” He puts the canister with the harvest on his hover cart and starts to walk away from you. Before he turns a corner, he looks back one last time. Tentacle are allready moving towards you.",
     },
     {
       txt:
@@ -1113,29 +1099,32 @@ function fillGameBox(scene) {
 function createHTMLElements(sElement) {
   let newDiv = document.createElement("div");
 
-  if (sElement.forwardToNextScene) {
-    newScene = sElement.forwardToNextScene;
-    fillGameBox(scenes[newScene]);
+  if (keys[sElement.hide]) return;
+  if (keys[sElement.show] == false) return;
+  if (sElement.setToTrue) keys[sElement.setToTrue] = true;
+  if (sElement.setToFalse) keys[sElement.setToFalse] = false;
+
+  if (sElement.addOne) keys[sElement.addOne]++;
+
+  if (sElement.hideIfBelow) {
+    let x = sElement.hideIfBelow[0];
+    let y = sElement.hideIfBelow[1];
+    if (keys[x] < y) return;
+  }
+  if (sElement.hideAbove) {
+    let x = sElement.hideAbove[0];
+    let y = sElement.hideAbove[1];
+    if (keys[x] > y) return;
+    console.log(keys.x > y);
   }
 
-  if (keys[sElement.key_hide]) return;
-  if (keys[sElement.key_show] == false) return;
-  if (sElement.key_setToTrue) keys[sElement.key_setToTrue] = true;
-  if (sElement.key_setToFalse) keys[sElement.key_setToFalse] = false;
-
-  if (counters[sElement.counter_hideBelow3] < 3) return;
-  if (counters[sElement.counter_hideBelow4] < 4) return;
-  if (counters[sElement.counter_hideBelow5] < 5) return;
-  if (counters[sElement.counter_hideBelow6] < 6) return;
-  if (counters[sElement.counter_hideBelow7] < 7) return;
   if (counters[sElement.counter_hideAt4] >= 3) return;
   if (counters[sElement.counter_hideAt4] >= 4) return;
   if (counters[sElement.counter_hideAt5] >= 5) return;
   if (counters[sElement.counter_hideAt6] >= 6) return;
   if (counters[sElement.counter_hideAt7] >= 7) return;
-  if (sElement.counter_reset) counters[sElement.counter_reset] = 0;
 
-  if (sElement.counter_addOne) counters[sElement.counter_addOne]++;
+  if (sElement.addOne) counters[sElement.addOne]++;
 
   if (sElement.h1) {
     newDiv.classList.add("h1");
