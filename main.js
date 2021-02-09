@@ -51,6 +51,8 @@ let content = {
       txt:
         "Normal Text, <b>bold</b>, <i>italic</i>, <u>underlined</u>, <gr>green</gr>, <re>red</re>",
     },
+    { img: "test_01.jpg" },
+    { img: "test_02.jpg" },
 
     /////////////////////////
     { btn: "Go to START PAGE", changeScene: "startPage" },

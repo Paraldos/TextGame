@@ -108,7 +108,7 @@ re {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0.7rem;
+  padding: 1rem;
 }
 .img img {
   max-width: 95%;
