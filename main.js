@@ -48,8 +48,8 @@ let content = {
   test: [
     { h1: "Test Page" },
     {
-      hideAbove: ["test01", 3],
-      txt: "test",
+      txt:
+        "Normal Text, <b>bold</b>, <i>italic</i>, <u>underlined</u>, <gr>green</gr>, <re>red</re>",
     },
 
     /////////////////////////
