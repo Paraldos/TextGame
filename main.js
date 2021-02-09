@@ -35,9 +35,10 @@ let content = {
   startPage: [
     { h1: "Start Page" },
     { btn: "Go to TEST PAGE", changeScene: "test" },
+    { btn: "Dedication", changeScene: "dedication" },
+
     // { btn: "Go to WIKI", changeScene: "wiki" },
     { h1: "Story: The Xil" },
-    { btn: "Dedication", changeScene: "dedication" },
     { btn: "Rude Awakening", changeScene: "xilStart" },
     { btn: "The Cave", changeScene: "theCave" },
     { btn: "Lost in the tunnels", changeScene: "exploreTunnel_01" },
