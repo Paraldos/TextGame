@@ -8,8 +8,7 @@ variables
 ============================== */
 let keys = {
   // ==============================
-  chapter: "TEST",
-  scene: "test_01",
+  scene: "start",
   btnCounter: [],
   // ==============================
   test01: 1,
@@ -968,7 +967,8 @@ let scenes = {
     },
     { btn: "Change.", changeScene: "OrlopToTheRescue" },
   ],
-  // rescue
+
+  // chapter 5
   OrlopToTheRescue: [
     { h1: "Chapter 5: The Rescue" },
     {
@@ -1020,15 +1020,14 @@ let scenes = {
     },
     {
       btn: "More! You need moor!",
-      changeScene: "livestock",
+      changeScene: "end_livestock",
     },
     {
       btn: "No! Please! Get me out of here!",
-      changeScene: "rescued",
+      changeScene: "end_rescued",
     },
   ],
-
-  livestock: [
+  end_livestock: [
     { h1: "End: Livestock" },
     {
       txt:
@@ -1044,8 +1043,7 @@ let scenes = {
     },
     { btn: "Back to STARTPAGE", changeScene: "start" },
   ],
-
-  rescued: [
+  end_rescued: [
     { h1: "End: Rescued" },
     { txt: "A few days later..." },
     {
@@ -1118,7 +1116,6 @@ function fillGameBox() {
   devAssist_addSceneName();
 
   let scene = keys.scene;
-  let chapter = keys.chapter;
   scenes[scene].forEach((sElement) => createHTMLElements(sElement));
   window.scrollTo(0, 0);
 }
