@@ -14,8 +14,8 @@ let keys = {
   // ==============================
   test01: 1,
   // ==============================
-  examinYourself: false,
-  examineSurrondings: false,
+  examineYourself: false,
+  examineSurroundings: false,
   gotSpanked: false,
   gotGroped: false,
   gropingCounter: 0,
@@ -37,6 +37,7 @@ let content = {
     { btn: "Go to TEST PAGE", changeScene: "test" },
     // { btn: "Go to WIKI", changeScene: "wiki" },
     { h1: "Story: The Xil" },
+    // { btn: "Dedication", changeScene: "dedication" },
     { btn: "Rude Awakening", changeScene: "xilStart" },
     { btn: "The Cave", changeScene: "theCave" },
     { btn: "Lost in the tunnels", changeScene: "exploreTunnel_01" },
@@ -83,18 +84,31 @@ let content = {
   ],
 
   // ==============================
-  xilStart: [
-    { h1: "Kapitel 1: Rude Awakening" },
+  dedication: [
+    { h1: "Dedication" },
     {
       txt:
-        "You slowly come to your senses and immediately know something is wrong. You are bound and gagged, lying on the cold floor of a transport shuttle, and you feel hazy and tired. Have you been druged? What had happend? You can't remember!",
+        "This game was inspired by a phenomenal RP I did with Harley / Daena. So it is dedicated to her – the best RP partner I ever had the pleasure to play with.",
     },
-    { btn: "Examine yourself.", changeScene: "examinYourself" },
-    { btn: "Examine your surroundings.", changeScene: "examineSurrondings" },
+    {
+      btn: "Back to STARTPAGE",
+      changeScene: "startPage",
+    },
   ],
 
-  examinYourself: [
-    { setToTrue: "examinYourself" },
+  // ==============================
+  xilStart: [
+    { h1: "Chapter 1: Rude Awakening" },
+    {
+      txt:
+        "You slowly come to your senses and immediately know something is wrong. You are bound and gagged, lying on the cold floor of a transport shuttle, and you feel hazy and tired. Have you been drugged? What had happened? You can't remember!",
+    },
+    { btn: "Examine yourself.", changeScene: "examineYourself" },
+    { btn: "Examine your surroundings.", changeScene: "examineSurroundings" },
+  ],
+
+  examineYourself: [
+    { setToTrue: "examineYourself" },
     {
       txt:
         "You take a deep breath, calm down and take a moment to examine yourself.",
@@ -108,26 +122,26 @@ let content = {
         "As you try to sit up, you notice your arms are cuffed behind your back and your legs are chained together. A big, red ballgag forces your mouth painfully wide and makes intelligible speak impossible.",
     },
     {
-      hide: "examineSurrondings",
+      hide: "examineSurroundings",
       btn: "Examine your surroundings.",
-      changeScene: "examineSurrondings",
+      changeScene: "examineSurroundings",
     },
     {
-      show: "examineSurrondings",
+      show: "examineSurroundings",
       btn: "Struggle to get free.",
       changeScene: "meetOrlop",
     },
   ],
 
-  examineSurrondings: [
-    { setToTrue: "examineSurrondings" },
+  examineSurroundings: [
+    { setToTrue: "examineSurroundings" },
     {
       txt:
-        "You are in the cargo bay of some sort of old transport shuttle. The room is only a couple of meters wide and long, and mostly empty. The metal floor looks old and dirty and the walls are covered with scratches and rings to mount cargo.",
+        "You are in the cargo bay of some sort of old transport shuttle. The room is only a couple of meters wide and long, and mostly empty. The metal floor looks old and dirty, and the walls are covered with scratches and rings to mount cargo.",
     },
     {
       txt:
-        "A big crane is mounted to the ceiling and waiting to lift stuff in an out through a big loading gate to your left side. The only other exit is a much small metal door and probably leads to the cockpit.",
+        "A big crane is mounted to the ceiling and waiting to lift cargo in and out through a big loading gate to your left side. The only other exit is a much smaller metal door, which probably leads to the cockpit.",
     },
     {
       txt:
@@ -138,12 +152,12 @@ let content = {
     { txt: "“…Yea! A real prime fucktoy…”" },
     { txt: "“…might take a few days…”" },
     {
-      hide: "examinYourself",
+      hide: "examineYourself",
       btn: "Examine yourself.",
-      changeScene: "examinYourself",
+      changeScene: "examineYourself",
     },
     {
-      show: "examinYourself",
+      show: "examineYourself",
       btn: "Struggle to get free.",
       changeScene: "meetOrlop",
     },
@@ -152,19 +166,19 @@ let content = {
   meetOrlop: [
     {
       txt:
-        "You moan and grunt, while you try to get free, but your bondage hold’s tight. After only a few minutes you are totally exhausted and sweaty, but still bound and helpless.",
+        "You moan and grunt, while you try to get free, but your bondage holds tight. After only a few minutes, you are totally exhausted and sweaty, but still bound and helpless.",
     },
     {
       txt:
-        "You give yourself a moment to breath, but before you can try again, the cockpit door slides open. A big, scarry looking man steps towards you.",
+        "You give yourself a moment to breathe, but before you can try again, the cockpit door slides open. A big, scary-looking man steps towards you.",
     },
     {
       txt:
-        "He looks like he is in his 40s and his face is covered with a wild looking, brown beard. He wears an old looking environment suit and has tools and survival equipment hanging from his belt. Something in the back of your head recognizes him. You think his name is Orlop.",
+        "He looks like he is in his 40s and his face is covered with a wild-looking brown beard. He wears an old environment suit and has tools and survival equipment hanging from his belt. Something in the back of your mind recognizes him. You think his name is Orlop.",
     },
     {
       txt:
-        "He stops for a moment and grumbles, “you are awake? Good.” Then he slowly walks towards you, takes what looks like a harness mad of leather belts and kneels to strap you into it.",
+        "He stops for a moment and grumbles, “You're awake? Good.” Then he slowly walks towards you, takes what looks like a harness made of leather belts and kneels to strap you into it.",
     },
     {
       btn: "Try to fight him!",
@@ -182,7 +196,7 @@ let content = {
     },
     {
       txt:
-        "You struggle and squirm as best as you can, but even without the bondage, you would be no match for this big, strong man. After only a few moments he has enough from your antics. He turns you on your belly and pins you down with his knee on your back.",
+        "You struggle and squirm as best you can, but even without the bondage, you would be no match for this big, strong man. After only a few moments, he has enough of your antics. He turns you on your belly and pins you down with his knee on your back.",
     },
     {
       txt:
@@ -190,9 +204,9 @@ let content = {
     },
     {
       txt:
-        "He gives you a second to catch your breave, before he growls: “Now Missy. Wanna more or can we finally move on?”",
+        "He gives you a second to catch your breath, before he growls: “Now Missy. Want more or can we finally move on?”",
     },
-    { btn: "Struggle", changeScene: "spanking02" },
+    { btn: "Struggle.", changeScene: "spanking02" },
     {
       btn: "Give up.",
       changeScene: "getHarnessed",
@@ -208,7 +222,7 @@ let content = {
     },
     {
       txt_random: [
-        "Orlop just pins you down again, then gives you another brutal spanking. You cannot fight it. After only few seconds you are a sobbing mess again, as with every slap, another flash of pain jolts through your body.",
+        "Orlop just pins you down again, then gives you another brutal spanking. You cannot fight it. After only few seconds, you are a sobbing mess again, as with every slap, another flash of pain jolts through your body.",
         "Orlop loses his balance only for a short second, grunts angrily, and rewards your resistance with another barrage of painful slaps to your ass. After only seconds, you can no longer fight but have to plea unintelligibly through your gag for mercy.",
         "Orlop just snorts, amused, and gives you a couple of extra-hard slaps on the ass. You can only scream in pain, no longer able to resist.",
       ],
@@ -222,7 +236,7 @@ let content = {
         "“Just give up already. This temper tantrum will not change anything – except for you having a sore ass.”",
       ],
     },
-    { btn: "Struggle", changeScene: "spanking02" },
+    { btn: "Struggle.", changeScene: "spanking02" },
     {
       btn: "Give up.",
       changeScene: "getHarnessed",
@@ -235,11 +249,11 @@ let content = {
     },
     {
       txt:
-        "Instead of doing his work, Orlops rests the harness next to him and instead gropes your exposed tits. He smiles predatory, while he massages your soft flesh with his rough hands.",
+        "Instead of doing his work, Orlops rests the harness next to him and instead gropes your exposed tits. He gives a predatory smile, while he massages your soft flesh with his rough hands.",
     },
     {
       txt:
-        "“What a waist.” He mumbles to himself, while he catches your nipples and gently pinches them.",
+        "“What a waste.” He mumbles to himself, while he catches your nipples and gently pinches them.",
     },
     {
       btn: "Lean into his hands.",
@@ -257,21 +271,21 @@ let content = {
         "You get red from shame but let Orlop fondle you without resistance. You really should not do this. Right?",
         "You feel the heat inside of you. How can you get aroused by this? Instead of thinking too much about it, you shiver and enjoy the moment.",
         "You lean into his big, strong hands. Maybe you can get him so horny that he unbinds you?",
-        "You moan with lust and stretch your willing body towards Orlops hands. Maybe you can seduce him into letting you go?",
+        "You moan with lust and stretch your willing body towards Orlop's hands. Maybe you can seduce him into letting you go?",
       ],
     },
     {
       txt_random: [
         "Orlop grins and massages your tits for a little longer. “Good girl.”",
-        "“You are real slut, aren’t you? I like that.”",
+        "“You are a real slut, aren’t you? I like that.”",
         "“What a waste to use you as a breeder.”",
-        "Orlops rough hands squeeze your soft breasts hard and you can see the lust in his eyes.",
+        "Orlop's rough hands squeeze your soft breasts hard and you can see the lust in his eyes.",
         "Suddenly you feel a jolt of pain. Orlop pinches both of your nipples hard and pulls them upwards.",
         `“Nice try, slut. But you are not the first whore who's tried to fuck her way out of this.”`,
       ],
     },
     {
-      btn: "Fuck him",
+      btn: "Fuck him!",
       changeScene: "sexWithOrlop",
       hideIfBelow: ["gropingCounter", 6],
     },
@@ -300,7 +314,7 @@ let content = {
     },
     {
       txt:
-        "“Okay, missy. I found a cave that looks inhabited.” While he speaks, he takes an aerosol can and starts to spray you from top to bottom. “The pheromones will attract the Xil. Just move around a little, it will find you eventually.”",
+        "“Okay, missy. I found a cave that looks inhabited.” While he speaks, he takes an aerosol can and starts to spray you from top to bottom. “The pheromones will attract the Xil. Just move around a little - it will find you eventually.”",
     },
     {
       txt:
@@ -323,7 +337,7 @@ let content = {
     },
     {
       txt:
-        "Finally your feet touch the ground, but you get lowered even further until you lay on your stomach. You can only moan as your exposed breasts get squished against cold, wet rock. CLICK! CLICK! CLICK! CLICK! CLICK! Suddenly, dozens of tiny locks open up and you feel the pressure of your bondage lessen dramatically.",
+        "Finally your feet touch the ground, but you get lowered even farther until you lay on your stomach. You can only moan as your exposed breasts get squished against cold, wet rock. CLICK! CLICK! CLICK! CLICK! CLICK! Suddenly, dozens of tiny locks open up and you feel the pressure of your bondage lessen dramatically.",
     },
     {
       btn: "Try to get up.",
