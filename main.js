@@ -1,10 +1,18 @@
 /* variables */
 let navBox = document.getElementsByClassName("navBox");
 let gameBox = document.querySelector(".gameBox");
-let btn = [];
-let newScene = "";
+let returnBtn = document.querySelector(".return");
+
+/* ==============================
+variables
+============================== */
 let keys = {
+  // ==============================
+  scene: "start",
+  btnCounter: [],
+  // ==============================
   test01: 1,
+  // ==============================
   examinYourself: false,
   examineSurrondings: false,
   gotSpanked: false,
@@ -16,17 +24,11 @@ let keys = {
   goBack: 0,
   breathOfAir: 0,
 };
-let counters = {
-  gropingCounter: 0,
-  slimePoolCounter: 0,
-  goBack: 0,
-  breathOfAir: 0,
-};
-let player = {};
+let keysHistory = [];
 
-/* ===============
+/* ==============================
 scenen
-=============== */
+============================== */
 let scenes = {
   start: [
     { h1: "Start Page" },
@@ -280,6 +282,7 @@ let scenes = {
     {
       btn: "Lean into his hands.",
       changeScene: "Groping_02",
+      hideAbove: ["gropingCounter", 5],
     },
     {
       btn: "Turn away.",
@@ -472,12 +475,12 @@ let scenes = {
         "Suddenly you feel the urge to like it, no, to suck it from your finger. You feel… hot… horny… your mouth is hanging half open, your pussy is wet and you have startet subconsciously to knead your tits with your left hand.",
     },
     {
-      btn: "Step away!",
-      changeScene: "slimePool_run",
-    },
-    {
       btn: "Give in to it! Suck the goo from your finger!",
       changeScene: "slimePool_giveIn",
+    },
+    {
+      btn: "Step away!",
+      changeScene: "slimePool_run",
     },
   ],
   slimePool_run: [
@@ -1073,26 +1076,51 @@ let scenes = {
   ],
 };
 
+/* =================================
+logic
+================================= */
 /* event listener: keydown*/ {
   document.addEventListener("keydown", (event) => {
-    if (!btn[event.key]) return;
-    clickBtn(btn[event.key]);
+    if (!keys.btnCounter[event.key]) return;
+    clickBtn(keys.btnCounter[event.key]);
   });
 }
 
-function fillGameBox(scene) {
-  if (!scene) return;
-  btn = [[]];
+/* event listener: return btn */ {
+  returnBtn.addEventListener("click", () => {
+    if (keysHistory.length == 0) return;
+    let x = keysHistory.pop();
+    keys = Object.assign({}, x);
+    fillGameBox();
+  });
+}
+
+function removeOldElementsFromGameBox() {
   while (gameBox.children.length > 0) gameBox.lastChild.remove();
+}
 
-  /* post page name / only for development*/ {
-    let newDiv = document.createElement("div");
-    newDiv.classList.add("dev_pageName");
-    newDiv.innerHTML = "Current Page: " + newScene;
-    gameBox.appendChild(newDiv);
-  }
+function createHistoryOfScenes() {
+  keysHistory.push(Object.assign({}, keys));
+}
 
-  scene.forEach((sElement) => createHTMLElements(sElement));
+function devAssist_addSceneName() {
+  let newDiv = document.createElement("div");
+  newDiv.classList.add("dev_pageName");
+  newDiv.innerHTML = `Scene: "${keys.scene}"`;
+  gameBox.appendChild(newDiv);
+}
+
+function resetBtnCounter() {
+  keys.btnCounter = [[]];
+}
+
+function fillGameBox() {
+  resetBtnCounter();
+  removeOldElementsFromGameBox();
+  devAssist_addSceneName();
+
+  let x = keys.scene;
+  scenes[x].forEach((y) => createHTMLElements(y));
   window.scrollTo(0, 0);
 }
 
@@ -1132,9 +1160,9 @@ function createHTMLElements(sElement) {
   }
   if (sElement.btn) {
     newDiv.classList.add("btn");
-    newDiv.innerHTML = btn.length + ".) " + sElement.btn;
+    newDiv.innerHTML = keys.btnCounter.length + ".) " + sElement.btn;
     newDiv.addEventListener("click", () => clickBtn(sElement));
-    btn.push(sElement);
+    keys.btnCounter.push(sElement);
   }
   if (sElement.img) {
     newDiv.classList.add("img");
@@ -1146,12 +1174,16 @@ function createHTMLElements(sElement) {
 }
 
 function clickBtn(sElement) {
-  if (sElement.changeScene) newScene = sElement.changeScene;
-  fillGameBox(scenes[newScene]);
+  createHistoryOfScenes();
+  if (sElement.changeScene) keys.scene = sElement.changeScene;
+  fillGameBox();
 }
 
 function randomInteger(x) {
   return Math.floor(Math.random() * x);
 }
 
-fillGameBox(scenes.start);
+/* =================================
+start game
+================================= */
+fillGameBox();

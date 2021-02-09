@@ -37,10 +37,20 @@ navBox
   position: sticky;
   top: 0;
   width: 100vw;
-  padding: 1rem;
   text-align: center;
   border-bottom: 3px solid var(--c2);
   background: var(--c1);
+}
+
+.return {
+  padding: 0.8rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+.return:hover {
+  background-color: var(--c2);
+  color: var(--c1);
+  cursor: pointer;
 }
 
 /*=======================
@@ -81,7 +91,7 @@ gameBox
 .btn:hover {
   background-color: var(--c2);
   color: var(--c1);
-  cursor: crosshair;
+  cursor: pointer;
 }
 
 .img {
