@@ -9,7 +9,7 @@ variables
 ============================== */
 let keys = {
   // ==============================
-  scene: "start",
+  scene: "startPage",
   btnCounter: [],
   // ==============================
   test01: 1,
@@ -32,7 +32,7 @@ scenen
 ============================== */
 let content = {
   // ==============================
-  start: [
+  startPage: [
     { h1: "Start Page" },
     { btn: "Go to TEST PAGE", changeScene: "test" },
     // { btn: "Go to WIKI", changeScene: "wiki" },
@@ -53,14 +53,14 @@ let content = {
     },
 
     /////////////////////////
-    { btn: "Go to START PAGE", changeScene: "start" },
+    { btn: "Go to START PAGE", changeScene: "startPage" },
   ],
 
   // ==============================
   wiki: [
     { h1: "Wiki" },
     { btn: "The World", changeScene: "theWorld" },
-    { btn: "Back to STARTPAGE", changeScene: "start" },
+    { btn: "Back to STARTPAGE", changeScene: "startPage" },
   ],
   theWorld: [
     { h1: "The World" },
@@ -77,7 +77,7 @@ let content = {
         "Every person can live in luxurious live and do whatever they like, without any worries or responsibilities.",
     },
     { btn: "Back to WIKI", changeScene: "wiki" },
-    { btn: "Back to STARTPAGE", changeScene: "start" },
+    { btn: "Back to STARTPAGE", changeScene: "startPage" },
   ],
 
   // ==============================
@@ -90,6 +90,7 @@ let content = {
     { btn: "Examine yourself.", changeScene: "examinYourself" },
     { btn: "Examine your surroundings.", changeScene: "examineSurrondings" },
   ],
+
   examinYourself: [
     { setToTrue: "examinYourself" },
     {
@@ -100,6 +101,12 @@ let content = {
       txt:
         "Nearly all your body is covered in grey latex. The only exceptions are your face, breasts, and crotch. Your legs are fitted into black, knee-high balletboots and your arms into shoulder length, black, latex gloves. A tight, black underbust corset and a tight posture collar sits snug around your throat.",
     },
+    {
+      btn: "Next",
+      changeScene: "examineYourself02",
+    },
+  ],
+  examineYourself02: [
     {
       txt:
         "As you try to sit up, you notice your arms are cuffed behind your back and your legs are chained together. A big, red ballgag forces your mouth painfully wide and makes intelligible speak impossible.",
@@ -115,12 +122,19 @@ let content = {
       changeScene: "meetOrlop",
     },
   ],
+
   examineSurrondings: [
     { setToTrue: "examineSurrondings" },
     {
       txt:
         "You are in the cargo bay of some sort of old transport shuttle. The room is only a couple of meters wide and long, and mostly empty. The metal floor looks old and dirty and the walls are covered with scratches and rings to mount cargo. A big crane is mounted to the ceiling and waiting to lift stuff in an out through a big loading gate to your left side. The only other exit is a much small metal door and probably leads to the cockpit.",
     },
+    {
+      btn: "Next",
+      changeScene: "examineSurrondings02",
+    },
+  ],
+  examineSurrondings02: [
     {
       txt:
         "You can feel a soft humming from the engines, so you guess you are probably moving, but there are no windows, so you cannot be sure. But you can hear a muffled, male voice through the door.",
@@ -140,6 +154,7 @@ let content = {
       changeScene: "meetOrlop",
     },
   ],
+
   meetOrlop: [
     {
       txt:
@@ -150,6 +165,12 @@ let content = {
         "You give yourself a moment to breath, but before you can try again, the cockpit door slides open. A big, scarry looking man steps towards you.",
     },
     {
+      btn: "Next",
+      changeScene: "meetOrlop02",
+    },
+  ],
+  meetOrlop02: [
+    {
       txt:
         "He looks like he is in his 40s and his face is covered with a wild looking, brown beard. He wears an old looking environment suit and has tools and survival equipment hanging from his belt. Something in the back of your head recognizes him. You think his name is Orlop.",
     },
@@ -159,14 +180,15 @@ let content = {
     },
     {
       btn: "Try to fight him!",
-      changeScene: "Spanking_01",
+      changeScene: "spanking",
     },
     {
       btn: "Give in. Better not make him angry.",
       changeScene: "Groping_01",
     },
   ],
-  Spanking_01: [
+
+  spanking: [
     {
       setToTrue: "gotSpanked",
     },
@@ -179,16 +201,22 @@ let content = {
         "You still try to wiggle free as you suddenly feel a hard slap on the ass. Then another, and another, and another. He spanks you hard and without mercy until you are reduced to a sobbing mess. Your ass is pulsing from pain and burning like fire.",
     },
     {
+      btn: "Next",
+      changeScene: "spanking02",
+    },
+  ],
+  spanking02: [
+    {
       txt:
         "He gives you a second to catch your breave, before he growls: “Now Missy. Wanna more or can we finally move on?”",
     },
-    { btn: "Struggle", changeScene: "Spanking_02" },
+    { btn: "Struggle", changeScene: "spanking03" },
     {
       btn: "Give up.",
       changeScene: "getHarnessed",
     },
   ],
-  Spanking_02: [
+  spanking03: [
     {
       txt_random: [
         "You will not let him win! You fight your tears back, take a few breaths, shift your weight, and try to roll onto your back and away from this monster.",
@@ -212,12 +240,13 @@ let content = {
         "“Just give up already. This temper tantrum will not change anything – except for you having a sore ass.”",
       ],
     },
-    { btn: "Struggle", changeScene: "Spanking_02" },
+    { btn: "Struggle", changeScene: "spanking03" },
     {
       btn: "Give up.",
       changeScene: "getHarnessed",
     },
   ],
+
   Groping_01: [
     {
       setToTrue: "gotGroped",
@@ -1045,7 +1074,7 @@ let content = {
       txt:
         "Farming this way would be much easier. He knows where you are, and he only would have to get rid of small parts of the cocoon. Maybe he could farm you multiple times a week? Food for thought…",
     },
-    { btn: "Back to STARTPAGE", changeScene: "start" },
+    { btn: "Back to STARTPAGE", changeScene: "startPage" },
   ],
   end_rescued: [
     { h1: "End: Rescued" },
@@ -1058,7 +1087,7 @@ let content = {
       txt:
         "But sometimes there are dreams. Dreams about being trapped in the dark, engulfed by something unbelievable powerful, that is using your body, filling it up. You feel pleasure, lust… and a strange urge to go back. Back to the tunnels. Back to the creature.",
     },
-    { btn: "Back to STARTPAGE", changeScene: "start" },
+    { btn: "Back to STARTPAGE", changeScene: "startPage" },
   ],
 };
 
@@ -1084,7 +1113,7 @@ logic
 /* event listener: home btn */ {
   homeBtn.addEventListener("click", () => {
     createHistoryOfScenes();
-    keys.scene = "start";
+    keys.scene = "startPage";
     fillGameBox();
   });
 }
