@@ -695,10 +695,10 @@ let scenes = {
     },
     {
       txt_random: [
-        "You wander through the dark and follow the illusive gust of fresh air you feel every now and then. Is it now more from the left or the right?",
+        "You wander through the dark and follow the elusive gust of fresh air you feel every now and then. Is it now more from the left or the right?",
         "After a while you reach a point that looks awfully familiar. Have you just wandered in a circle?",
         "You struggle to move in your boots. The uneven floor and the lack of light make it hard to not fall over. What a nightmare.",
-        "You find a rather easy to follow tunnel, only to find a dead end. But you where certain you felt the breez of air from right here!",
+        "You find a rather easy to follow tunnel, only to find a dead end. But you were certain you felt the breeze of air from this direction!",
         "You struggle walking around this dark, uneven tunnel with your boots. Sometimes you just have to concentrate more on not falling than getting anywhere.",
         "You stumble through the dark, stopping every now and then to sense the little hint of fresh air. Are you still on the right path?",
       ],
@@ -707,16 +707,16 @@ let scenes = {
       counter_hideBelow3: "breathOfAir",
       txt_random: [
         "Did you really feel the wind come from here? You cannot feel it now anymore!",
-        "You slowly but surely get the impression the wind is changing direction every now and then. Is this even actual lead?",
+        "You slowly but surely get the impression the wind is changing direction every now and then. Is this even working?",
         "You lost the lead and must go back from where you came. It is so hard to concentrate with all this drugs in the air!",
-        "What where you doing again? Oh yea… following the fresh air.",
+        "What where you doing again? Oh yeah… following the fresh air.",
       ],
     },
     {
       counter_hideBelow5: "breathOfAir",
       txt_random: [
         "Fear is creeping into your mind. You feel like there is something stalking you.",
-        "You are getting worry. Is there something out to hunt you?",
+        "You are getting worried. Is there something out to hunt you?",
         "You get more and more uneasy. You can feel it. Something is lurking in the shadows nearby.",
       ],
     },
@@ -773,11 +773,11 @@ let scenes = {
     },
     {
       txt_random: [
-        "You slowly wander through the dark. You must be careful and deliberate as your boots make it difficult to walk on this uneven ground. Better to support yourself at the wall. Wait? Where did you go again? It is so hard to think.",
-        "You must squint your eyes to see in this dark. The faint glow of the plant’s around you is just enough to see outlines. Wait! There is someone! You move as fast as you can towards the silhouette, only to find a stalagmite which vaguely resembles a human. Damnit!",
-        "You wander the tunnels until you find a passage you think you know. You follow the path you remember, turn a corner, and suddenly stand in front of a wall. Fuck! You had been absolutely sure this was the way back!",
+        "You slowly wander through the dark. You must be careful and deliberate as your boots make it difficult to walk on this uneven ground. Better to support yourself with the wall. Wait? Where did you go again? It is so hard to think.",
+        "You have to squint your eyes to see in the dark. The faint glow of the plants around you is just enough to see outlines. Wait! There is someone! You move as fast as you can towards the silhouette, only to find a stalagmite which vaguely resembles a human. Damn it!",
+        "You wander the tunnels until you find a passage you think you know. You follow the path you remember, turn a corner, and suddenly are standingin front of a wall. Fuck! You had been absolutely sure this was the way back!",
         "You follow a long tunnel that looks familiar. But slowly get’s narrower and narrower until you can no longer fit through. Darn it! Another dead end!",
-        "After a while wandering the tunnel you feel tired and your poor little snatch is itching for attention. You stop, to catch a break… and to rub exposed sex for a little. Cannot hurt, right? Suddenly you realize what you are doing and snap out of it. This place is making you mad! Better go on.",
+        "After a while wandering the tunnel you feel tired and your poor little snatch is itching for attention. You stop, to catch a break… and to rub your exposed sex for a little. Can't hurt, right? Suddenly you realize what you are doing and snap out of it. This place is making you mad! Better go on.",
       ],
     },
     {
@@ -785,7 +785,7 @@ let scenes = {
       txt_random: [
         "Is this really where you came from? All of this looks so… alien.",
         "It is so hard to stay focused. Everything inside of your mind is begging to stop, rest, and just give up.",
-        "Doubts start to gnaw on your resolve. Will you ever leave this place? Is there any hope of seeing sunlight ever again?",
+        "Doubts start to gnaw at your resolve. Will you ever leave this place? Is there any hope of seeing sunlight ever again?",
         "With every second it gets a little harder to think straight. Maybe you should just give up.",
         "Doubts settle in. Are you really walking back towards where you came from?",
         "Is this really the right way? What if you cannot find a way out of this maze?",
@@ -794,7 +794,7 @@ let scenes = {
     {
       counter_hideBelow5: "goBack",
       txt_random: [
-        "Fears starts to creep into your mind. Something dangerous nearby.",
+        "Fears starts to creep into your mind. Something dangerous is nearby.",
         "Something is off. You feel it. There is something hunting you.",
         "You can feel it. Something is hunting you.",
         "Something has changed. You are sure there is something hunting you.",
@@ -1000,7 +1000,7 @@ let scenes = {
     { h1: "Chapter 5: The Rescue" },
     {
       txt:
-        "You don’t know how much time has passed as you suddenly feel something change. The tentacles around you start to jerk and twitch. Almost like the creature around you is fighting someone.",
+        "You don’t know how much time has passed as you suddenly feel something change. The tentacles around you start to jerk and twitch. Almost like the creature around you is fighting something.",
     },
     {
       txt:
@@ -1014,22 +1014,36 @@ let scenes = {
   OrlopToTheRescue02: [
     {
       txt:
-        "With more pheromones and a knife, he slowly cuts and scares away more and more of the tentacles, untile he can reach you. He puts a canister beneath you, cuts away some more tentacles and pulls out the tentacles from your pussy and ass.",
+        "With more pheromones and a knife, he slowly cuts and scares away more and more of the tentacles, untile he can reach you. He puts a canister beneath you, cuts away some more tentacles and pulls the tentacles out of your private parts.",
     },
     {
       txt:
-        "Eggs spill out of you and into the canister. “Darn… that is a big load.” The experienced Wastelander uses a long, latex covered shaft to poke into your poor little holes, provoking another wave of eggs spilling fourth. He repeats the process a few times, until you are mostly empty.",
+        "Eggs spill out of you and into the canister. “Darn… that is a big load.” The experienced Wastelander uses a long, latex covered shaft to poke into your poor overstretched holes, provoking another wave of eggs spilling fourth. He repeats the process a few times, until you are mostly empty.",
     },
     { btn: "Next", changeScene: "OrlopToTheRescue03" },
   ],
   OrlopToTheRescue03: [
     {
       txt:
-        "At last, Orlop cuts away the tentacles around your head, until you collapse into his arms. He holds you over the canisters, cuts away the leaves engulfing your head and pulls the tube out of your mouth. You immediately start to vomit dozens of eggs, nearly suffocating in the process.",
+        "At last, Orlop cuts away the tentacles around your head and torso, until you collapse into his arms. He holds you over the canisters, cuts away the leaves engulfing your head and pulls the tube out of your mouth. You immediately start to vomit dozens of eggs, nearly suffocating in the process.",
     },
     {
       txt:
-        "After a while Orlop rests you on the floor. There are certainly still eggs inside of you, but for the moment he seems satisfied. He examines the harvest with interest. It is much more then usual and of really good quality. Big eggs and no discoloration in the insemination goo. He looks back at you and starts to mumble. “I could just say I did not find you and come back again in a week or two.”",
+        "After you are done, Orlop rests you on the floor. There are certainly still eggs inside of you, but for the moment he seems satisfied.",
+    },
+    {
+      btn: "Next",
+      changeScene: "OrlopToTheRescue04",
+    },
+  ],
+  OrlopToTheRescue04: [
+    {
+      txt:
+        'He examines the harvest and starts to mumble to himself. "That is much more then usual, and really good quality too. Big eggs and no discoloration in the insemination goo."',
+    },
+    {
+      txt:
+        'He looks at you with a uncanny glimmer in his eyes. "Nobody would ask if I said I could not find you..."',
     },
     {
       btn: "More! You need moor!",
@@ -1045,11 +1059,15 @@ let scenes = {
     { h1: "End: Livestock" },
     {
       txt:
-        "You weekly look up to him, chough some goo, and beg him to stay. “Leve me here. In the cave… I need it!”",
+        "You cough some goo, before you look up at him. Your mind is still clouded, but you realize what he is up to. It is hard to form words, but you need him to know. “Stay… I want… to stay…”",
     },
     {
       txt:
-        "The man looks at you for a long moment, but nods after a while. He stands up and puts the canister with eggs on his hover cart. He looks down at you, thinking about the business possibilities. He never thought about farming Xil eggs this way. After a while he addresses you one last time. “I will be back in about a week… and I will make sure I will not cut away too much. Will make it easier for it to regrow around you…”",
+        "Orlop looks at you with a mix of disbelief and delight. “Well, an easy decision then.” He puts the canister with the harvest on his hover cart and starts to walk away from you. Before he turns a corner, he looks back at you one last time. Tentacle are allready moving towards you.",
+    },
+    {
+      txt:
+        "Farming this way would be much easier. He knows where you are, and he only would have to get rid of small parts of the cocoon. Maybe he could farm you multiple times a week? Food for thought…",
     },
     { btn: "Back to STARTPAGE", changeScene: "start" },
   ],
