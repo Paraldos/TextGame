@@ -41,6 +41,10 @@ let content = {
 
     // { btn: "Go to WIKI", changeScene: "wiki" },
     { h1: "Story: The Xil" },
+    /* {
+      txt:
+        "M/f, Solo-F, Other/f, sci-fi, reluctant, Anal, mast, oral, sex, vag, bond, cocoon, corset, posture-collar, boots, bdsm, breathplay, catsuit, latex, mind-control, rough, sen-dep, ",
+    }, */
     { btn: "Rude Awakening", changeScene: "xilStart" },
     { btn: "The Cave", changeScene: "theCave" },
     { btn: "Lost in the tunnels", changeScene: "exploreTunnel_01" },
