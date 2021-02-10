@@ -1100,6 +1100,7 @@ function keyboardControl(event) {
   document.addEventListener("keydown", (event) => keyboardControl(event));
 }
 
+// =================================
 function returnOnScene() {
   if (keysHistory.length == 0) return;
   let x = keysHistory.pop();
@@ -1111,6 +1112,7 @@ function returnOnScene() {
   returnBtn.addEventListener("click", () => returnOnScene());
 }
 
+// =================================
 function goToStartPage() {
   createHistoryOfScenes();
   keys.scene = "startPage";
@@ -1121,6 +1123,7 @@ function goToStartPage() {
   homeBtn.addEventListener("click", () => goToStartPage());
 }
 
+// =================================
 function removeOldElementsFromGameBox() {
   while (gameBox.children.length > 0) gameBox.lastChild.remove();
 }
