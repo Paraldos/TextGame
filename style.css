@@ -12,8 +12,8 @@
   font-size: 14px;
   --c1: #222222;
   --c2: #ceeff5;
-  --c3: #0d335d;
-  --c4: #c1a1d3;
+  --cRed: rgb(228, 39, 39);
+  --cGreen: rgb(24, 185, 24);
   --fadeTime: 1s;
 }
 
@@ -70,7 +70,7 @@ gameBox
 
 .dev_pageName {
   text-align: right;
-  color: green;
+  color: var(--cGreen);
   font-size: 1rem;
 }
 
@@ -78,12 +78,12 @@ gameBox
   padding: 0.5rem;
 }
 
-gr {
-  color: green;
+green {
+  color: var(--cGreen);
 }
 
-re {
-  color: red;
+red {
+  color: var(--cRed);
 }
 
 .h1 {

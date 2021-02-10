@@ -53,7 +53,7 @@ let content = {
     { h1: "Test Page" },
     {
       txt:
-        "Normal Text, <b>bold</b>, <i>italic</i>, <u>underlined</u>, <gr>green</gr>, <re>red</re>",
+        "Normal Text, <b>bold</b>, <i>italic</i>, <u>underlined</u>, <green>green</green>, <red>red</red>",
     },
     { img: "test_01.jpg" },
     { img: "test_02.jpg" },
@@ -1091,28 +1091,34 @@ let content = {
 /* =================================
 logic
 ================================= */
+function keyboardControl(event) {
+  if (!keys.btnCounter[event.key]) return;
+  clickBtn(keys.btnCounter[event.key]);
+}
+
 /* event listener: keydown*/ {
-  document.addEventListener("keydown", (event) => {
-    if (!keys.btnCounter[event.key]) return;
-    clickBtn(keys.btnCounter[event.key]);
-  });
+  document.addEventListener("keydown", (event) => keyboardControl(event));
+}
+
+function returnOnScene() {
+  if (keysHistory.length == 0) return;
+  let x = keysHistory.pop();
+  keys = Object.assign({}, x);
+  fillGameBox();
 }
 
 /* event listener: return btn */ {
-  returnBtn.addEventListener("click", () => {
-    if (keysHistory.length == 0) return;
-    let x = keysHistory.pop();
-    keys = Object.assign({}, x);
-    fillGameBox();
-  });
+  returnBtn.addEventListener("click", () => returnOnScene());
+}
+
+function goToStartPage() {
+  createHistoryOfScenes();
+  keys.scene = "startPage";
+  fillGameBox();
 }
 
 /* event listener: home btn */ {
-  homeBtn.addEventListener("click", () => {
-    createHistoryOfScenes();
-    keys.scene = "startPage";
-    fillGameBox();
-  });
+  homeBtn.addEventListener("click", () => goToStartPage());
 }
 
 function removeOldElementsFromGameBox() {
