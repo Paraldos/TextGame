@@ -1142,7 +1142,7 @@ function fillGameBox() {
 
   let scene = keys.scene;
   content[scene].forEach((sElement) => createHTMLElements(sElement));
-  window.scrollTo(0, 0);
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function createHTMLElements(sElement) {
