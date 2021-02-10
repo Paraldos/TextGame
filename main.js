@@ -40,7 +40,7 @@ let content = {
     { btn: "Dedication", changeScene: "dedication" },
 
     // { btn: "Go to WIKI", changeScene: "wiki" },
-    { h1: "Story: The Xil" },
+    { h1: "Story: Maze of Desire" },
     /* {
       txt:
         "M/f, Solo-F, Other/f, sci-fi, reluctant, Anal, mast, oral, sex, vag, bond, cocoon, corset, posture-collar, boots, bdsm, breathplay, catsuit, latex, mind-control, rough, sen-dep, ",
