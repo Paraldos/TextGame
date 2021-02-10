@@ -11,7 +11,7 @@ let keys = {
   // ==============================
   scene: "startPage",
   btnCounter: [],
-  version: 0,
+  version: "0.1",
   // ==============================
   test01: 1,
   // ==============================
@@ -35,6 +35,7 @@ let content = {
   // ==============================
   startPage: [
     { h1: "Start Page" },
+    { txt: `Version: ${keys.version}` },
     { btn: "Go to TEST PAGE", changeScene: "test" },
     { btn: "Dedication", changeScene: "dedication" },
 
@@ -1185,8 +1186,9 @@ function createHTMLElements(sElement) {
     keys.btnCounter.push(sElement);
   }
   if (sElement.img) {
-    newDiv.classList.add("img");
+    newDiv.classList.add("img-frame");
     let newImg = document.createElement("img");
+    newImg.classList.add("img-content");
     newImg.src = `./assets/${sElement.img}`;
     newDiv.appendChild(newImg);
   }
