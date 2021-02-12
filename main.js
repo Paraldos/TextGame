@@ -25,6 +25,7 @@ let keys = {
   slimePoolCounter: 0,
   goBack: 0,
   breathOfAir: 0,
+  tunnelGiveIn: 0,
 };
 let keysHistory = [];
 
@@ -36,7 +37,7 @@ let content = {
   startPage: [
     { h1: "Start Page" },
     { txt: `Version: ${keys.version}` },
-    { btn: "Go to TEST PAGE", changeScene: "test" },
+    // { btn: "Go to TEST PAGE", changeScene: "test" },
     { btn: "Dedication", changeScene: "dedication" },
 
     // { btn: "Go to WIKI", changeScene: "wiki" },
@@ -49,6 +50,7 @@ let content = {
     { btn: "The Cave", changeScene: "theCave" },
     { btn: "Lost in the tunnels", changeScene: "exploreTunnel_01" },
     { btn: "The Xil", changeScene: "XilAttack" },
+    { btn: "The Spiders", changeScene: "spiders" },
     { btn: "The Rescue", changeScene: "OrlopToTheRescue" },
   ],
 
@@ -424,6 +426,7 @@ let content = {
       changeScene: "theTunnel",
     },
   ],
+
   failedToUndress01: [
     { setToTrue: "failedToUndress" },
     {
@@ -458,6 +461,7 @@ let content = {
     },
     { btn: "Explore your Surrondings.", changeScene: "exploreCave" },
   ],
+
   slimePool: [
     {
       txt:
@@ -619,6 +623,7 @@ let content = {
       changeScene: "exploreCave",
     },
   ],
+
   smallHoles: [
     { h1: "Small holes / under construction" },
     { txt: "Plan: Facehugger type creature attacks player" },
@@ -665,6 +670,7 @@ let content = {
   exploreTunnel_02: [
     { counter_reset: "goBack" },
     { counter_reset: "breathOfAir" },
+    { counter_reset: "tunnelGiveIn" },
     {
       txt:
         "You are surrounded by long uneven tunnels, junctions, and caverns. Some parts of this underworld are filled with fluorescent moss or puddles of slime. Gurgling, slithering sounds seem to come from all around and drugs in the air make it hard to stay focused.",
@@ -691,7 +697,7 @@ let content = {
     },
     {
       btn: "There is no way to get out of this. Just sit down and wait.",
-      changeScene: "fallAsleep",
+      changeScene: "rest01",
     },
   ],
 
@@ -735,7 +741,7 @@ let content = {
     {
       hideIfBelow: ["breathOfAir", 7],
       btn: "Go on.",
-      changeScene: "tunnelAmbush",
+      changeScene: "tunnelGiveIn01",
     },
     {
       btn: "Give up.",
@@ -814,7 +820,7 @@ let content = {
     {
       hideIfBelow: ["goBack", 7],
       btn: "Go on.",
-      changeScene: "tunnelAmbush",
+      changeScene: "tunnelGiveIn01",
     },
     {
       btn: "Give up.",
@@ -822,15 +828,54 @@ let content = {
     },
   ],
 
-  fallAsleep: [
-    { h1: "Under Construction – Fall asleep and get surprised by the Xil" },
+  rest01: [
     {
-      btn: "Back to tunnels",
+      txt:
+        "Your tired, lost and confused. The Air makes it hard to think and there is really no way you will get out of this. There is nothing you can do.",
+    },
+    {
+      txt:
+        "So, you give up, sit down, and pull your legs close to your body. Orlops said he will be back in a couple of days, right? Maybe you can just wait… and he will eventually come back for you.",
+    },
+    {
+      btn: "Next.",
+      changeScene: "rest02",
+    },
+  ],
+  rest02: [
+    {
+      txt:
+        "You close your eyes and just listen into the dark. At first you notice the obvious. The gurling sound in the distance and the slight breeze of fresh air. But… there is also something else. Something you hear in the walls. Like something is moving inside of it…",
+    },
+    {
+      txt:
+        "But resting takes away your ability to distract your drugged mind. While you notice the sound in the wall, you also can feel the burning sensation between your legs. You even have started to rub yourself subconsciously….",
+    },
+    {
+      btn: "This is madness. Get back up!",
       changeScene: "exploreTunnel_02",
+    },
+    {
+      btn: "Ignore your desire. Concentrate on the holes in the wall.",
+      changeScene: "beastInTheWall",
+    },
+    {
+      btn: "It is all for nothing. Give in to your lust.",
+      changeScene: "rest03",
+    },
+  ],
+  rest03: [
+    {
+      txt:
+        "Fuck it! Why should you try to control yourself when you clearly need it so badly?! You move your right hand to your tits and concentrate the other hand on more actively rubbing your clit. ",
+    },
+    {
+      btn: "More!",
+      changeScene: "tunnelGiveIn02",
     },
   ],
 
-  tunnelAmbush: [
+  tunnelGiveIn01: [
     {
       txt:
         "You feel like you have stumbled through the dark for ages. Your feet hurt and you are just sooo horny. Maybe you should just rest for a moment. Just a little pause.",
@@ -841,9 +886,224 @@ let content = {
     },
     {
       btn: "I NEED this!",
+      changeScene: "tunnelGiveIn02",
+    },
+  ],
+  tunnelGiveIn02: [
+    {
+      addOne: "tunnelGiveIn",
+    },
+    {
+      txt_random: [
+        "You push a finger slow and deliberately into your snatch, while you push your hips forward to feel them deep inside of you.",
+        "You rub your clit with fast, desperate need. Your entire body tense and feels like it is on fire. You need more!",
+        "You cannot hold back anymore. You finger yourself hard and fast, feeding into the growing need pulsing in your pussy. It just feels so amazing!",
+        "You force yourself to slow down a bit, rock your hips gently back and forth and fondle your clit softly. It feels good, but you need more. This is just to tame.",
+        "You rub your clit and pussylips, before slowly and deliberately push three fingers into your love tunnel. You cannot hold it back and moan with deep passion.",
+        "Your hand rubs slow and deliberate up and down your pussy, holding back just a little, before you give into your need and push deep and hard into your lovetunnel.",
+        "You can feel your finger inside of your pussy, rubbing against the lovely spot which makes you feel soooooo good.",
+      ],
+    },
+    {
+      txt_random: [
+        "Meanwhile you suck on your left hand’s forefinger, lovingly explore it with your warm and hungry lips, and imagining it was a man’s penis.",
+        "With your left hand you are kneading your breasts, feel your hard nipple press against your latex covered hands. It feels so good to grab them, squeeze them, and imagine a rough lover grope them.",
+        "With your left hand you pinch your nipples – hard! Pain jolts through your body. It makes everything else just feel even more intense.",
+        "With your other hand you touch the rest of your latex covered body. The collar around your throat, your tits, your hips, your legs. Everything just feels so good right now.",
+        "A deep moan escapes your mouth, your entire body is trembling in ecstasy. You need more, you need it deeper, harder!",
+      ],
+    },
+    {
+      hideIfBelow: ["tunnelGiveIn", 4],
+      txt_random: [
+        "You are so close. You can feel the tension right benath your skin, ready to burst into orgasm.",
+        "Your entire body is trembling. You feel the climax allready - you just need a little more to get over the edge.",
+        "You can feel it, you are right on the edge, only a little more!",
+      ],
+    },
+    {
+      hideAbove: ["tunnelGiveIn", 5],
+      btn: "More!",
+      changeScene: "tunnelGiveIn02",
+    },
+    {
+      hideIfBelow: ["tunnelGiveIn", 6],
+      btn: "More!",
+      changeScene: "tunnelGiveIn03",
+    },
+    {
+      hideAbove: ["tunnelGiveIn", 3],
+      btn: "This is wrong! Stop it!",
+      changeScene: "tunnelGiveIn04",
+    },
+  ],
+  tunnelGiveIn03: [
+    { txt: "You are so close, ride on the edge, just a little more…!" },
+    {
+      txt:
+        "But suddenly you get forced out of your fantasy. Tentacles have sneaked up onto you and dozens of them shoot forward to grab you all at once! ",
+    },
+    {
+      btn: "Scream in panic!",
       changeScene: "XilAttack",
     },
   ],
+  tunnelGiveIn04: [
+    {
+      txt:
+        "No! This is wrong! You need to get out of this! But... it feels soooo good. You push with two fingers into your waiting pussy and gently rub against the warm and sensitive spot inside. Your entire existence seems to shrink to this point of lust.",
+    },
+    {
+      btn: "More!",
+      changeScene: "tunnelGiveIn02",
+    },
+    {
+      btn: "No! Fight it! Snap out of it!",
+      changeScene: "tunnelGiveIn05",
+    },
+  ],
+  tunnelGiveIn05: [
+    {
+      txt:
+        "It takes you all the willpower you have left, but you stop yourself from masturbating, and get back up on your legs. You don’t know if you could hold back, if your arousal takes over again…",
+    },
+    {
+      btn: "Explore your surrondings.",
+      changeScene: "exploreTunnel_02",
+    },
+  ],
+
+  beastInTheWall: [
+    {
+      txt:
+        "You fight down your urges and get up on your knees and investigate one of the holes. It is way to dark to see anything. But you can clearly hear, there is something moving inside. You lean your head as close as possible and try to listen. It is a soft chittering noise, like something many legs are moving inside – and it is close.",
+    },
+    {
+      txt:
+        "You lean back and look with big eyes, as weird spider legs move out of the hole. The creature has no eyes and kind of looks like a mix of a spider and a crab. Its long legs are slowly exploring the side around the hole. It does not seem hostile, and you think you are out of reach for it to attack you.",
+    },
+    {
+      btn: "It looks dangerous! Slowly move away!",
+      changeScene: "beastInTheWall03",
+    },
+    {
+      btn: "It looks dangerous! Run Away!",
+      changeScene: "beastInTheWall02",
+    },
+    {
+      btn: "What is that? Examine it closer.",
+      changeScene: "beastInTheWall08",
+    },
+  ],
+  beastInTheWall02: [
+    {
+      txt:
+        "You panic, turn around and run as fast as you can – and just in time! The creature jumps at you with incredible speed and force and latches onto your neck. Thankfully, your neck is protected by the collar. You grab the thing, throw it away with all your might and run as fast as you can.",
+    },
+    {
+      txt:
+        "You cannot run fast or far, before you stumble and fall. You are sweating and breathing like mad, while watching back. It seems the creature has not followed you!",
+    },
+    { btn: "Get back on your feet.", changeScene: "exploreTunnel_02" },
+  ],
+  beastInTheWall03: [
+    {
+      txt:
+        "You slowly move away, but the creature seems to notice and shoots itself forward with incredible speed. It jumps right at your face, its legs are wide, ready to grab onto you, while it uses a long, spindly tail to control its flight.",
+    },
+    { btn: "Scream and run!", changeScene: "beastInTheWall04" },
+    { btn: "Lift your arms in defence!", changeScene: "beastInTheWall05" },
+  ],
+  beastInTheWall04: [
+    {
+      txt:
+        "You try to scream and run away, but the thing hits you in the face. You try to pull it off, but its powerful legs hold onto you and pressing the creature against your head like a tight mask.",
+    },
+    {
+      txt:
+        "Its tail wraps around your throat and pulls tight, but your collar prevents it from strangling you. Still, you can not breath, and after a short fight you feel dizzy and collapse onto your knees.",
+    },
+    {
+      btn: "Darkness.",
+      changeScene: "spiders",
+    },
+  ],
+  beastInTheWall05: [
+    {
+      txt:
+        "You raise your arms just in time to protect your face, but instead the creature wraps around your arms and forces them together with unnatural force. Your thick gloves give you some protection, but not much.",
+    },
+    { btn: "Get the thing of your arms!", changeScene: "beastInTheWall06a" },
+    { btn: "Get up and run!", changeScene: "beastInTheWall06b" },
+  ],
+  beastInTheWall06a: [
+    {
+      txt:
+        "You try to fight the creature, but it is way to powerful. There is no way for you to get it of your arms. ",
+    },
+    {
+      txt:
+        "Meanwhile you see more of these creatures crawl out of holes in the wall. Three, six, nine… it’s so many, no way to count them.",
+    },
+    {
+      btn: "Run away!",
+      changeScene: "beastInTheWall07",
+    },
+  ],
+  beastInTheWall06b: [
+    {
+      txt:
+        "You try to get up on your legs, but with your arms bound AND these boots it’s really hard to move even a little. Still, with adrenaline pumping in your veins, you get up on your legs.",
+    },
+    {
+      txt:
+        "Meanwhile you see more of these creatures crawl out of holes in the wall. Three, six, nine… it’s so many, no way to count them.",
+    },
+    {
+      btn: "Run away!",
+      changeScene: "beastInTheWall07",
+    },
+  ],
+  beastInTheWall07: [
+    {
+      txt:
+        "You struggle to get away, but these creatures are fast and powerful. They surround you in seconds, and with your arms bound you have no way to defend yourself.",
+    },
+    {
+      txt:
+        "Suddenly another creature jumps right towards your face. You can barley see it moving, before it gets dark. Long but powerful spider legs wrap around your head. The thing attaches itself to your head like a mask. ",
+    },
+    {
+      txt:
+        "You can feel its tail wrapping around your throat, but your collar prevents it from strangling you. Nonetheless, you cannot breathe and after a short fight, you feel dizzy and collapse onto your knees.",
+    },
+    {
+      btn: "Darkness.",
+      changeScene: "spiders",
+    },
+  ],
+  beastInTheWall08: [
+    {
+      txt:
+        "Every fiber in your body screams to move away, but you fight it down and get closer, and examine the creature. It looks like some sort of big, black insect, but without eyes. Its long, spindly legs are carefully mapping the rock around it’s hole, hoke into position, and…",
+    },
+    { txt: "Suddenly the creature shoots forward, right at your face!" },
+    { btn: "Next", changeScene: "beastInTheWall09" },
+  ],
+  beastInTheWall09: [
+    {
+      txt:
+        "You have no time to react. The creature spreads its legs, slams into your face, and grabs onto your head with inhuman strength. You try to fight it, pull it off, but it holds to tight. You can feel its tail wrapping around your collar, pulling tight.",
+    },
+    {
+      txt:
+        "The fight last only for moments. Lack of oxygen and the struggle wear you and you drop to your knees – to weak to fight on.",
+    },
+    { btn: "Next", changeScene: "spiders" },
+  ],
+
+  // ==============================
+  spiders: [{ h1: "Chapter 4: The Spiders / Under Construction" }],
 
   // ==============================
   XilAttack: [
@@ -871,7 +1131,7 @@ let content = {
         "You can only scream in panic, as the inhumanly strong thing tightens its grip. You get lifted in the air and forced into a spread-eagle position, while more and more tentacles wrap around your body.",
     },
     {
-      btn: "Scream!",
+      btn: "Next",
       changeScene: "XilAttack03",
     },
   ],
@@ -1168,6 +1428,7 @@ function createHTMLElements(sElement) {
 
   if (sElement.addOne) keys[sElement.addOne]++;
 
+  if (sElement.counter_reset) keys[sElement.counter_reset] = 0;
   if (sElement.hideIfBelow) {
     let x = sElement.hideIfBelow[0];
     let y = sElement.hideIfBelow[1];
