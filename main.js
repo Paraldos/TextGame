@@ -656,11 +656,11 @@ let content = {
     { h1: "Chapter 3: Lost in the tunnels" },
     {
       txt:
-        "It does not take long before you realize that you are in a big labyrinth of tunnels and caves. Ofcourse you only enter slowly, and make sure to remember the way back. But after a while you notice that it is getting hard to concentrate. Something in the air is clouding your mind.",
+        "It does not take long before you realize that you are in a big, dark labyrinth of tunnels and caves. Of course, you only enter slowly, and make sure to remember the way back. But after a while you notice that it is getting hard to concentrate. Something in the air is clouding your mind.",
     },
     {
       txt:
-        "Fear is slowly settling in and so you turn around to leave this place. You walk for a bit, but swiftly realize you can no longer remember where exactly you came from. Was it left or right on this crossing? You can't tell anymore.",
+        "Fear is slowly settling in and so you turn around to leave this place. You walk for a bit, but swiftly realize you can no longer remember where exactly you came from. Was it left or right on this crossing? You cannot tell anymore.",
     },
     {
       btn: "Examine your surrondings.",
@@ -677,7 +677,7 @@ let content = {
     },
     {
       txt:
-        "Like in the cave you came from, the walls are dotted with small holes, roughly the size of your fist. And at some places you find cocoons. They are made of a purple, flesh like substance and are grown onto the wall. If you look closely, you can see them twitch from time to time.",
+        "Like in the cave you came from, the walls are dotted with small holes, roughly the size of your fist. And at some places you find cocoons. They are made of a purple, flesh-like substance and are grown onto the wall. If you look closely, you can see them twitch from time to time.",
     },
     {
       txt:
@@ -831,11 +831,11 @@ let content = {
   rest01: [
     {
       txt:
-        "Your tired, lost and confused. The Air makes it hard to think and there is really no way you will get out of this. There is nothing you can do.",
+        "You are tired, lost and confused. The Air makes it hard to think. Slowly you realize there is not really a way you will get out of this. There is nothing you can do.",
     },
     {
       txt:
-        "So, you give up, sit down, and pull your legs close to your body. Orlops said he will be back in a couple of days, right? Maybe you can just wait… and he will eventually come back for you.",
+        "So, you just give up. Sit down, and pull your legs close to your body. Orlops said he will be back in a couple of days, right? Maybe you can just wait for him. What else could you do?",
     },
     {
       btn: "Next.",
@@ -845,11 +845,11 @@ let content = {
   rest02: [
     {
       txt:
-        "You close your eyes and just listen into the dark. At first you notice the obvious. The gurling sound in the distance and the slight breeze of fresh air. But… there is also something else. Something you hear in the walls. Like something is moving inside of it…",
+        "You close your eyes and listen into the dark. At first you notice the obvious. The gurling sound in the distance and the slight breeze of fresh air. But… there is also something else. Something you hear in the walls. Like something is moving inside of it.",
     },
     {
       txt:
-        "But resting takes away your ability to distract your drugged mind. While you notice the sound in the wall, you also can feel the burning sensation between your legs. You even have started to rub yourself subconsciously….",
+        "But resting also takes away your ability to distract your drugged mind. While you notice the sound in the wall, you also can feel the burning sensation between your legs. You even have started to rub yourself subconsciously. You really need some relief. Maybe you should just focus on yourself? Just for a little?",
     },
     {
       btn: "Ignore your desire. Concentrate on the holes in the wall.",
@@ -867,7 +867,7 @@ let content = {
   rest03: [
     {
       txt:
-        "Fuck it! Why should you try to control yourself when you clearly need it so badly?! You move your right hand to your tits and concentrate the other hand on more actively rubbing your clit.",
+        "Fuck it! Why should you even try to control yourself?! You move your right hand to your tits and concentrate the other hand on more actively rubbing your love button.",
     },
     {
       btn: "More!",
