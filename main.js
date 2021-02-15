@@ -852,10 +852,6 @@ let content = {
         "But resting takes away your ability to distract your drugged mind. While you notice the sound in the wall, you also can feel the burning sensation between your legs. You even have started to rub yourself subconsciously….",
     },
     {
-      btn: "This is madness. Get back up!",
-      changeScene: "exploreTunnel_02",
-    },
-    {
       btn: "Ignore your desire. Concentrate on the holes in the wall.",
       changeScene: "beastInTheWall",
     },
@@ -863,11 +859,15 @@ let content = {
       btn: "It is all for nothing. Give in to your lust.",
       changeScene: "rest03",
     },
+    {
+      btn: "This is madness. Get back up!",
+      changeScene: "exploreTunnel_02",
+    },
   ],
   rest03: [
     {
       txt:
-        "Fuck it! Why should you try to control yourself when you clearly need it so badly?! You move your right hand to your tits and concentrate the other hand on more actively rubbing your clit. ",
+        "Fuck it! Why should you try to control yourself when you clearly need it so badly?! You move your right hand to your tits and concentrate the other hand on more actively rubbing your clit.",
     },
     {
       btn: "More!",
