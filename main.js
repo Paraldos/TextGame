@@ -941,7 +941,7 @@ let content = {
     { txt: "You are so close, ride on the edge, just a little more…!" },
     {
       txt:
-        "But suddenly you get forced out of your fantasy. Tentacles have sneaked up onto you and dozens of them shoot forward to grab you all at once! ",
+        "But suddenly you get forced out of your fantasy. Tentacles have sneaked up onto you and dozens of them shoot forward to grab you all at once!",
     },
     {
       btn: "Scream in panic!",
