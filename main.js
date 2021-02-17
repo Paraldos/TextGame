@@ -11,7 +11,7 @@ let keys = {
   // ==============================
   scene: "startPage",
   btnCounter: [],
-  version: "0.2c",
+  version: "0.2d",
   // ==============================
   test01: 1,
   // ==============================
@@ -895,30 +895,30 @@ let content = {
     },
     {
       txt_random: [
-        "You push a finger slow and deliberately into your snatch, while you push your hips forward to feel them deep inside of you.",
-        "You rub your clit with fast, desperate need. Your entire body tense and feels like it is on fire. You need more!",
+        "You push a finger slowly and deliberately into your snatch, while you push your hips forward to feel it deep inside of you.",
+        "You rub your clit with fast, desperate need. Your entire body tenses and feels like it is on fire. You need more!",
         "You cannot hold back anymore. You finger yourself hard and fast, feeding into the growing need pulsing in your pussy. It just feels so amazing!",
-        "You force yourself to slow down a bit, rock your hips gently back and forth and fondle your clit softly. It feels good, but you need more. This is just to tame.",
-        "You rub your clit and pussylips, before slowly and deliberately push three fingers into your love tunnel. You cannot hold it back and moan with deep passion.",
-        "Your hand rubs slow and deliberate up and down your pussy, holding back just a little, before you give into your need and push deep and hard into your lovetunnel.",
+        "You force yourself to slow down a bit, rock your hips gently back and forth and fondle your clit softly. It feels good, but you need more. This is just too tame.",
+        "You rub your clit and pussylips, before slowly and deliberately pushing three fingers into your love tunnel. You cannot hold it back, and moan with deep passion.",
+        "Your hand rubs slowly and deliberately up and down your pussy, holding back just a little, before you give into your need and push deep and hard into your lovetunnel.",
         "You can feel your finger inside of your pussy, rubbing against the lovely spot which makes you feel soooooo good.",
       ],
     },
     {
       txt_random: [
-        "Meanwhile you suck on your left hand’s forefinger, lovingly explore it with your warm and hungry lips, and imagining it was a man’s penis.",
-        "With your left hand you are kneading your breasts, feel your hard nipple press against your latex covered hands. It feels so good to grab them, squeeze them, and imagine a rough lover grope them.",
+        "Meanwhile, you suck on your left hand’s forefinger, lovingly exploring it with your warm and hungry lips, and imagining it was a man’s penis.",
+        "With your left hand, you are kneading your breasts, feeling your hard nipple press against your latex-covered hands. It feels so good to grab them, squeeze them, and imagine a rough lover groping them.",
         "With your left hand you pinch your nipples – hard! Pain jolts through your body. It makes everything else just feel even more intense.",
-        "With your other hand you touch the rest of your latex covered body. The collar around your throat, your tits, your hips, your legs. Everything just feels so good right now.",
-        "A deep moan escapes your mouth, your entire body is trembling in ecstasy. You need more, you need it deeper, harder!",
+        "With your other hand you touch the rest of your latex-covered body. The collar around your throat, your tits, your hips, your legs - everything just feels so good right now.",
+        "A deep moan escapes your mouth. Your entire body is trembling in ecstasy. You need more, you need it deeper, harder!",
       ],
     },
     {
       hideIfBelow: ["tunnelGiveIn", 4],
       txt_random: [
         "You are so close. You can feel the tension right benath your skin, ready to burst into orgasm.",
-        "Your entire body is trembling. You feel the climax allready - you just need a little more to get over the edge.",
-        "You can feel it, you are right on the edge, only a little more!",
+        "Your entire body is trembling. You feel the climax already - you just need a little more to get over the edge.",
+        "You can feel it, you are right on the edge. Only a little more!",
       ],
     },
     {
@@ -938,10 +938,10 @@ let content = {
     },
   ],
   tunnelGiveIn03: [
-    { txt: "You are so close, ride on the edge, just a little more…!" },
+    { txt: "You are so close, right on the edge, just a little more…!" },
     {
       txt:
-        "But suddenly you get forced out of your fantasy. Tentacles have sneaked up onto you and dozens of them shoot forward to grab you all at once!",
+        "But suddenly, you get forced out of your fantasy. Tentacles have snuck up on you, and dozens of them shoot forward to grab you all at once!",
     },
     {
       btn: "Scream in panic!",
