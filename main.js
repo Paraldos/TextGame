@@ -710,7 +710,7 @@ let content = {
         "You wander through the dark and follow the elusive gust of fresh air you feel every now and then. Is it now more from the left or the right?",
         "After a while you reach a point that looks awfully familiar. Have you just wandered in a circle?",
         "You struggle to move in your boots. The uneven floor and the lack of light make it hard to not fall over. What a nightmare.",
-        "You find a rather easy to follow tunnel, only to find a dead end. But you were certain you felt the breeze of air from this direction!",
+        "You find a rather easy-to-follow tunnel, only to find a dead end. But you were certain you felt the breeze from this direction!",
         "You struggle walking around this dark, uneven tunnel with your boots. Sometimes you just have to concentrate more on not falling than getting anywhere.",
         "You stumble through the dark, stopping every now and then to sense the little hint of fresh air. Are you still on the right path?",
       ],
@@ -718,9 +718,9 @@ let content = {
     {
       hideIfBelow: ["breathOfAir", 3],
       txt_random: [
-        "Did you really feel the wind come from here? You cannot feel it now anymore!",
+        "Did you really feel the wind come from here? You cannot feel it anymore!",
         "You slowly but surely get the impression the wind is changing direction every now and then. Is this even working?",
-        "You lost the lead and must go back from where you came. It is so hard to concentrate with all this drugs in the air!",
+        "You lost the lead and must go back from where you came. It is so hard to concentrate with all this drugged air!",
         "What where you doing again? Oh yeah… following the fresh air.",
       ],
     },
@@ -787,8 +787,8 @@ let content = {
       txt_random: [
         "You slowly wander through the dark. You must be careful and deliberate as your boots make it difficult to walk on this uneven ground. Better to support yourself with the wall. Wait? Where did you go again? It is so hard to think.",
         "You have to squint your eyes to see in the dark. The faint glow of the plants around you is just enough to see outlines. Wait! There is someone! You move as fast as you can towards the silhouette, only to find a stalagmite which vaguely resembles a human. Damn it!",
-        "You wander the tunnels until you find a passage you think you know. You follow the path you remember, turn a corner, and suddenly are standingin front of a wall. Fuck! You had been absolutely sure this was the way back!",
-        "You follow a long tunnel that looks familiar. But slowly get’s narrower and narrower until you can no longer fit through. Darn it! Another dead end!",
+        "You wander the tunnels until you find a passage you think you know. You follow the path you remember, turn a corner, and suddenly are standing in front of a wall. Fuck! You had been absolutely sure this was the way back!",
+        "You follow a long tunnel that looks familiar, but slowly gets narrower and narrower until you can no longer fit through. Darn it! Another dead end!",
         "After a while wandering the tunnel you feel tired and your poor little snatch is itching for attention. You stop, to catch a break… and to rub your exposed sex for a little. Can't hurt, right? Suddenly you realize what you are doing and snap out of it. This place is making you mad! Better go on.",
       ],
     },
