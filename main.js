@@ -11,7 +11,7 @@ let keys = {
   // ==============================
   scene: "startPage",
   btnCounter: [],
-  version: "0.2d",
+  version: "0.2e",
   // ==============================
   test01: 1,
   // ==============================
@@ -976,11 +976,11 @@ let content = {
   beastInTheWall: [
     {
       txt:
-        "You fight down your urges and get up on your knees and investigate one of the holes. It is way to dark to see anything. But you can clearly hear, there is something moving inside. You lean your head as close as possible and try to listen. It is a soft chittering noise, like something many legs are moving inside – and it is close.",
+        "You fight down your urges and get up on your knees and investigate one of the holes. It is way too dark to see anything, but you can clearly hear that there is something moving inside. You lean your head as close as possible and try to listen. It is a soft chittering noise, like something with many legs moving inside – and it is close.",
     },
     {
       txt:
-        "You lean back and look with big eyes, as weird spider legs move out of the hole. The creature has no eyes and kind of looks like a mix of a spider and a crab. Its long legs are slowly exploring the side around the hole. It does not seem hostile, and you think you are out of reach for it to attack you.",
+        "You lean back and look with big eyes, as weird spidery legs move out of the hole. The creature has no eyes and kind of looks like a mix of a spider and a crab. Its long legs are slowly exploring the side around the hole. It does not seem hostile, and you think you are out of reach for it to attack you.",
     },
     {
       btn: "It looks dangerous! Slowly move away!",
@@ -1009,7 +1009,7 @@ let content = {
   beastInTheWall03: [
     {
       txt:
-        "You slowly move away, but the creature seems to notice and shoots itself forward with incredible speed. It jumps right at your face, its legs are wide, ready to grab onto you, while it uses a long, spindly tail to control its flight.",
+        "You slowly move away, but the creature seems to notice and shoots itself forward with incredible speed. It jumps right at your face! Its legs are wide, ready to grab onto you, while it uses a long, spindly tail to control its flight.",
     },
     { btn: "Scream and run!", changeScene: "beastInTheWall04" },
     { btn: "Lift your arms in defence!", changeScene: "beastInTheWall05" },
@@ -1017,11 +1017,11 @@ let content = {
   beastInTheWall04: [
     {
       txt:
-        "You try to scream and run away, but the thing hits you in the face. You try to pull it off, but its powerful legs hold onto you and pressing the creature against your head like a tight mask.",
+        "You try to scream and run away, but the thing hits you in the face. You try to pull it off, but its powerful legs hold onto you and press the creature against your head like a tight mask.",
     },
     {
       txt:
-        "Its tail wraps around your throat and pulls tight, but your collar prevents it from strangling you. Still, you can not breath, and after a short fight you feel dizzy and collapse onto your knees.",
+        "Its tail wraps around your throat and pulls tight, but your collar prevents it from fully strangling you. Still, you can not breathe, and after a short fight, you feel dizzy and collapse onto your knees.",
     },
     {
       btn: "Darkness.",
@@ -1039,11 +1039,11 @@ let content = {
   beastInTheWall06a: [
     {
       txt:
-        "You try to fight the creature, but it is way to powerful. There is no way for you to get it of your arms. ",
+        "You try to fight the creature, but it is far too powerful. There is no way for you to get it off your arms.",
     },
     {
       txt:
-        "Meanwhile you see more of these creatures crawl out of holes in the wall. Three, six, nine… it’s so many, no way to count them.",
+        "Meanwhile, you see more of these creatures crawl out of holes in the wall. Three, six, nine… it’s so many, there's no way to count them.",
     },
     {
       btn: "Run away!",
@@ -1053,11 +1053,11 @@ let content = {
   beastInTheWall06b: [
     {
       txt:
-        "You try to get up on your legs, but with your arms bound AND these boots it’s really hard to move even a little. Still, with adrenaline pumping in your veins, you get up on your legs.",
+        "You try to get up on your legs, but with your arms bound AND these boots it’s really hard to move! Still, with adrenaline pumping in your veins, you get up on your legs.",
     },
     {
       txt:
-        "Meanwhile you see more of these creatures crawl out of holes in the wall. Three, six, nine… it’s so many, no way to count them.",
+        "Meanwhile you see more of these creatures crawl out of holes in the wall. Three, six, nine… it’s so many, there's no way to count them.",
     },
     {
       btn: "Run away!",
@@ -1071,11 +1071,11 @@ let content = {
     },
     {
       txt:
-        "Suddenly another creature jumps right towards your face. You can barley see it moving, before it gets dark. Long but powerful spider legs wrap around your head. The thing attaches itself to your head like a mask.",
+        "Suddenly another creature jumps right towards your face. You can barely see it moving, before everything goes dark. Long but powerful spider legs wrap around your head. The thing attaches itself to your head like a mask.",
     },
     {
       txt:
-        "You can feel its tail wrapping around your throat, but your collar prevents it from strangling you. Nonetheless, you cannot breathe and after a short fight, you feel dizzy and collapse onto your knees.",
+        "You can feel its tail wrapping around your throat, but your collar prevents it from fully strangling you. Nonetheless, you cannot breathe and after a short fight, you feel dizzy and collapse onto your knees.",
     },
     {
       btn: "Darkness.",
@@ -1085,7 +1085,7 @@ let content = {
   beastInTheWall08: [
     {
       txt:
-        "Every fiber in your body screams to move away, but you fight it down and get closer, and examine the creature. It looks like some sort of big, black insect, but without eyes. Its long, spindly legs are carefully mapping the rock around it’s hole, hoke into position, and…",
+        "Every fiber in your body screams to move away, but you fight it down and get closer, and examine the creature. It looks like some sort of big, black insect, but without eyes. Its long, spindly legs are carefully mapping the rock around its hole. They hook into position, and…",
     },
     { txt: "Suddenly the creature shoots forward, right at your face!" },
     { btn: "Next", changeScene: "beastInTheWall09" },
@@ -1093,11 +1093,11 @@ let content = {
   beastInTheWall09: [
     {
       txt:
-        "You have no time to react. The creature spreads its legs, slams into your face, and grabs onto your head with inhuman strength. You try to fight it, pull it off, but it holds to tight. You can feel its tail wrapping around your collar, pulling tight.",
+        "You have no time to react. The creature spreads its legs, slams into your face, and grabs onto your head with inhuman strength. You try to fight it, pull it off, but it holds too tight. You can feel its tail wrapping around your collar, pulling tight.",
     },
     {
       txt:
-        "The fight last only for moments. Lack of oxygen and the struggle wear you and you drop to your knees – to weak to fight on.",
+        "The fight lasts only for moments. Lack of oxygen and the struggle wear you down, and you drop to your knees – too weak to fight on.",
     },
     { btn: "Next", changeScene: "spiders" },
   ],
