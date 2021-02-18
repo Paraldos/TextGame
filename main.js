@@ -1071,7 +1071,7 @@ let content = {
     },
     {
       txt:
-        "Suddenly another creature jumps right towards your face. You can barley see it moving, before it gets dark. Long but powerful spider legs wrap around your head. The thing attaches itself to your head like a mask. ",
+        "Suddenly another creature jumps right towards your face. You can barley see it moving, before it gets dark. Long but powerful spider legs wrap around your head. The thing attaches itself to your head like a mask.",
     },
     {
       txt:
