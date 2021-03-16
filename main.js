@@ -26,6 +26,7 @@ let keys = {
   goBack: 0,
   breathOfAir: 0,
   tunnelGiveIn: 0,
+  Spiders03_struggle: false,
 };
 let keysHistory = [];
 
