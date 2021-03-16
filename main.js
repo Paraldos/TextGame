@@ -35,7 +35,7 @@ scenes
 let content = {
   // ==============================
   startPage: [
-    { h1: "Start Page" },
+    { h1: "STARTPAGE" },
     { txt: `Version: ${keys.version}` },
     // { btn: "Go to TEST PAGE", changeScene: "test" },
     { btn: "Dedication", changeScene: "dedication" },
