@@ -11,7 +11,7 @@ let keys = {
   // ==============================
   scene: "startPage",
   btnCounter: [],
-  version: "0.2e",
+  version: "0.3a",
   // ==============================
   test01: 1,
   // ==============================
@@ -26,7 +26,6 @@ let keys = {
   goBack: 0,
   breathOfAir: 0,
   tunnelGiveIn: 0,
-  Spiders03_struggle: false,
 };
 let keysHistory = [];
 
@@ -52,7 +51,8 @@ let content = {
     { btn: "Lost in the tunnels", changeScene: "exploreTunnel_01" },
     { btn: "The Xil", changeScene: "XilAttack" },
     { btn: "The Spiders", changeScene: "spiders" },
-    { btn: "The Rescue", changeScene: "OrlopToTheRescue" },
+    { btn: "The Rescue (Xil)", changeScene: "OrlopToTheRescue" },
+    { btn: "The Rescue (Spiders)", changeScene: "SpiderRescue" },
   ],
 
   // ==============================
@@ -1104,7 +1104,110 @@ let content = {
   ],
 
   // ==============================
-  spiders: [{ h1: "Chapter 4: The Spiders / Under Construction" }],
+  spiders: [
+    { h1: "Chapter 4: Spiders!" },
+    {
+      txt:
+        "You gasp for air as you wake up with a start. You can barely move and can feel dozens of the spider creatures grappling your body. It is dark, and your head is still in the tight grip of one of the creatures. Its powerful muscles contract and press its warm, slimy belly against your face and a big, foul tasting tentacle or tube down your throat.",
+    },
+    { btn: "Struggle", changeScene: "spiders02a" },
+    { btn: "Stay calm and experience the feeling.", changeScene: "spiders02b" },
+  ],
+  spiders02a: [
+    {
+      txt:
+        "Panic overtakes you and grants you a sudden burst of strength and energy. You start to wiggle and move around, straining against the creatures to break free of them.",
+    },
+    {
+      txt:
+        "...but it’s no use. The creatures have you tightly bound down, and you cannot breathe enough air to keep your fight up for long. You must give up. Sobbing and groaning in protest, you are still unable to move.",
+    },
+    { btn: "Next", changeScene: "spiders03" },
+  ],
+  spiders02b: [
+    {
+      txt:
+        "Your first instinct is to panic, but you force yourself to calm down. You have no chance to fight your way out of this. You need to be smart!",
+    },
+    {
+      txt:
+        "After you have yourself back under control, you start to listen to your body…",
+    },
+    { btn: "Next", changeScene: "spiders03" },
+  ],
+  spiders03: [
+    {
+      txt:
+        "You can feel the creatures grabbing your body. Your arms are held behind your back and painfully forced together. Your legs aren't faring any better, as they are also tightly pressed against one another. You can only wiggle on the ground – blind, unable to stand up or to use your hands.",
+    },
+    {
+      txt:
+        "But the most concerning thing is that you can feel something inside of your vagina and anus. Warm, pulsing tentacles or tubes, throbbing inside of your most private parts - and you have no way to do anything about it.",
+    },
+    { btn: "Next", changeScene: "spider04" },
+  ],
+  spider04: [
+    {
+      txt:
+        "Suddenly, you can feel the spiders move. Their muscles start to contract and tighten their grip around your arms and legs.",
+    },
+    {
+      txt:
+        "You can feel the tube in your mouth contract. Tears well up in your eyes as your jaws gets forced painfully wide, and your breath is cut off again. “It’s an egg! It’s pushing an egg into me!” Panic starts to settle in. You wiggle and strain, but it is no use. It takes painfully long, and you nearly pass out from lack of oxygen before the egg finally is inside of you and you can breathe again.",
+    },
+    { btn: "Next", changeScene: "spider05" },
+  ],
+  spider05: [
+    {
+      txt:
+        "Seconds later, the tube contracts again and a big load of goo is pumped into your stomach. A few squirts follow, then the creatures loosen their grip a little, and noticeably relax.",
+    },
+    {
+      txt:
+        "Did the thing just throatfuck you? It certainly felt like it. Your poor throat and mouth feel painfully sore, and you have a foul, slimy taste in your mouth. But you can also feel a weirdly nice warmth inside of your belly.",
+    },
+    {
+      txt:
+        "Over the next few minutes, the warmth grows and a happy feeling emanates from there throughout your body. The pain and panic slowly subside, and your muscles feel weaker and weaker.",
+    },
+    { btn: "Next", changeScene: "spider06" },
+  ],
+  spider06: [
+    {
+      txt:
+        "The warmth in your belly slowly floods your body, numbing the pain and dulling your thoughts with a hazy need for sex. You realize you are being drugged, and instinctively start to struggle, but you have no chance. Moments later, you stop fighting and instead start to revel in a horny daze.",
+    },
+    { btn: "Next", changeScene: "spider07" },
+  ],
+  spider07: [
+    {
+      txt:
+        "You don’t know how long you rest on the floor before you feel the spiders move again. Their grip around your body tightens again and you can feel the tube inside of your ass contract and wiggle.",
+    },
+    {
+      txt:
+        "Your mind comes back into reality, as you can feel another egg pressing against your backdoor. You try to keep it out, but your poor little sphincter has no chance. A mix of pain and pleasure floods your body as your ass is forced to swallow the giant thing.",
+    },
+    {
+      txt:
+        "Like before, a big load of goo follows right after. Another wave of drugs takes you over. You can feel the need burning between your legs, and you mentally beg for something pushing into your pussy next.",
+    },
+    { btn: "Next", changeScene: "spider08" },
+  ],
+  spider08: [
+    {
+      txt:
+        "You don’t have to wait for long. Only minutes later, the spiders tighten their grip again, and you can feel the tube in your pussy move. Your drugged mind is no longer able to feel anything but lust. Your pussy is pulsing in anticipation as the egg starts slipping into your body. Your body starts to convulse and tense, tumbling you into a earthshattering orgasm, as the egg is deposited into your womb.",
+    },
+    { btn: "Next", changeScene: "spider09" },
+  ],
+  spider09: [
+    {
+      txt:
+        "Time flies by. You only awaken every now and then to feel the spiders pumping more goo into your body. You can feel your babies moving inside of you. It makes you so happy to feel them being healthy, but you are too tired to stay awake for long.",
+    },
+    { btn: "Next", changeScene: "SpiderRescue" },
+  ],
 
   // ==============================
   XilAttack: [
@@ -1348,6 +1451,79 @@ let content = {
     {
       txt:
         "But sometimes there are dreams. Dreams about being trapped in the dark, engulfed by something unbelievable powerful, that is using your body, filling it up. You feel pleasure, lust… and a strange urge to go back. Back to the tunnels. Back to the creature.",
+    },
+    { btn: "Back to STARTPAGE", changeScene: "startPage" },
+  ],
+
+  // ==============================
+  SpiderRescue: [
+    {
+      h1: "Chapter 5: The Rescue",
+    },
+    {
+      txt:
+        "You cannot tell how much time has passed, but suddenly you can feel a change. Something strange and alien is close by. You can feel it. The spiders get nervous. Some of them suddenly loosen their grip and run away.",
+    },
+    {
+      txt:
+        "Something grabs your shoulders and moves you to your side. The spider on your face tightens its grip. It starts to jerk and twitch, before suddenly going limp. The thing is pulled off your face, the tube forced out of your throat. Your gag reflex kicks in and you throw up liters of foul slime. You feel like you're drowning, before you finally can take deep and desperate breaths of air.",
+    },
+    { btn: "Next", changeScene: "SpiderRescue02" },
+  ],
+  SpiderRescue02: [
+    {
+      txt:
+        "You have to blink, as even the dim twilight of the cave is blinding you. Orlop stands above you. His face is hidden behind a thick gasmask, and he has a slime-covered knife in his hand. He examines the creature you had on your face just moments ago.",
+    },
+    {
+      txt:
+        "“What the hell? What are those things?!” All of the spiders have either run away or have been killed by Orlop, but you are too weak to move.",
+    },
+    { btn: "Next", changeScene: "SpiderRescue03" },
+  ],
+  SpiderRescue03: [
+    {
+      txt:
+        "Orlop looks down at you, confused and not sure what to make of you right now. He pokes his shoe against your swollen belly. “Maybe whatever they pumped into you is worth something. I don’t know…” He speaks more to himself than to you, clearly thinking how to make a profit of the situation.",
+    },
+    { btn: "I don’t care! Just cut it out!", changeScene: "End_spiderProfit" },
+    { btn: "Don't hurt my babies!", changeScene: "End_spiderBreeder" },
+  ],
+  End_spiderProfit: [
+    {
+      txt:
+        "Your words are weak but clear. Orlop just shrugs and brings you back to his ship, calling the base to get a medical team ready.",
+    },
+    {
+      txt:
+        "A couple of days later you have forgotten most of your adventure. Your memories have been clouded to prevent lasting damage and your original memories have been restored. Your paycheck was not as big as expected, as you have not successfully breed a Xil. But still was more then enough to pay your depts.",
+    },
+    {
+      txt:
+        "You still wonder what those spider things where, but nobody would tell you. Maybe you could find out if you register as a Xil breeder again. Also, you would earn a lot of money…",
+    },
+    { btn: "Back to STARTPAGE", changeScene: "startPage" },
+  ],
+  End_spiderBreeder: [
+    {
+      txt:
+        "You instinctively try to protect your babys and snarl at Orlop to stay away. But he just gets annoyed. You try to fight him, but moments later he sedates you and the world goes dark again.",
+    },
+    { btn: "Next", changeScene: "End_spiderBreeder02" },
+  ],
+  End_spiderBreeder02: [
+    { txt: "A few weeks later…" },
+    {
+      txt:
+        "You hear the familiar hissing sound of the sealed Lab door as the doctor enters the room. She is clad in a thick environmental suit and the pheromones on her body make your babies run and hide. But you like her.",
+    },
+    {
+      txt:
+        "Since your Babies have spun you into your cocoon you can no longer move. But they also leave your head uncovered when they are not breeding you. You great the doctor and she smile at you, while she examines your swollen belly with a weird looking device. “Good new C-32.” She beams at you. “I think you might deliver in a couple of minutes. I think it should be at least another 20 to 30 specimens. And this time it took only 30 hours from impregnation to maturity!”",
+    },
+    {
+      txt:
+        "A flush of love and proud rushes through your body. That is good news. You cannot wait to see them. And to get impregnated again…. ",
     },
     { btn: "Back to STARTPAGE", changeScene: "startPage" },
   ],
